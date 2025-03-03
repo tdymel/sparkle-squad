@@ -1,0 +1,16 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(Astro.url);
+---
+
+<BaseLayout includeSidebar={false}>
+    <div class="text-center">
+        <h1 class="text-9xl font-bold mb-4">🏝</h1>
+        <h1 class="text-9xl font-bold mb-2">404</h1>
+        <h3 class="text-2xl">{t.fourofour.title}</h3>
+        <a class="btn btn-accent mt-9" href={"/" + lang}>{t.fourofour.backToHome}</a>
+    </div>
+</BaseLayout>

@@ -1,6 +1,6 @@
 ---
-import FourOFourPage from '../components/pages/FourOFourPage.astro';
-import { supportedLanguages } from '../i18n';
+import FourOFourPage from '../../components/pages/FourOFourPage.astro';
+import { supportedLanguages } from '../../i18n';
 
 export async function getStaticPaths() {
     return supportedLanguages.map(lang => ({

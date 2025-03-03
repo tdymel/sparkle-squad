@@ -1,0 +1,21 @@
+---
+import { useTranslations } from '../../i18n';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const t = useTranslations(Astro.url);
+---
+
+<BaseLayout sideBarActiveItemID="kontakt">
+    <div class="pb-12 mt-5">
+        <div class="text-5xl font-bold">{t.contact.title}</div>
+        <div class="py-2">
+            <text class="text-lg">
+                {t.contact.text1} <br/>
+                TODO: Adresse usw.
+            </text>
+        </div>
+        <div class="mt-8">
+            <a class="btn btn-outline" href="mailto:dymel.tom@gmail.com">{t.contact.writeUs}</a>
+        </div>
+    </div>
+</BaseLayout>

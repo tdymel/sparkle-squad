@@ -5,6 +5,7 @@ import SideBar from "../components/SideBar.astro";
 import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
+import { getLangFromUrl } from '../i18n';
 
 const {
   image,
@@ -14,12 +15,15 @@ const {
   sideBarActiveItemID,
   ogType,
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
 <!doctype html>
-<html lang="de" data-theme="lofi">
+<html lang={lang} data-theme="lofi">
   <head>
-    <BaseHead title={title} description={description} image={image} , ogType={ogType} />
+    <BaseHead title={title} description={description} image={image} ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>

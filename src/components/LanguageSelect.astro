@@ -1,0 +1,27 @@
+---
+import { languages } from '../i18n';
+const currentLang = Astro.url.pathname.split('/')[1] || 'en'; // Default to 'en' if no language is specified
+---
+
+<select id="language-select" class="select select-bordered w-full max-w-xs" aria-label="Select Language" value={currentLang}>
+    {Object.entries(languages).map(([code, name]) => (
+            <option value={code} selected={code === currentLang}>
+                {name}
+            </option>
+    ))}
+</select>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        document.getElementById('language-select').addEventListener('change', function (event) {
+            const selectedLang = event.target.value;
+            const currentPath = window.location.pathname.replace(/^\/[^/]+/, '');
+
+            // If the selected language is the default language, use the root path
+            const newPath = `/${selectedLang}${currentPath}`;
+
+            window.location.href = newPath;
+        });
+    });
+
+</script>

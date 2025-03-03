@@ -1,6 +1,6 @@
 ---
-import IndexPage from "../components/pages/IndexPage.astro";
-import { supportedLanguages } from '../i18n';
+import IndexPage from "../../components/pages/IndexPage.astro";
+import { supportedLanguages } from '../../i18n';
 
 export async function getStaticPaths() {
     return supportedLanguages.map(lang => ({
