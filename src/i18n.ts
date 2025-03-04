@@ -52,6 +52,13 @@ export const translations = {
         sidebar: {
             news: "Neuigkeiten",
             contact: "Kontakt"
+        },
+        news: {
+            title: "Neuigkeiten",
+            sorry: "Sorry!",
+            sorryText: "Leider gibt es derzeit keine Neuigkeiten. Schau später nochmal vorbei!",
+            recentPosts: "Vorherige Seite",
+            olderPosts: "Nächste Seite"
         }
     },
     en: {
@@ -97,6 +104,13 @@ export const translations = {
         sidebar: {
             news: "News",
             contact: "Contact"
+        },
+        news: {
+            title: "News",
+            sorry: "Sorry!",
+            sorryText: "Unfortunately, there are no news at the moment. Please check back later!",
+            recentPosts: "Previous Page",
+            olderPosts: "Next Page"
         }
     },
     ru: {
@@ -142,6 +156,13 @@ export const translations = {
         sidebar: {
             news: "Новости",
             contact: "Контакт"
+        },
+        news: {
+            title: "Новости",
+            sorry: "Извините!",
+            sorryText: "К сожалению, в настоящее время новостей нет. Пожалуйста, зайдите позже!",
+            recentPosts: "Предыдущая страница",
+            olderPosts: "Следующая страница"
         }
     },
 } as const;

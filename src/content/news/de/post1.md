@@ -3,7 +3,7 @@ title: "Sparkle Squad wurde gegründet!"
 description: "Aus dem inoffiziellen Turnier-Team wird nun ein richtiges Mixed-Team gegründet."
 pubDate: "Feb 28 2025"
 heroImage: "/logo_slim.png"
-tags: []
+identifier: "1"
 ---
 
 Ein neues Team in Hamburg zu gründen ist gar nicht so einfach. 
