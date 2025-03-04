@@ -1,6 +1,6 @@
 ---
 import { languages } from '../i18n';
-const currentLang = Astro.url.pathname.split('/')[1] || 'en'; // Default to 'en' if no language is specified
+const currentLang = Astro.url.pathname.split('/')[1] || 'de';
 ---
 
 <select id="language-select" class="select select-bordered w-full max-w-xs" aria-label="Select Language" value={currentLang}>
