@@ -15,7 +15,7 @@ export const translations = {
                 greeting: "Moin",
                 weAre: "Wir sind Sparkle Squad!",
                 subTitle: "Mixed Volleyball-Team um Hamburg Hamm",
-                text: "Du suchst nach einem ambitionierten und sympathischen Team und du hast sichere Grundlagen? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
+                text: "Du suchst nach einem ambitionierten und sympathischen Team und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
                 comeToTrial: "Komm zum Probetraining!",
                 followOnInstagram: "Folge uns auf Instagram!"
             },
@@ -23,7 +23,7 @@ export const translations = {
                 title: "Das zeichnet uns aus",
                 team: {
                     title: "Ambitioniertes, sympathisches und multi-Linguales Team",
-                    desc: "Wir wollen uns alle stetig verbessern und wir geben immer 110%. Wir halten uns den Rücken frei und feuern uns gegenseitig an. Wir sprechen Deutsch, Englisch, Ukrainisch und Russisch."
+                    desc: "Wir wollen uns alle stetig verbessern und wir geben immer 110%. Wir halten uns den Rücken frei und feuern uns gegenseitig an. Wir sprechen Deutsch, Englisch, Ukrainisch und Russisch. Im Schnitt sind wir 25 Jahre alt."
                 },
                 training: {
                     title: "Strukturiertes und zielgerichtetes Training",
@@ -43,7 +43,9 @@ export const translations = {
         contact: {
             title: "Werde teil des Sparkle Squad's!",
             text1: "Im Team sprechen wir hauptsächlich Deutsch, aber wir können auch auf Englisch, Russisch und Ukrainisch weiterhelfen.",
-            writeUs: "Schreib uns!"
+            writeUs: "Schreib uns!",
+            training: "Training: Voraussichtlich Dienstag oder Mittwoch: 20 bis 22 Uhr.",
+            casualPlaying: "Daddeln: Montags 19:30 - 22 Uhr bei den Hammstern."
         },
         fourofour: {
             title: "Leider konnte die Seite nicht gefunden werden.",
@@ -67,7 +69,7 @@ export const translations = {
                 greeting: "Hello",
                 weAre: "We are Sparkle Squad!",
                 subTitle: "Mixed Volleyball Team around Hamburg Hamm",
-                text: "Are you looking for an ambitious and friendly team with solid fundamentals? Then you are exactly right with us! Come to a trial and see what we are all about!",
+                text: "Are you looking for an ambitious and friendly team with solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
                 comeToTrial: "Come to a trial!",
                 followOnInstagram: "Follow us on Instagram!"
             },
@@ -75,7 +77,7 @@ export const translations = {
                 title: "What sets us apart",
                 team: {
                     title: "Ambitious, friendly, and multilingual team",
-                    desc: "We all strive to continually improve and always give 110%. We have each other's backs and cheer each other on. We speak German, English, Ukrainian, and Russian."
+                    desc: "We all strive to continually improve and always give 110%. We have each other's backs and cheer each other on. We speak German, English, Ukrainian, and Russian. The average age is 25."
                 },
                 training: {
                     title: "Structured and goal-oriented training",
@@ -95,7 +97,9 @@ export const translations = {
         contact: {
             title: "Become part of the Sparkle Squad!",
             text1: "In the team, we mainly speak German, but we can also assist in English, Russian, and Ukrainian.",
-            writeUs: "Write to us!"
+            writeUs: "Write to us!",
+            training: "Training: Most likely we will get a slot on Tuesday or Wednesday from 8 PM to 10 PM.",
+            casualPlaying: "Casual Play: Mondays 7:30 PM to 10 PM at the Hammster's."
         },
         fourofour: {
             title: "Unfortunately, the page could not be found.",
@@ -119,7 +123,7 @@ export const translations = {
                 greeting: "Привет",
                 weAre: "Мы - Sparkle Squad!",
                 subTitle: "Смешанная волейбольная команда в районе Гамбург Хамм",
-                text: "Вы ищете амбициозную и дружелюбную команду с прочной базой? Тогда вам точно к нам! Приходите на пробное занятие и посмотрите, что мы из себя представляем!",
+                text: "Вы ищете амбициозную и дружелюбную команду с прочной базой (A3/A4)? Тогда вам точно к нам! Приходите на пробное занятие и посмотрите, что мы из себя представляем!",
                 comeToTrial: "Приходите на пробное занятие!",
                 followOnInstagram: "Подписывайтесь на нас в Instagram!"
             },
@@ -127,7 +131,7 @@ export const translations = {
                 title: "Что нас отличает",
                 team: {
                     title: "Амбициозная, дружелюбная и многоязычная команда",
-                    desc: "Мы все стремимся к постоянному улучшению и всегда выкладываемся на 110%. Мы поддерживаем и подбадриваем друг друга. Мы говорим на немецком, английском, украинском и русском языках."
+                    desc: "Мы все стремимся к постоянному улучшению и всегда выкладываемся на 110%. Мы поддерживаем и подбадриваем друг друга. Мы говорим на немецком, английском, украинском и русском языках. Наш возраст 19-28 лет."
                 },
                 training: {
                     title: "Структурированная и целенаправленная тренировка",
@@ -147,7 +151,9 @@ export const translations = {
         contact: {
             title: "Станьте частью Sparkle Squad!",
             text1: "В команде мы в основном говорим на немецком, но можем помочь и на английском, русском и украинском языках.",
-            writeUs: "Напишите нам!"
+            writeUs: "Напишите нам!",
+            training: "Тренировки: Скорее всего мы получим время в зале во вторник или среду 20:00-22:00.",
+            casualPlaying: "Дополнительные товарищеские игры в понедельник 19:30-22:00 с командой Hammster"
         },
         fourofour: {
             title: "К сожалению, страница не найдена.",

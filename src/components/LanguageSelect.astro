@@ -13,14 +13,10 @@ const currentLang = Astro.url.pathname.split('/')[1] || 'de';
 
 <script>
     document.addEventListener("astro:page-load", () => {
-        document.getElementById('language-select').addEventListener('change', function (event) {
+        document.getElementById('language-select')?.addEventListener('change', function (event) {
             const selectedLang = event.target.value;
             const currentPath = window.location.pathname.replace(/^\/[^/]+/, '');
-
-            // If the selected language is the default language, use the root path
-            const newPath = `/${selectedLang}${currentPath}`;
-
-            window.location.href = newPath;
+            window.location.href = `/${selectedLang}${currentPath}`;
         });
     });
 
