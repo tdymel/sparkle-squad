@@ -2,7 +2,7 @@
 title: "7. Platz beim 13. MTV Pattensen Turnier"
 description: "7. Platz, aber den 1. Platz haben wir gekonnt abgeschossen!"
 pubDate: "Mar 28 2025"
-heroImage: "/logo_slim.png"
+heroImage: "/13_mtv_pattensen_tournament.jpg"
 identifier: "2"
 ---
 

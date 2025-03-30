@@ -2,7 +2,7 @@
 title: "7th Place at the 13th MTV Pattensen Tournament"
 description: "7th place, but we skillfully defeated the 1st place!"
 pubDate: "Mar 28 2025"
-heroImage: "/logo_slim.png"
+heroImage: "/13_mtv_pattensen_tournament.jpg"
 identifier: "2"
 ---
 
