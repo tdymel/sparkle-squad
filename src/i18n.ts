@@ -44,8 +44,8 @@ export const translations = {
             title: "Werde teil des Sparkle Squad's!",
             text1: "Im Team sprechen wir hauptsächlich Deutsch, aber wir können auch auf Englisch, Russisch und Ukrainisch weiterhelfen.",
             writeUs: "Schreib uns!",
-            training: "Training: Mittwoch: 20 bis 22 Uhr.",
-            casualPlaying: "Daddeln: Montags/Freitags 19:30 - 22 Uhr bei den Hammstern und Kunterbunten."
+            training: "Training: Mittwoch: 19:30 bis 22:00 Uhr.",
+            casualPlaying: "Daddeln: Montags/Freitags 19:30 - 22:00 Uhr bei den Hammstern und Kunterbunten."
         },
         fourofour: {
             title: "Leider konnte die Seite nicht gefunden werden.",
@@ -98,7 +98,7 @@ export const translations = {
             title: "Become part of the Sparkle Squad!",
             text1: "In the team, we mainly speak German, but we can also assist in English, Russian, and Ukrainian.",
             writeUs: "Write to us!",
-            training: "Training: Wednesday from 8 PM to 10 PM.",
+            training: "Training: Wednesday from 7:30 PM to 10 PM.",
             casualPlaying: "Casual Play: Mondays/Fridays 7:30 PM to 10 PM at the Hammster's and Kunterbunten."
         },
         fourofour: {
@@ -152,7 +152,7 @@ export const translations = {
             title: "Станьте частью Sparkle Squad!",
             text1: "В команде мы в основном говорим на немецком, но можем помочь и на английском, русском и украинском языках.",
             writeUs: "Напишите нам!",
-            training: "Тренировки: среда 20-22:00",
+            training: "Тренировки: среда 19:30-22:00",
             casualPlaying: "Игровые тренировки: понедельник и пятница, 19:30-22:00 у Hammster и Kunterbunten"
         },
         fourofour: {
