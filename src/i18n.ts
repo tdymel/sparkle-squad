@@ -53,7 +53,8 @@ export const translations = {
         },
         sidebar: {
             news: "Neuigkeiten",
-            contact: "Kontakt"
+            contact: "Kontakt",
+            wiki: "Wiki"
         },
         news: {
             title: "Neuigkeiten",
@@ -107,7 +108,8 @@ export const translations = {
         },
         sidebar: {
             news: "News",
-            contact: "Contact"
+            contact: "Contact",
+            wiki: "Wiki"
         },
         news: {
             title: "News",
@@ -161,7 +163,8 @@ export const translations = {
         },
         sidebar: {
             news: "Новости",
-            contact: "Контакт"
+            contact: "Контакт",
+            wiki: "Wiki"
         },
         news: {
             title: "Новости",
