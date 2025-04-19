@@ -16,13 +16,12 @@ export default defineConfig({
                 {
                     label: "Positioning",
                     translations: {
-                        "de": "Positionierung",
                         "en": "Positioning",
                         "ru": "TODO",
                     },
                     items: [
                         {
-                            label: "Feldverteidigung",
+                            label: "Defense",
                             translations: {
                                 en: "Defense",
                                 ru: ""
