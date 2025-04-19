@@ -26,7 +26,7 @@ export default defineConfig({
                                 en: "Defense",
                                 ru: ""
                             },
-                            link: "defense"
+                            link: "https://sparkle-squad.de/docs/de/defense"
                         }
                     ],
                 },
