@@ -38,9 +38,12 @@ export function localizedUrl(
         }
     } else if (locale) {
         // We’re in the root language. Inject the new locale if we have one.
-        url.pathname = url.pathname.replace("/de", `/${locale}`);
-        url.pathname = url.pathname.replace("/en", `/${locale}`);
-        url.pathname = url.pathname.replace("/ru", `/${locale}`);
+        url.pathname = url.pathname.replace(/\/de$/, `/${locale}`);
+        url.pathname = url.pathname.replace(/\/en$/, `/${locale}`);
+        url.pathname = url.pathname.replace(/\/ru$/, `/${locale}`);
+        url.pathname = url.pathname.replace("/de/", `/${locale}/`);
+        url.pathname = url.pathname.replace("/en/", `/${locale}/`);
+        url.pathname = url.pathname.replace("/ru/", `/${locale}/`);
     }
     // Restore base
     if (hasBase) url.pathname = base + url.pathname;

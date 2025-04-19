@@ -1,6 +1,6 @@
 ---
-title: Home
-description: TODO
+title: Вики  
+description: Обзор Вики  
 ---
 
-## TODO
+Это Вики Sparkle Squad. Здесь вы найдете информацию о наших системах, а также результаты наших игр.

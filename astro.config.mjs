@@ -12,8 +12,28 @@ export default defineConfig({
         tailwind({ applyBaseStyles: false }),
         starlight({
             title: "Sparkle Squad - Wiki",
+            sidebar: [
+                {
+                    label: "Positioning",
+                    translations: {
+                        "de": "Positionierung",
+                        "en": "Positioning",
+                        "ru": "TODO",
+                    },
+                    items: [
+                        {
+                            label: "Feldverteidigung",
+                            translations: {
+                                en: "Defense",
+                                ru: ""
+                            },
+                            link: "defense"
+                        }
+                    ],
+                },
+            ],
             components: {
-              LanguageSelect: './src/components/StarlightLanguageSelect.astro'
+                LanguageSelect: './src/components/StarlightLanguageSelect.astro'
             },
             defaultLocale: 'de',
             locales: {
@@ -27,17 +47,6 @@ export default defineConfig({
                     label: "Русский",
                 },
             },
-            sidebar: [
-                {
-                    label: "Getting started",
-                    items: [
-                        {
-                            label: "TODO",
-                            link: "/TODO",
-                        },
-                    ],
-                },
-            ]
         })
     ]
 });

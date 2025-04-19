@@ -164,7 +164,7 @@ export const translations = {
         sidebar: {
             news: "Новости",
             contact: "Контакт",
-            wiki: "Wiki"
+            wiki: "Вики"
         },
         news: {
             title: "Новости",

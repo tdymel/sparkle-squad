@@ -39,5 +39,15 @@ const lang = getLangFromUrl(Astro.url);
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+
+    <script>
+      document.addEventListener("astro:page-load", () => {
+        document.getElementById('language-select')?.addEventListener('change', function (event) {
+          const selectedLang = event.target.value;
+          const currentPath = window.location.pathname.replace(/^\/[^/]+/, '');
+          window.location.href = `/${selectedLang}${currentPath}`;
+        });
+      });
+    </script>
   </body>
 </html>
