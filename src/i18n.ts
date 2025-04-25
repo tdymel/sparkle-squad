@@ -45,7 +45,7 @@ export const translations = {
             text1: "Im Team sprechen wir hauptsächlich Deutsch, aber wir können auch auf Englisch, Russisch und Ukrainisch weiterhelfen.",
             writeUs: "Schreib uns!",
             training: "Training: Mittwoch: 19:30 bis 22:00 Uhr.",
-            casualPlaying: "Daddeln: Montags/Freitags 19:30 - 22:00 Uhr bei den Hammstern und Kunterbunten."
+            casualPlaying: "Zu Gast: Montags/Freitags 19:30 - 22:00 Uhr bei den Hammstern und Kunterbunten."
         },
         fourofour: {
             title: "Leider konnte die Seite nicht gefunden werden.",
@@ -100,7 +100,7 @@ export const translations = {
             text1: "In the team, we mainly speak German, but we can also assist in English, Russian, and Ukrainian.",
             writeUs: "Write to us!",
             training: "Training: Wednesday from 7:30 PM to 10 PM.",
-            casualPlaying: "Casual Play: Mondays/Fridays 7:30 PM to 10 PM at the Hammster's and Kunterbunten."
+            casualPlaying: "As guests: Mondays/Fridays 7:30 PM to 10 PM at the Hammster's and Kunterbunten."
         },
         fourofour: {
             title: "Unfortunately, the page could not be found.",
@@ -155,7 +155,7 @@ export const translations = {
             text1: "В команде мы в основном говорим на немецком, но можем помочь и на английском, русском и украинском языках.",
             writeUs: "Напишите нам!",
             training: "Тренировки: среда 19:30-22:00",
-            casualPlaying: "Игровые тренировки: понедельник и пятница, 19:30-22:00 у Hammster и Kunterbunten"
+            casualPlaying: "Гостевые игры: понедельник и пятница, 19:30-22:00 у Hammster и Kunterbunten"
         },
         fourofour: {
             title: "К сожалению, страница не найдена.",
