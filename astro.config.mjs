@@ -27,6 +27,14 @@ export default defineConfig({
                                 ru: ""
                             },
                             link: "https://sparkle-squad.de/docs/en/defense"
+                        },
+                        {
+                            label: "Match results",
+                            translations: {
+                                en: "Match results",
+                                ru: ""
+                            },
+                            link: "https://sparkle-squad.de/docs/en/history"
                         }
                     ],
                 },
