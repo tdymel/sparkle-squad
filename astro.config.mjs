@@ -28,15 +28,15 @@ export default defineConfig({
                             },
                             link: "https://sparkle-squad.de/docs/en/defense"
                         },
-                        {
-                            label: "Match results",
-                            translations: {
-                                en: "Match results",
-                                ru: ""
-                            },
-                            link: "https://sparkle-squad.de/docs/en/history"
-                        }
                     ],
+                },
+                {
+                    label: "Match results",
+                    translations: {
+                        "en": "Match results",
+                        "ru": "TODO",
+                    },
+                    link: "https://sparkle-squad.de/docs/en/history"
                 },
             ],
             components: {
