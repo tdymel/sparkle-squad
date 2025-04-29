@@ -2,7 +2,7 @@
 title: "7-е место на 13-м турнире MTV Pattensen"
 description: "Мы заняли 7 место, хоть и выиграли у победителей!"
 pubDate: "Mar 28 2025"
-heroImage: "/13_mtv_pattensen_tournament.jpg"
+heroImage: "/13_mtv_pattensen_tournament.webp"
 identifier: "2"
 ---
 

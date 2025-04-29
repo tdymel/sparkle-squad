@@ -2,7 +2,7 @@
 title: "Sparkle Squad wurde gegründet!"
 description: "Aus dem inoffiziellen Turnier-Team wird nun ein richtiges Mixed-Team gegründet."
 pubDate: "Feb 28 2025"
-heroImage: "/logo_slim.png"
+heroImage: "/logo_slim.webp"
 identifier: "1"
 ---
 

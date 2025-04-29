@@ -2,7 +2,7 @@
 title: "Wir haben eine Hallenzeit bekommen!"
 description: "Glück muss man auch mal haben! Nach nur knapp 1.5 Monaten haben wir eine Hallenzeit bekommen."
 pubDate: "Apr 16 2025"
-heroImage: "/court.png"
+heroImage: "/court.webp"
 identifier: "3"
 ---
 

@@ -16,7 +16,7 @@ The purple player is the opposing attacker.
 The area for which they are roughly responsible is also 
 shaded in the same colors as the players.
 
-![Legend](/docs/defense/legend.png)
+![Legend](/docs/defense/legend.webp)
 
 ## Attack from the Outside
 When attacking from the outside, we leave the line open.  
@@ -30,21 +30,21 @@ The person in position 6, usually the back outside, is responsible for the balls
 Positions 4 (outside), 5 (middle/libero), and 1 (opposite/setter) are responsible for the set balls into the middle.
 
 ### Tall Setter/Opposite
-![Attack from Outside - Tall Opposite/Setter](/docs/defense/outside_tall_dia_setter.png)
+![Attack from Outside - Tall Opposite/Setter](/docs/defense/outside_tall_dia_setter.webp)
 
 ### Short Setter/Opposite
 If the setter or opposite at the front is short and an attempt to block would not be sensible or could even 
 lead to injuries, it would be better to pull this player out a bit to cover tip balls.  
-![Attack from Outside - Short Opposite/Setter](/docs/defense/outside_small_dia_setter.png)
+![Attack from Outside - Short Opposite/Setter](/docs/defense/outside_small_dia_setter.webp)
 
 ## Attack from Diagonal
 In this situation, the defense looks inverse to the situation when the attack comes from the outside.
 
 ### Tall Outside
-![Attack from Diagonal - Tall Outside](/docs/defense/dia_tall_outside.png)
+![Attack from Diagonal - Tall Outside](/docs/defense/dia_tall_outside.webp)
 
 ### Short Outside
-![Attack from Diagonal - Short Outside](/docs/defense/dia_small_outside.png)
+![Attack from Diagonal - Short Outside](/docs/defense/dia_small_outside.webp)
 
 ## Middle attack
 The middle is a bit tricky. Sometimes the attacks are so fast that you can only get one block up.  
@@ -55,13 +55,13 @@ This situation occurs when the attack is too fast or when both the outside and o
 In this case, the middle blocker prefers one side, and the outside on position 6 must align accordingly.
 
 #### Middle blocks more to the left
-![Middle blocks more to the left](/docs/defense/middle_middle_alone_left.png)
+![Middle blocks more to the left](/docs/defense/middle_middle_alone_left.webp)
 
 #### Middle blocks more to the right
-![Middle blocks more to the right](/docs/defense/middle_middle_alone_right.png)
+![Middle blocks more to the right](/docs/defense/middle_middle_alone_right.webp)
 
 ## Middle and Outside block
-![Middle and Outside block](/docs/defense/middle_middle_and_outside.png)
+![Middle and Outside block](/docs/defense/middle_middle_and_outside.webp)
 
 ## Middle and Opposite block
-![Middle and Opposite block](/docs/defense/middle_middle_and_dia.png)
+![Middle and Opposite block](/docs/defense/middle_middle_and_dia.webp)

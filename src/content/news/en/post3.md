@@ -2,7 +2,7 @@
 title: "We Got a Training Time Slot!"
 description: "You have to be lucky sometimes! After just about 1.5 months, we got a training time slot."
 pubDate: "Apr 16 2025"
-heroImage: "/court.png"
+heroImage: "/court.webp"
 identifier: "3"
 ---
 

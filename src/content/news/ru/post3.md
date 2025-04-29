@@ -2,7 +2,7 @@
 title: "Мы получили зал для тренировок!"
 description: "Иногда нужно немного удачи! Всего через 1,5 месяца мы получили время в зале."
 pubDate: "Apr 16 2025"
-heroImage: "/court.png"
+heroImage: "/court.webp"
 identifier: "3"
 ---
 

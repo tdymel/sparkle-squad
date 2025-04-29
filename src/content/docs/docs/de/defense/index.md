@@ -21,7 +21,7 @@ die Fläche schraffiert, wofür sie ungefähr verantwortlich
 sind.
 
 
-![Legende](/docs/defense/legend.png)
+![Legende](/docs/defense/legend.webp)
 
 ## Angriff von Außen
 Beim Angriff von Außen lassen wir die Linie offen. 
@@ -41,24 +41,24 @@ und die 1 (Dia/Zuspieler) sind für die gelegten Bälle
 in die Mitte verantwortlich.
 
 ### Großer Zuspieler/Diagonal
-![Angriff von Außen - Großer Dia/Zuspieler](/docs/defense/outside_tall_dia_setter.png)
+![Angriff von Außen - Großer Dia/Zuspieler](/docs/defense/outside_tall_dia_setter.webp)
 
 ### Kleiner Zuspieler/Diagonal
 Wenn der Zuspieler oder Diagonal vorne klein ist und ein 
 Blockversuch nicht sinnvoll wäre oder sogar zu Verletzungen 
 führen kann, würde es besser sein diesen Spieler etwas 
 rauszuziehen, um Tippbälle besser abzufangen.
-![Angriff von Außen - Kleiner Dia/Zuspieler](/docs/defense/outside_small_dia_setter.png)
+![Angriff von Außen - Kleiner Dia/Zuspieler](/docs/defense/outside_small_dia_setter.webp)
 
 ## Angriff von Diagonal
 In dieser Situation sieht die Verteidigung invers zu der 
 Situation aus, wenn der Angriff von Außen kommt.
 
 ### Großer Außen
-![Angriff von Diagonal - Großer Außen](/docs/defense/dia_tall_outside.png)
+![Angriff von Diagonal - Großer Außen](/docs/defense/dia_tall_outside.webp)
 
 ### Kleiner Außen
-![Angriff von Diagonal - Kleiner Außen](/docs/defense/dia_small_outside.png)
+![Angriff von Diagonal - Kleiner Außen](/docs/defense/dia_small_outside.webp)
 
 ## Angriff Mitte
 Die Mitte ist ein wenig tricky. Manchmal sind die Angriffe 
@@ -73,13 +73,13 @@ zum blocken sind. In diesem Fall präferiert der Mittelblocker
 eine Seite und der Außen auf der 6 muss sich demnach ausrichten.
 
 #### Mitte blockt eher links
-![Mitte blockt eher links](/docs/defense/middle_middle_alone_left.png)
+![Mitte blockt eher links](/docs/defense/middle_middle_alone_left.webp)
 
 #### Mitte blockt eher rechts
-![Mitte blockt eher links](/docs/defense/middle_middle_alone_right.png)
+![Mitte blockt eher links](/docs/defense/middle_middle_alone_right.webp)
 
 ## Mitte und Außen blocken
-![Mitte und Außen blocken](/docs/defense/middle_middle_and_outside.png)
+![Mitte und Außen blocken](/docs/defense/middle_middle_and_outside.webp)
 
 ## Mitte und Dia blocken
-![Mitte und Dia blocken](/docs/defense/middle_middle_and_dia.png)
+![Mitte und Dia blocken](/docs/defense/middle_middle_and_dia.webp)

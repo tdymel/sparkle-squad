@@ -2,7 +2,7 @@
 title: "Successful First Match Day!"  
 description: "On our first match day, we won both games!"  
 pubDate: "Apr 27 2025"  
-heroImage: "/spieltag_25_04_27.png"  
+heroImage: "/spieltag_25_04_27.webp"  
 identifier: "4"  
 ---
 
