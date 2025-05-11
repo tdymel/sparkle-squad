@@ -15,3 +15,7 @@ Nevertheless, we now need to arrange some infrastructure. We need balls, a score
 Finally, it's about making ourselves discoverable. Whether through this website or via Instagram.
 
 According to the motto "Slowly but surely," we are getting closer to our goal step by step!
+
+Would you also like to be part of our Mixed Volleyball Team in Hamm?  
+Do you have a solid playing level between Bezirksklasse and Landesliga?  
+Then contact us via email or on Instagram and come by for a trial practice!

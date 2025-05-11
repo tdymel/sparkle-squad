@@ -13,3 +13,7 @@ Unser Team wird immer als Zweites genannt.
 
 - Alibiblocker: 0:2 - 19:50 - 7:25, 12:25
 - Die Grünlinge: 1:2 - 58:63 - 22:25, 25:23, 11:15
+
+### Gesamtturnierergebnisse
+
+- Abschlussturnier Stelle: 2. Platz

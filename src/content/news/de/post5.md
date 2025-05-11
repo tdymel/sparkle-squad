@@ -1,0 +1,28 @@
+---
+title: "2. Platz beim Mixed Volleyball Abschlussturnier in Stelle"
+description: "Ganz knapp haben wir den ersten Platz verpasst beim Mixed Volleyball Abschlussturnier in Stelle!"
+pubDate: "May 11 2025"
+heroImage: "/2025_stelle_tournament.webp"
+identifier: "5"
+---
+
+Am 11.05.25 haben wir beim Mixed Abschlussturnier in Stelle teilgenommen. 
+Dieses Turnier hatte ein leicht anderes Format, wie sonst. 
+Es wurden nur 8 Mannschaften eingeladen, wodurch man oft nur 10 Minuten zwischen jedem Spiel hatte.
+
+Am Anfang haben wir gegen die Gastgeber gespielt. 
+Da waren wir noch nicht so ganz warm und haben einen Ball nach dem anderen an die Wand geschossen,
+aber nun mal nicht ins Feld. 
+Danach haben wir aber fast jedes Spiel gewonnen.
+Am Ende haben wir leider den ersten Platz, um nur 2 Punkte verpasst.
+
+Als Preis gab es etwas Hüftgold und wir haben sogar einen Volleyball geschenkt bekommen.
+Das war wirklich unerwartet. 
+
+Großes Lob an den NWVV und die Gastgeber in Stelle, für dieses tolle Turnier. 
+Hoffentlich können wir nächstes Jahr wieder dabei sein.
+Als Nächstes geht es in 2 Wochen zum Lütjensee Turnier!
+
+Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamm werden?
+Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
+Dann kontaktiere uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

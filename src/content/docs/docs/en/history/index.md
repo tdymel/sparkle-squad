@@ -12,4 +12,8 @@ Our team will always be mentioned second.
 ### Hansa Pokal
 
 - Alibiblocker: 0:2 - 19:50 - 7:25, 12:25
-- Die Grünlinge: 1:2 - 58:63 - 22:25, 25:23, 11:15
+- Die Grünlinge: 1:2 - 58:63 - 22:25, 25:23, 11:11
+
+### Overall Tournament Results
+
+- Final Tournament in Stelle: 2nd Place

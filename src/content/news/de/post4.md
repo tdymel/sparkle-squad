@@ -21,3 +21,7 @@ uns beim Trave-Bull Turnier anmelden.
 
 Die Spielergebnisse findet man im Wiki!
 
+Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamm werden?
+Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
+Dann kontaktiere uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!
+
