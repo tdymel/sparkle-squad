@@ -11,7 +11,7 @@ export default defineConfig({
         sitemap(),
         tailwind({ applyBaseStyles: false }),
         starlight({
-            title: "Sparkle Squad - Wiki",
+            title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm",
             sidebar: [
                 {
                     label: "Positioning",
@@ -21,9 +21,9 @@ export default defineConfig({
                     },
                     items: [
                         {
-                            label: "Defense",
+                            label: "Perimeter Defense",
                             translations: {
-                                en: "Defense",
+                                en: "Perimeter Defense",
                                 ru: ""
                             },
                             link: "https://sparkle-squad.de/docs/en/defense"
