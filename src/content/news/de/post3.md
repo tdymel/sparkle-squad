@@ -23,6 +23,6 @@ nächster Woche ist jeder aus dem Team am Start!
 Trotzdem brauchen wir noch mehr Spieler, damit wir diese 
 Hallenzeit langfristig behalten können.
 
-Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamm werden?
+Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamburg Hamm werden?
 Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
 Dann kontaktiere uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

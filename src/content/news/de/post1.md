@@ -19,6 +19,6 @@ Sei es über diese Webseite oder über Instagram.
 
 Gemäß dem Motto "Langsam hoppelt der Hase", kommen wir unserem Ziel aber Schritt für Schritt näher!
 
-Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamm werden?
+Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamburg Hamm werden?
 Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
 Dann kontaktiere uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

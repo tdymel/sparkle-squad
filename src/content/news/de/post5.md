@@ -23,6 +23,6 @@ Großes Lob an den NWVV und die Gastgeber in Stelle, für dieses tolle Turnier.
 Hoffentlich können wir nächstes Jahr wieder dabei sein.
 Als Nächstes geht es in 2 Wochen zum Lütjensee Turnier!
 
-Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamm werden?
+Du möchtest auch Teil von unserem Mixed Volleyball Team in Hamburg Hamm werden?
 Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
 Dann kontaktiere uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

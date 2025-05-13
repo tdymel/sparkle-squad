@@ -22,6 +22,6 @@ Great praise to the NWVV and the hosts in Stelle for this wonderful tournament.
 Hopefully, we can participate again next year.  
 Next up is the Lütjensee Tournament in 2 weeks!
 
-Would you also like to be part of our Mixed Volleyball Team in Hamm?  
+Would you also like to be part of our Mixed Volleyball Team in Hamburg Hamm?  
 Do you have a solid playing level between Bezirksklasse and Landesliga?  
 Then contact us via email or on Instagram and come by for a trial practice!
