@@ -5,7 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const t = useTranslations(Astro.url);
 ---
 
-<BaseLayout sideBarActiveItemID="kontakt" title={t.contact.title}>
+<BaseLayout sideBarActiveItemID="kontakt" title={t.contact.title} description={t.contact.description} />
     <div class="pb-12 mt-5">
         <div class="text-5xl font-bold">{t.contact.title}</div>
         <div class="py-2">

@@ -26,6 +26,6 @@ waren, wie die Teams der ersten Runde.
 Insgesamt haben wir uns bei unserem Debüt gut geschlagen!
 Wir freuen uns auf viele weitere Turniere.
 
-Du möchtest auch Teil von unserem Mixed/Hobby Volleyball Team in Hamburg Hamm werden?
+Du möchtest auch Teil von Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
 Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
 Dann kontaktiere uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

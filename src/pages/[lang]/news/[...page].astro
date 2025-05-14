@@ -37,7 +37,7 @@ const { lang, page } = Astro.params;
 const { data, totalPages } = Astro.props;
 ---
 
-<BaseLayout sideBarActiveItemID="news" title={t.index.newsTitle}>
+<BaseLayout sideBarActiveItemID="news" title={t.index.newsTitle} description={t.news.description} />
     <div class="mb-5">
         <div class="text-3xl w-full font-bold">{t.news.title}</div>
     </div>

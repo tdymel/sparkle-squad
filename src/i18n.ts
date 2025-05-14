@@ -11,18 +11,19 @@ export const defaultLang = "de";
 export const translations = {
     de: {
         index: {
+            description: "Wir sind ein internationales Freizeit-Hobby-Mixed Volleyball-Team um Hamburg Hamm. Wir spielen Montag, Mittwochs und Freitags von 19:30 Uhr bis 22:00 Uhr. Wir spielen in der Halle und im Sommer draußen. Neben dem regulären Season-Betrieb nehmen wir an zahlreichen Turnieren rund um Hamburg teil. Wir sind immer auf der Suche nach talentierten und erfahrenen Spielern. Komm zum Probetraining vorbei!",
             header: {
                 greeting: "Moin",
                 weAre: "Wir sind Sparkle Squad!",
                 subTitle: "Mixed/Hobby Volleyball-Team um Hamburg Hamm",
-                text: "Du suchst nach einem ambitionierten und sympathischen Team und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
+                text: "Du suchst nach einem ambitionierten und sympathischen Mixed/Hobby Team und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
                 comeToTrial: "Komm zum Probetraining!",
                 followOnInstagram: "Folge uns auf Instagram!"
             },
             qualities: {
                 title: "Das zeichnet uns aus",
                 team: {
-                    title: "Ambitioniertes, sympathisches und multi-Linguales Team",
+                    title: "Ambitioniertes, sympathisches und internationales Mixed/Hobby Team",
                     desc: "Wir wollen uns alle stetig verbessern und wir geben immer 110%. Wir halten uns den Rücken frei und feuern uns gegenseitig an. Wir sprechen Deutsch, Englisch, Ukrainisch und Russisch. Im Schnitt sind wir 25 Jahre alt."
                 },
                 training: {
@@ -31,7 +32,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Teilnahme an Turnieren",
-                    desc: "Wir spielen nicht nur in der Mixed-Hobby-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
+                    desc: "Wir spielen nicht nur in der Freizeit-Mixed-Hobby-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
                 },
                 outside: {
                     title: "Im Sommer gehen wir raus",
@@ -41,6 +42,7 @@ export const translations = {
             newsTitle: "Funkelnde Neuigkeiten"
         },
         contact: {
+            description: "Unser Trainingstag ist Mittwoch von 19:30 Uhr bis 22:00 Uhr. Am Montag und Freitag sind wir zur selben Zeit zu Gast bei anderen Teams. Kontaktiere uns via E-Mail oder Instagram!",
             title: "Werde teil des Sparkle Squad's!",
             text1: "Im Team sprechen wir hauptsächlich Deutsch, aber wir können auch auf Englisch, Russisch und Ukrainisch weiterhelfen.",
             writeUs: "Schreib uns!",
@@ -57,7 +59,8 @@ export const translations = {
             wiki: "Wiki"
         },
         news: {
-            title: "Neuigkeiten",
+            description: "Hier berichten wir von unseren Spielergebnissen, Turnieren und Projekten.",
+            title: "Funkelnde Neuigkeiten",
             sorry: "Sorry!",
             sorryText: "Leider gibt es derzeit keine Neuigkeiten. Schau später nochmal vorbei!",
             recentPosts: "Vorherige Seite",
@@ -66,18 +69,19 @@ export const translations = {
     },
     en: {
         index: {
+            description: "We are an international recreational hobby mixed volleyball team based around Hamburg Hamm. We play on Mondays, Wednesdays, and Fridays from 7:30 PM to 10:00 PM. We play indoors and outdoors during the summer. In addition to the regular season, we participate in numerous tournaments around Hamburg. We are always looking for talented and experienced players. Come by for a trial practice!",
             header: {
                 greeting: "Hello",
                 weAre: "We are Sparkle Squad!",
                 subTitle: "Mixed/Hobby Volleyball Team around Hamburg Hamm",
-                text: "Are you looking for an ambitious and friendly team with solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
+                text: "Are you looking for an ambitious and friendly hobby mixed team with solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
                 comeToTrial: "Come to a trial!",
                 followOnInstagram: "Follow us on Instagram!"
             },
             qualities: {
                 title: "What sets us apart",
                 team: {
-                    title: "Ambitious, friendly, and multilingual team",
+                    title: "Ambitious, friendly, and multilingual hobby mixed team",
                     desc: "We all strive to continually improve and always give 110%. We have each other's backs and cheer each other on. We speak German, English, Ukrainian, and Russian. The average age is 25."
                 },
                 training: {
@@ -96,6 +100,7 @@ export const translations = {
             newsTitle: "Sparkling News"
         },
         contact: {
+            description: "Our training day is Wednesday from 7:30 PM to 10:00 PM. On Monday and Friday, we visit other teams at the same time. Contact us via E-Mail or Instagram!",
             title: "Become part of the Sparkle Squad!",
             text1: "In the team, we mainly speak German, but we can also assist in English, Russian, and Ukrainian.",
             writeUs: "Write to us!",
@@ -112,6 +117,7 @@ export const translations = {
             wiki: "Wiki"
         },
         news: {
+            description: "Here we report on our match results, tournaments, and projects.",
             title: "News",
             sorry: "Sorry!",
             sorryText: "Unfortunately, there are no news at the moment. Please check back later!",
@@ -121,6 +127,7 @@ export const translations = {
     },
     ru: {
         index: {
+            description: "Мы — интернациональная  любительская смешанная волейбольная команда, базирующаяся в районе Гамбург Хамм. Мы играем по понедельникам, средам и пятницам с 19:30 до 22:00. Мы играем в зале и летом на открытом воздухе. Помимо регулярного сезона, мы участвуем во многих турнирах вокруг Гамбурга. Мы всегда в поиске талантливых и опытных игроков. Приходите на пробную тренировку!",
             header: {
                 greeting: "Привет",
                 weAre: "Мы - Sparkle Squad!",
@@ -151,6 +158,7 @@ export const translations = {
             newsTitle: "Sparkle Squad новости"
         },
         contact: {
+            description: "Мы тренируемся по средам с 19:30 до 22:00. В понедельник и пятницу мы играем в гостях у других команд в это же время. Свяжитесь с нами по электронной почте или в Instagram!",
             title: "Станьте частью Sparkle Squad!",
             text1: "В команде мы в основном говорим на немецком, но можем помочь и на английском, русском и украинском языках.",
             writeUs: "Напишите нам!",
@@ -167,6 +175,7 @@ export const translations = {
             wiki: "Вики"
         },
         news: {
+            description: "Здесь мы рассказываем о наших результатах игр, турнирах и проектах",
             title: "Новости",
             sorry: "Извините!",
             sorryText: "К сожалению, в настоящее время новостей нет. Пожалуйста, зайдите позже!",

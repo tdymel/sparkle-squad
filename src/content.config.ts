@@ -11,6 +11,7 @@ const blogSchema = z.object({
     heroImage: z.string().optional(),
     badge: z.string().optional(),
 });
+export type BlogSchema = z.infer<typeof blogSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 

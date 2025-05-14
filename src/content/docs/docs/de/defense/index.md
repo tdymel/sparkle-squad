@@ -4,7 +4,7 @@ description: Perimeter Verteidigung im Hobby-Mixed
 ---
 
 ## Einführung
-Im Hobby/Mixed Volleyball Bereich in Hamburg sind die Angriffe eher tief im 
+Im Freizeit-Hobby-Mixed Volleyball Bereich in Hamburg sind die Angriffe eher tief im 
 Feld, anstatt sehr steil im 3 Meter Raum. 
 Aus diesem Grund ziehen wir die Verteidigung auch etwas 
 tiefer ins Feld hinein. 
