@@ -18,6 +18,6 @@ But a win is a win. Now on May 18, we are not occupied with a Hansa-Pokal match 
 
 The match results can be found in the Wiki!
 
-Would you also like to be part of our Mixed Volleyball Team in Hamburg Hamm?  
+Would you also like to be part of our Mixed/Hobby Volleyball Team in Hamburg Hamm?  
 Do you have a solid playing level between Bezirksklasse and Landesliga?  
 Then contact us via email or on Instagram and come by for a trial practice!

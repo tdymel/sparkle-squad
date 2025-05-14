@@ -14,7 +14,7 @@ export const translations = {
             header: {
                 greeting: "Moin",
                 weAre: "Wir sind Sparkle Squad!",
-                subTitle: "Mixed Volleyball-Team um Hamburg Hamm",
+                subTitle: "Mixed/Hobby Volleyball-Team um Hamburg Hamm",
                 text: "Du suchst nach einem ambitionierten und sympathischen Team und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
                 comeToTrial: "Komm zum Probetraining!",
                 followOnInstagram: "Folge uns auf Instagram!"
@@ -31,7 +31,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Teilnahme an Turnieren",
-                    desc: "Wir spielen nicht nur in der Mixed-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
+                    desc: "Wir spielen nicht nur in der Mixed-Hobby-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
                 },
                 outside: {
                     title: "Im Sommer gehen wir raus",
@@ -69,7 +69,7 @@ export const translations = {
             header: {
                 greeting: "Hello",
                 weAre: "We are Sparkle Squad!",
-                subTitle: "Mixed Volleyball Team around Hamburg Hamm",
+                subTitle: "Mixed/Hobby Volleyball Team around Hamburg Hamm",
                 text: "Are you looking for an ambitious and friendly team with solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
                 comeToTrial: "Come to a trial!",
                 followOnInstagram: "Follow us on Instagram!"
@@ -86,7 +86,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Participation in tournaments",
-                    desc: "We not only participate in the Mixed Round (A4) and the Hansa Cup but also in numerous other indoor and beach tournaments around Hamburg."
+                    desc: "We not only participate in the Mixed-Hobby Round (A4) and the Hansa Cup but also in numerous other indoor and beach tournaments around Hamburg."
                 },
                 outside: {
                     title: "We go outside in the summer",
@@ -141,7 +141,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Участие в турнирах",
-                    desc: "Мы участвуем не только в Mixed-Runde (A4) и Hansa-Pokal, в том числе и пляжных турнирах в окрестностях Гамбурга."
+                    desc: "Мы участвуем не только в Mixed-Hobby-Runde (A4) и Hansa-Pokal, в том числе и пляжных турнирах в окрестностях Гамбурга."
                 },
                 outside: {
                     title: "Летом мы выходим в парк",
