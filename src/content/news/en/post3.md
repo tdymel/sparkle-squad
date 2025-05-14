@@ -18,4 +18,4 @@ Nevertheless, we still need more players to keep this slot in the long run.
 
 Would you also like to be part of our Mixed/Hobby Volleyball Team in Hamburg Hamm?  
 Do you have a solid playing level between Bezirksklasse and Landesliga?  
-Then contact us via email or on Instagram and come by for a trial practice!
+Then [contact](/en/contact/) us via email or on Instagram and come by for a trial practice!
