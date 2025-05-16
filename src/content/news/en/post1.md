@@ -1,6 +1,6 @@
 ---
-title: "Sparkle Squad has been founded!"
-description: "The informal tournament team is now being established as a proper mixed team."
+title: "New mixed-hobby volleyball team based in Hamburg: Sparkle Squad!"
+description: "The informal tournament team is now being established as a proper mixed team. Now we are looking for additional team members based in Hamburg around Hamm!"
 pubDate: "Feb 28 2025"
 heroImage: "/logo_slim.webp"
 identifier: "1"

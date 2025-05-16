@@ -1,6 +1,6 @@
 ---
-title: "Sparkle Squad wurde gegründet!"
-description: "Aus dem inoffiziellen Turnier-Team wird nun ein richtiges Mixed/Hobby-Team gegründet."
+title: "Neues Hamburger Mixed/Hobby Volleyball Team Sparkle Squad!"
+description: "Aus dem inoffiziellen Turnier-Team wird nun ein richtiges Mixed/Hobby Volleyball Team gegründet. Jetzt suchen wir nach weiteren Spielern in Hamburg rund um Hamm!"
 pubDate: "Feb 28 2025"
 heroImage: "/logo_slim.webp"
 identifier: "1"

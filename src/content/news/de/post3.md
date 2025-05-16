@@ -1,6 +1,6 @@
 ---
-title: "Wir haben eine Hallenzeit bekommen!"
-description: "Glück muss man auch mal haben! Nach nur knapp 1.5 Monaten haben wir eine Hallenzeit bekommen."
+title: "Endlich können wir Volleyball in unserer eigenen Halle mitten in Hamburg spielen!"
+description: "Glück muss man auch mal haben! Nach nur knapp 1.5 Monaten haben wir eine Hallenzeit mitten in Hamburg bekommen."
 pubDate: "Apr 16 2025"
 heroImage: "/court.webp"
 identifier: "3"
@@ -12,7 +12,7 @@ eine Hallenzeit frei wäre. Die meisten Vereine hatten
 uns eine Absage gegeben, aber der SVSTG hat gesagt, 
 dass man da was machen kann. Initial war leider keine 
 Zeit verfügbar, aber mit ein wenig herumschieben wurde 
-dann doch eine Hallenzeit mitten in Hamm frei. 
+dann doch eine Hallenzeit mitten in Hamburg Hamm frei. 
 Nochmal vielen Dank an allen beteiligten!
 
 Heute war unser erstes Training. Leider waren wir nicht 

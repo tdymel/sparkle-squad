@@ -1,6 +1,6 @@
 ---
-title: "We Got a Training Time Slot!"
-description: "You have to be lucky sometimes! After just about 1.5 months, we got a training time slot."
+title: "We can finally play Volleyball in our own court in the middle of Hamburg!"
+description: "You have to be lucky sometimes! After just about 1.5 months, we got a training time slot at a court in the middle of Hamburg."
 pubDate: "Apr 16 2025"
 heroImage: "/court.webp"
 identifier: "3"

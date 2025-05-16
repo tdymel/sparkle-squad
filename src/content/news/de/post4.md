@@ -1,6 +1,6 @@
 ---
-title: "Erfolgreicher erster Spieltag!"
-description: "Bei unserem ersten Spieltag haben wir beide Spiele gewonnen!"
+title: "Erfolgreicher erster Spieltag beim Hansa-Pokal!"
+description: "Das neue Mixed Hamburger Volleyball Team glänzt beim Debut beim Hansa-Pokal und gewinnt die ersten beiden Spiele!"
 pubDate: "Apr 27 2025"
 heroImage: "/spieltag_25_04_27.webp"
 identifier: "4"

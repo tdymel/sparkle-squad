@@ -1,6 +1,6 @@
 ---
 title: "7th Place at the 13th MTV Pattensen Tournament"
-description: "7th place, but we skillfully defeated the 1st place!"
+description: "The new volleyball team from hamburg got 7th place, but we skillfully defeated the 1st place!"
 pubDate: "Mar 28 2025"
 heroImage: "/13_mtv_pattensen_tournament.webp"
 identifier: "2"

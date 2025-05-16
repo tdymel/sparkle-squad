@@ -16,7 +16,7 @@ export const translations = {
                 greeting: "Moin",
                 weAre: "Wir sind Sparkle Squad!",
                 subTitle: "Mixed/Hobby Volleyball-Team um Hamburg Hamm",
-                text: "Du suchst nach einem ambitionierten und sympathischen Mixed/Hobby Team und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
+                text: "Du suchst nach einem ambitionierten und sympathischen Mixed/Hobby Volleyball Team in Hamburg und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
                 comeToTrial: "Komm zum Probetraining!",
                 followOnInstagram: "Folge uns auf Instagram!"
             },
@@ -32,11 +32,11 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Teilnahme an Turnieren",
-                    desc: "Wir spielen nicht nur in der Freizeit-Mixed-Hobby-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
+                    desc: "Wir spielen nicht nur in der Hamburger Freizeit-Mixed-Hobby-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
                 },
                 outside: {
                     title: "Im Sommer gehen wir raus",
-                    desc: "Im Sommer gehts raus an die frische Luft. Wir treffen uns dann im Stadtpark, um dort auf dem Sand oder Rasen zu spielen."
+                    desc: "Im Sommer gehts raus an die frische Luft. Wir treffen uns dann im Hamburger Stadtpark, um dort auf dem Sand Beachvolleyball oder Rasen-Volleyball zu spielen."
                 }
             },
             newsTitle: "Funkelnde Neuigkeiten"
@@ -74,7 +74,7 @@ export const translations = {
                 greeting: "Hello",
                 weAre: "We are Sparkle Squad!",
                 subTitle: "Mixed/Hobby Volleyball Team around Hamburg Hamm",
-                text: "Are you looking for an ambitious and friendly hobby mixed team with solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
+                text: "Are you looking for an ambitious and friendly hobby mixed volleyball team in Hamburg and you have solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
                 comeToTrial: "Come to a trial!",
                 followOnInstagram: "Follow us on Instagram!"
             },
@@ -90,11 +90,11 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Participation in tournaments",
-                    desc: "We not only participate in the Mixed-Hobby Round (A4) and the Hansa Cup but also in numerous other indoor and beach tournaments around Hamburg."
+                    desc: "We not only participate in the Mixed-Hobby Round in Hamburg (A4) and the Hansa-Pokal but also in numerous other indoor and beach tournaments around Hamburg."
                 },
                 outside: {
                     title: "We go outside in the summer",
-                    desc: "In the summer, we head out into the fresh air. We meet in the city park to play on the sand or grass."
+                    desc: "In the summer, we head out into the fresh air. We meet in the city park in Hamburg to play on the sand or grass."
                 }
             },
             newsTitle: "Sparkling News"

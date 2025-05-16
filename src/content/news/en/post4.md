@@ -1,6 +1,6 @@
 ---
-title: "Successful First Match Day!"  
-description: "On our first match day, we won both games!"  
+title: "Successful First Match Day at the Hansa-Pokal!"  
+description: "The new mixed volleyball team based around Hamburg won its first two games at its debut!"  
 pubDate: "Apr 27 2025"  
 heroImage: "/spieltag_25_04_27.webp"  
 identifier: "4"  
