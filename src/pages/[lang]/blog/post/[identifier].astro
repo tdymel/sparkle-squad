@@ -1,0 +1,41 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import { BlogSchema } from "../../../../content.config";
+import { supportedLanguages } from '../../../../i18n';
+import PostLayout from "../../../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const paths: any[] = [];
+
+  for (const lang of supportedLanguages) {
+    const posts = await getCollection('blog', ({ id }) => {
+      return id.startsWith(lang);
+    });
+
+    paths.push(...posts.map((entry) => ({
+      params: { lang: lang, identifier: entry.data.identifier },
+      props: { entry },
+    })));
+  }
+  return paths;
+}
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+const post: BlogSchema = entry.data;
+const { Content } = await entry.render();
+---
+
+<PostLayout
+  title={post.title}
+  description={post.description}
+  pubDate={post.pubDate}
+  heroImage={post.heroImage}
+  updatedDate={post.updatedDate}
+  badge={post.badge}
+>
+  <Content />
+</PostLayout>

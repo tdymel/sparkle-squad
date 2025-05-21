@@ -56,13 +56,22 @@ export const translations = {
         sidebar: {
             news: "Neuigkeiten",
             contact: "Kontakt",
-            wiki: "Wiki"
+            wiki: "Wiki",
+            blog: "Blog"
         },
         news: {
             description: "Hier berichten wir von unseren Spielergebnissen, Turnieren und Projekten.",
             title: "Funkelnde Neuigkeiten",
             sorry: "Sorry!",
             sorryText: "Leider gibt es derzeit keine Neuigkeiten. Schau später nochmal vorbei!",
+            recentPosts: "Vorherige Seite",
+            olderPosts: "Nächste Seite"
+        },
+        blog: {
+            description: "Hier werden Themen rund um Volleyball in Hamburg erforscht",
+            title: "Blog",
+            sorry: "Sorry!",
+            sorryText: "Leider gibt es derzeit keine Blogeinträge. Schau später nochmal vorbei!",
             recentPosts: "Vorherige Seite",
             olderPosts: "Nächste Seite"
         }
@@ -114,13 +123,22 @@ export const translations = {
         sidebar: {
             news: "News",
             contact: "Contact",
-            wiki: "Wiki"
+            wiki: "Wiki",
+            blog: "Blog"
         },
         news: {
             description: "Here we report on our match results, tournaments, and projects.",
             title: "News",
             sorry: "Sorry!",
             sorryText: "Unfortunately, there are no news at the moment. Please check back later!",
+            recentPosts: "Previous Page",
+            olderPosts: "Next Page"
+        },
+        blog: {
+            description: "Topics around volleyball in Hamburg are explored here",
+            title: "Blog",
+            sorry: "Sorry!",
+            sorryText: "Unfortunately, there are currently no blog entries. Check back later!",
             recentPosts: "Previous Page",
             olderPosts: "Next Page"
         }
@@ -172,13 +190,22 @@ export const translations = {
         sidebar: {
             news: "Новости",
             contact: "Контакт",
-            wiki: "Вики"
+            wiki: "Вики",
+            blog: "Блог"
         },
         news: {
             description: "Здесь мы рассказываем о наших результатах игр, турнирах и проектах",
             title: "Новости",
             sorry: "Извините!",
             sorryText: "К сожалению, в настоящее время новостей нет. Пожалуйста, зайдите позже!",
+            recentPosts: "Предыдущая страница",
+            olderPosts: "Следующая страница"
+        },
+        blog: {
+            description: "Здесь исследуются темы, связанные с волейболом в Гамбурге",
+            title: "Блог",
+            sorry: "Извините!",
+            sorryText: "К сожалению, в настоящее время нет записей в блоге. Загляните позже!",
             recentPosts: "Предыдущая страница",
             olderPosts: "Следующая страница"
         }

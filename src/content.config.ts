@@ -13,9 +13,11 @@ const blogSchema = z.object({
 });
 export type BlogSchema = z.infer<typeof blogSchema>;
 
+const newsCollection = defineCollection({ schema: blogSchema });
 const blogCollection = defineCollection({ schema: blogSchema });
 
 export const collections = {
-    news: blogCollection,
+    news: newsCollection,
+    blog: blogCollection,
     docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
 };

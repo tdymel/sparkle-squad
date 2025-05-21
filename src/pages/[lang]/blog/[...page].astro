@@ -1,0 +1,112 @@
+---
+import { supportedLanguages, useTranslations } from '../../../i18n';
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import HorizontalCard from "../../../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+
+const t = useTranslations(Astro.url);
+
+export async function getStaticPaths({ paginate }) {
+    const paths: any[] = [];
+
+    for (const lang of supportedLanguages) {
+        const posts = await getCollection('blog', ({ id }) => {
+            return id.startsWith(lang);
+        });
+        posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+        const totalPages = Math.ceil(posts.length / 10);
+
+        paths.push({ params: { lang: lang, page: undefined }, props: { data: posts.slice(0, 10), totalPages } });
+        for (let i = 0; i < totalPages; i++) {
+            paths.push({ params: { lang: lang, page: `${i + 1}` }, props: { data: posts.slice(i * 10, (i + 1) * 10), totalPages } });
+        }
+    }
+
+    return paths;
+}
+
+function prevUrl(currentPage: number) {
+    return Astro.url + "?page=" + (currentPage - 1);
+}
+
+function nextUrl(currentPage: number) {
+    return Astro.url + "?page=" + (currentPage + 1);
+}
+
+const { lang, page } = Astro.params;
+const { data, totalPages } = Astro.props;
+---
+
+<BaseLayout sideBarActiveItemID="blog" title={t.blog.title} description={t.blog.description} >
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">{t.blog.title}</div>
+    </div>
+
+    {
+        data.length === 0 ? (
+                <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
+                    <p class="font-bold">{t.blog.sorry}</p>
+                    <p>{t.blog.sorryText}</p>
+                </div>
+        ) : (
+                <ul>
+                    {data.map((post, index) => (
+                            <>
+                                <HorizontalCard
+                                        title={post.data.title}
+                                        img={post.data.heroImage}
+                                        desc={post.data.description}
+                                        url={"/" + lang + "/blog/post/" + post.data.identifier}
+                                        target="_self"
+                                        badge={post.data.badge}
+                                />
+                                {index !== data.length - 1 &&
+                                        <div class="divider my-0"/>}
+                            </>
+                    ))}
+                </ul>
+        )
+    }
+
+    <div class="flex justify-between">
+        {
+            page && page > 1 ? (
+                    <a href={prevUrl(page)} class="btn btn-ghost my-10 mx-5">
+                        {" "}
+                        <svg
+                                class="h-6 w-6 fill-current md:h-8 md:w-8"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                        >
+                            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/>
+                        </svg>
+                        {" "}
+                        {t.blog.recentPosts}
+                    </a>
+            ) : (
+                    <div/>
+            )
+        }
+        {
+            page && page !== totalPages ? (
+                    <a href={nextUrl(page)} class="btn btn-ghost my-10 mx-5">
+                        {t.blog.olderPosts}{" "}
+                        <svg
+                                class="h-6 w-6 fill-current md:h-8 md:w-8"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                        >
+                            {" "}
+                            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                        </svg>
+                    </a>
+            ) : (
+                    <div/>
+            )
+        }
+    </div>
+</BaseLayout>
