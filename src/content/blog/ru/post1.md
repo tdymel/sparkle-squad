@@ -1,7 +1,7 @@
 ---
 title: "Что такое смешанный волейбол в Гамбурге?"
 description: "Смешанный волейбол варьируется в зависимости от страны и региона."
-pubDate: "21 мая 2025"
+pubDate: "May 21 2025"
 heroImage: "/blog/mix_volleyball.webp"
 identifier: "1"
 ---
