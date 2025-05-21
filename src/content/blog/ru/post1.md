@@ -1,24 +1,19 @@
 ---
-title: "Neues Hamburger Mixed/Hobby Volleyball Team Sparkle Squad!"
-description: "Aus dem inoffiziellen Turnier-Team wird nun ein richtiges Mixed/Hobby Volleyball Team gegründet. Jetzt suchen wir nach weiteren Spielern in Hamburg rund um Hamm!"
-pubDate: "Feb 28 2025"
-heroImage: "/logo_slim.webp"
+title: "Что такое смешанный волейбол в Гамбурге?"
+description: "Смешанный волейбол варьируется в зависимости от страны и региона."
+pubDate: "21 мая 2025"
+heroImage: "/blog/mix_volleyball.webp"
 identifier: "1"
 ---
 
-Ein neues Team in Hamburg Hamm zu gründen ist gar nicht so einfach. 
-Um an eine Hallenzeit zu kommen, muss man ein Team mitbringen, etwas Glück haben und sehr flexibel sein.
-Im Sommer werden wir erst einmal draußen spielen können, aber wenn es kalt wird oder regnet, dann würden wir uns über ein Dach über unserem Kopf freuen.
+Смешанный волейбол — это популярный вариант волейбола, где мужчины и женщины играют вместе в одной команде. Эта форма спорта не только повышает спортивную сложность, но и способствует командному духу и социальному взаимодействию.
 
-Die gute Nachricht ist, dass wir sowohl an der Freizeit-Mixed-Hobby-Runde, als auch am Hansa-Pokal ohne Halle und Verein teilnehmen dürfen.
+В Гамбурге смешанный волейбол пользуется большой популярностью, в том числе благодаря многочисленным клубам и любительским группам, которые регулярно проводят турниры и тренировки. Обычно смешанная волейбольная команда состоит из трех мужчин и трех женщин, при этом на поле всегда должны находиться как минимум две женщины. Такое правило обеспечивает сбалансированную динамику и захватывающие игры.
 
-Trotzdem müssen wir uns aber jetzt um etwas Infrastruktur bemühen. Wir brauchen Bälle, eine Punktetafel und wahrscheinlich ein Netz.
+Организацию смешанного волейбола в Гамбурге осуществляют различные спортивные клубы и Гамбургская волейбольная ассоциация (HVbV). Ассоциация координирует лиги и турниры от любительского до соревновательного уровня. Особенно популярны в летние месяцы турниры по пляжному волейболу на пляжах Эльбы и в городских парках. Город предлагает множество крытых спортивных залов и площадок для пляжного волейбола, которые используют клубы и любительские группы.
 
-Zuletzt geht es noch darum uns findbar zu machen. 
-Sei es über diese Webseite oder über Instagram. 
+Смешанный волейбол в Гамбурге — это больше, чем просто спорт; это сообщество, объединяющее веселье, фитнес и дружеское соревнование. Будь вы новичок или опытный игрок, в Гамбурге каждый найдет команду, которая ему подходит.
 
-Gemäß dem Motto "Langsam hoppelt der Hase", kommen wir unserem Ziel aber Schritt für Schritt näher!
-
-Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
-Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
-Dann [kontaktiere](/de/contact/) uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!
+Вы тоже хотите стать частью нашей смешанной волейбольной команды в Hamburg Hamm?  
+Ваш уровень игры между районной и региональной лигой?  
+Тогда [свяжитесь](/ru/contact/) с нами по электронной почте или в Instagram и приходите на пробную тренировку!
