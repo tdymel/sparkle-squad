@@ -126,7 +126,7 @@ export const translations = {
             text5: "Additionally, we participate in many tournaments around Hamburg. In the summer, we also go outside to play in the park or on the sand!",
             text6: "We are not a beginner team but play at an advanced level. This means you should already be fairly confident in attacking, receiving, serving, setting, and know how to play within a system.",
             text7: "Interested? Come by for a trial training session!",
-            writeUs: "Write to us!",
+            writeUs: "Contact us!",
             training: "Training: Wednesday from 7:30 PM to 10 PM.",
             casualPlaying: "As guests: Mondays/Fridays 7:30 PM to 10 PM at the Hammster's and Kunterbunten."
         },
