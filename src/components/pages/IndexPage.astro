@@ -71,6 +71,7 @@ const last_posts = posts.slice(0, 10);
                             url={"/" + lang + "/news/post/" + post.data.identifier}
                             target="_self"
                             badge={post.data.badge}
+                            pubDate={post.data.pubDate}
                     />
                     {index !== last_posts.length - 1 &&
                             <div class="divider my-0"/>}

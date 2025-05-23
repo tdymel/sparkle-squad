@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { useTranslations } from '../../i18n';
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -9,10 +10,25 @@ const t = useTranslations(Astro.url);
     <div class="pb-12 mt-5">
         <div class="text-5xl font-bold">{t.contact.title}</div>
         <div class="py-2">
+            <Image width={750} height={422} format="webp" src="/spieltag_25_04_27.webp" alt={t.contact.sparkleSquadTeamImg} class="w-full mb-6" />
             <text class="text-lg">
-                {t.contact.text1} <br/><br />
+                {t.contact.text1}
+                <br />
+                {t.contact.text2}
+                <br /><br />
+                {t.contact.text3}
+                <br /><br />
+                {t.contact.text4}
+                <br /><br />
+                {t.contact.text5}
+                <br /><br />
+                {t.contact.text6}
+                <br /><br />
+                {t.contact.text7}
 
-                {t.contact.training}<br />
+                <br/><br />
+                {t.contact.training}
+                <br />
                 {t.contact.casualPlaying}
             </text>
         </div>

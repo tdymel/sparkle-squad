@@ -59,6 +59,7 @@ const { data, totalPages } = Astro.props;
                                         url={"/" + lang + "/blog/post/" + post.data.identifier}
                                         target="_self"
                                         badge={post.data.badge}
+                                        pubDate={post.data.pubDate}
                                 />
                                 {index !== data.length - 1 &&
                                         <div class="divider my-0"/>}
