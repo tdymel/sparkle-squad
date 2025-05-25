@@ -17,3 +17,4 @@ Our team will always be mentioned second.
 ### Overall Tournament Results
 
 - Final Tournament in Stelle: 2nd Place
+- Lütjensee Tournament: 2nd Place

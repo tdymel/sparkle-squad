@@ -17,3 +17,4 @@ Unser Team wird immer als Zweites genannt.
 ### Gesamtturnierergebnisse
 
 - Abschlussturnier Stelle: 2. Platz
+- Lütjensee Turnier: 2. Platz
