@@ -28,5 +28,5 @@ Die Netzhöhe im Mixed Volleyball in Hamburg ist auf 2,35 Meter festgelegt, eine
 Für den Freizeitspielbetrieb sind keine Spielerlizenzen erforderlich. Diese Regel senkt die Hürde für die Teilnahme und ermutigt sowohl Neulinge als auch erfahrene Spieler, ohne große bürokratische Aufwände am Spielbetrieb teilzunehmen.
 
 Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
-Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
+Du verfügst über ein solides Spielniveau?
 Dann [kontaktiere](/de/contact/) uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

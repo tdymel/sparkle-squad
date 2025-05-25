@@ -27,5 +27,5 @@ Insgesamt haben wir uns bei unserem Debüt gut geschlagen!
 Wir freuen uns auf viele weitere Turniere.
 
 Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
-Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
+Du verfügst über ein solides Spielniveau?
 Dann [kontaktiere](/de/contact/) uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

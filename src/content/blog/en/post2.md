@@ -14,5 +14,5 @@ The 2025/26 season introduces several significant rule changes in volleyball, re
 4. Permission to Reach Over the Net: After an attack hit, players may reach over the net as long as the ball contact occurred within their own playing area. This could lead to more aggressive attacks without violating fair play rules.
 
 Would you also like to be part of our Mixed/Hobby Volleyball Team in Hamburg Hamm?  
-Do you have a solid playing level between Bezirksklasse and Landesliga?  
+Do you have solid foundations?  
 Then [contact](/en/contact/) us via email or on Instagram and come by for a trial practice!

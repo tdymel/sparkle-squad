@@ -15,5 +15,5 @@ The organization of mixed volleyball in Hamburg is managed by various sports clu
 Mixed volleyball in Hamburg is more than just a sport; it's a community that combines fun, fitness, and friendly competition. Whether a beginner or an experienced player, everyone can find a team that suits them in Hamburg.
 
 Would you also like to be part of our Mixed/Hobby Volleyball Team in Hamburg Hamm?  
-Do you have a solid playing level between Bezirksklasse and Landesliga?  
+Do you have solid foundations?  
 Then [contact](/en/contact/) us via email or on Instagram and come by for a trial practice!

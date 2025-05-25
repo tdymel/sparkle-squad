@@ -24,5 +24,5 @@ Trotzdem brauchen wir noch mehr Spieler, damit wir diese
 Hallenzeit langfristig behalten können.
 
 Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
-Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
+Du verfügst über ein solides Spielniveau?
 Dann [kontaktiere](/de/contact/) uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!

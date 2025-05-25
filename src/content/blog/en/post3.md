@@ -28,5 +28,5 @@ The net height in Hamburg mixed volleyball is set at 2.35 meters, a height that 
 For recreational play, no player licenses are required. This rule lowers the barrier to participation and encourages both newcomers and experienced players to join the games without significant bureaucratic hurdles.
 
 Would you also like to be part of our Mixed/Hobby Volleyball Team in Hamburg Hamm?  
-Do you have a solid playing level between Bezirksklasse and Landesliga?  
+Do you have solid foundations?  
 Then [contact](/en/contact/) us via email or on Instagram and come by for a trial practice!

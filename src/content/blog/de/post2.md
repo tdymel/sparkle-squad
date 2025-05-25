@@ -14,5 +14,5 @@ Die Saison 2025/26 bringt im Volleyball einige bedeutende Regeländerungen, die 
 4. Erlaubnis, über das Netz zu greifen: Nach einem Angriffsschlag dürfen Spieler ihre Hände über das Netz führen, solange der Ballkontakt im eigenen Spielraum stattfand. Dies könnte zu aggressiveren Angriffen führen, ohne die Regeln des fairen Spiels zu verletzen.
 
 Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
-Du verfügst über ein solides Spielniveau zwischen Bezirksklasse und Landesliga?
+Du verfügst über ein solides Spielniveau?
 Dann [kontaktiere](/de/contact/) uns per E-Mail oder auf Instagram und komme zum Probetraining vorbei!
