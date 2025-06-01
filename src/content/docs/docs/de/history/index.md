@@ -18,3 +18,4 @@ Unser Team wird immer als Zweites genannt.
 
 - Abschlussturnier Stelle: 2. Platz
 - Lütjensee Turnier: 2. Platz
+- Wakenitz Pokal: 4. Platz

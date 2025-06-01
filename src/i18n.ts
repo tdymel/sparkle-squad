@@ -50,7 +50,7 @@ export const translations = {
             text3: "Dann ist der Sparkle Squad vielleicht genau das, wonach du suchst! Wir sind ein neu gegründetes Team, das darauf abzielt, auf hohem Niveau zu spielen. Wir sprechen hauptsächlich Deutsch und Englisch, aber wir haben auch viele Mitglieder, die Russisch sprechen. Wir sind zwischen alle zwischen 20 und 28 Jahre alt.",
             text4: "Wir haben 3 Trainingstage (Montag, Mittwoch, Freitag). Am Montag und Freitag sind wir als Gäste bei anderen Teams zum casual spielen. Am Mittwoch trainieren wir und arbeiten an unserer Technik, Strategie und Taktik.",
             text5: "Darüber hinaus nehmen wir an vielen Turnieren, rund um Hamburg teil. Im Sommer gehen wir auch raus und spielen im Park oder im Sand!",
-            text6: "Leider können wir keine Anfänger Ausbilden. Dafür würden wir die anderen Teams vom SVSTG empfehlen. Wenn du aber bereits solide Grundlagen hast, einige Jahre Erfahrung und den Willen dich zu verbessern, dann freuen wir uns dich kennenzulernen!",
+            text6: "Leider können wir keine Anfänger ausbilden. Dafür würden wir die anderen Teams vom SVSTG empfehlen. Wenn du aber bereits solide Grundlagen hast, einige Jahre Erfahrung und den Willen dich zu verbessern, dann freuen wir uns dich kennenzulernen!",
             text7: "Interesse geweckt? Komm zum Probetraining vorbei!",
             writeUs: "Schreib uns!",
             training: "Training: Mittwoch: 19:30 bis 22:00 Uhr.",

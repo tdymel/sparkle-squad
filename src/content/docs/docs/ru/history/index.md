@@ -18,3 +18,4 @@ description: Результаты игр Sparkle Squad для протокола
 
 - Финальный турнир в Stelle: 2-е место
 - Lütjensee турнир: 2-е место
+- Wakenitz турнир: 4-е место

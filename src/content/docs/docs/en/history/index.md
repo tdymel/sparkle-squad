@@ -18,3 +18,4 @@ Our team will always be mentioned second.
 
 - Final Tournament in Stelle: 2nd Place
 - Lütjensee Tournament: 2nd Place
+- Wakenitz Cup: 4th Place
