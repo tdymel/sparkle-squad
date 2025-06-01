@@ -6,7 +6,7 @@ heroImage: "/wakenitz_2025/team_bild.webp"
 identifier: "7"
 ---
 
-Am 1.06.25 haben wir beim 1. Mixed Volleyball Wakenitz Pokal in Lübeck teilgenommen.
+Am 01.06.25 haben wir beim 1. Mixed Volleyball Wakenitz Pokal in Lübeck teilgenommen.
 Insgesamt haben 7 Teams teilgenommen.
 Die meisten von ihnen bestanden aus Spielern mit Spielerfahrung aus der Landesliga und höher.
 Das Turnierformat war "Alle gegen Alle", mit insgesamt 2 Sätzen bis 15.
