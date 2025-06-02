@@ -16,7 +16,7 @@ export const translations = {
                 greeting: "Moin",
                 weAre: "Wir sind Sparkle Squad!",
                 subTitle: "Mixed/Hobby Volleyball-Team um Hamburg Hamm",
-                text: "Du suchst nach einem ambitionierten und sympathischen Mixed/Hobby Volleyball Team in Hamburg und du hast sichere Grundlagen (A3/A4)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
+                text: "Du suchst nach einem ambitionierten und sympathischen Mixed/Hobby Volleyball Team in Hamburg und du hast sichere Grundlagen (A3)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
                 comeToTrial: "Komm zum Probetraining!",
                 followOnInstagram: "Folge uns auf Instagram!"
             },
@@ -32,7 +32,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Teilnahme an Turnieren",
-                    desc: "Wir spielen nicht nur in der Hamburger Freizeit-Mixed-Hobby-Runde (A4) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
+                    desc: "Wir spielen nicht nur in der Hamburger Freizeit-Mixed-Hobby-Runde (A3) und dem Hansa-Pokal mit, sondern auch an zahlreichen anderen Hallen und Beach-Turnieren im Umkreis von Hamburg."
                 },
                 outside: {
                     title: "Im Sommer gehen wir raus",
@@ -46,15 +46,15 @@ export const translations = {
             sparkleSquadTeamImg: "Das Sparkle Squad Team",
             title: "Werde teil des Sparkle Squad's!",
             text1: "Du suchst nach einem internationalen, netten und ehrgeizigen Team?",
-            text2: "Du hast bereits solide Grundlagen und möchtest mit uns auf einem höheren Niveau spielen (A3/A4).",
+            text2: "Du hast bereits solide Grundlagen und möchtest mit uns auf einem höheren Niveau spielen (A3).",
             text3: "Dann ist der Sparkle Squad vielleicht genau das, wonach du suchst! Wir sind ein neu gegründetes Team, das darauf abzielt, auf hohem Niveau zu spielen. Wir sprechen hauptsächlich Deutsch und Englisch, aber wir haben auch viele Mitglieder, die Russisch sprechen. Wir sind zwischen alle zwischen 20 und 28 Jahre alt.",
-            text4: "Wir haben 3 Trainingstage (Montag, Mittwoch, Freitag). Am Montag und Freitag sind wir als Gäste bei anderen Teams zum casual spielen. Am Mittwoch trainieren wir und arbeiten an unserer Technik, Strategie und Taktik.",
+            text4: "Wir haben 2 Trainingstage (Mittwoch, Freitag). Am Freitag sind wir als Gäste bei den Kunterbunten zum casual spielen. Am Mittwoch trainieren wir und arbeiten an unserer Technik, Strategie und Taktik.",
             text5: "Darüber hinaus nehmen wir an vielen Turnieren, rund um Hamburg teil. Im Sommer gehen wir auch raus und spielen im Park oder im Sand!",
-            text6: "Leider können wir keine Anfänger ausbilden. Dafür würden wir die anderen Teams vom SVSTG empfehlen. Wenn du aber bereits solide Grundlagen hast, einige Jahre Erfahrung und den Willen dich zu verbessern, dann freuen wir uns dich kennenzulernen!",
+            text6: "Leider können wir keine Anfänger ausbilden. Dafür würden wir die anderen Teams vom SVSTG empfehlen. Wenn du aber bereits solide Grundlagen hast, einige Jahre Erfahrung, gängige Spielsysteme kennst und den Willen dich zu verbessern, dann freuen wir uns dich kennenzulernen!",
             text7: "Interesse geweckt? Komm zum Probetraining vorbei!",
             writeUs: "Schreib uns!",
             training: "Training: Mittwoch: 19:30 bis 22:00 Uhr.",
-            casualPlaying: "Zu Gast: Montags/Freitags 19:30 - 22:00 Uhr bei den Hammstern und Kunterbunten."
+            casualPlaying: "Zu Gast: Freitags 19:30 - 22:00 Uhr bei den Kunterbunten."
         },
         fourofour: {
             title: "Leider konnte die Seite nicht gefunden werden.",
@@ -90,7 +90,7 @@ export const translations = {
                 greeting: "Hello",
                 weAre: "We are Sparkle Squad!",
                 subTitle: "Mixed/Hobby Volleyball Team around Hamburg Hamm",
-                text: "Are you looking for an ambitious and friendly hobby mixed volleyball team in Hamburg and you have solid fundamentals (A3/A4)? Then you are exactly right with us! Come to a trial and see what we are all about!",
+                text: "Are you looking for an ambitious and friendly hobby mixed volleyball team in Hamburg and you have solid fundamentals (A3)? Then you are exactly right with us! Come to a trial and see what we are all about!",
                 comeToTrial: "Come to a trial!",
                 followOnInstagram: "Follow us on Instagram!"
             },
@@ -106,7 +106,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Participation in tournaments",
-                    desc: "We not only participate in the Mixed-Hobby Round in Hamburg (A4) and the Hansa-Pokal but also in numerous other indoor and beach tournaments around Hamburg."
+                    desc: "We not only participate in the Mixed-Hobby Round in Hamburg (A3) and the Hansa-Pokal but also in numerous other indoor and beach tournaments around Hamburg."
                 },
                 outside: {
                     title: "We go outside in the summer",
@@ -120,15 +120,15 @@ export const translations = {
             sparkleSquadTeamImg: "The Sparkle Squad Team",
             title: "Join the Sparkle Squad!",
             text1: "Are you looking for an international, friendly, and ambitious team?",
-            text2: "Do you have solid foundations and want to play with us at a higher level (A3/A4)?",
+            text2: "Do you have solid foundations and want to play with us at a higher level (A3)?",
             text3: "Then the Sparkle Squad might be exactly what you're looking for! We are a newly formed team aiming to play at a high level. We mainly speak German and English, but we also have many members who speak Russian. We are all between 20 and 28 years old.",
-            text4: "We have 3 training days (Monday, Wednesday, Friday). On Monday and Friday, we are guests at other teams to play casually with them. On Wednesday, we train and work on our technique, strategy, and tactics.",
+            text4: "We have 2 training days (Wednesday, Friday). On Friday, we are guests at the Kunterbunten to play casually with them. On Wednesday, we train and work on our technique, strategy, and tactics.",
             text5: "Additionally, we participate in many tournaments around Hamburg. In the summer, we also go outside to play in the park or on the sand!",
-            text6: "Unfortunately, we cannot train beginners. For that, we recommend the other teams from SVSTG. However, if you already have a solid foundation, a few years of experience, and the desire to improve, then we are looking forward to meeting you!",
+            text6: "Unfortunately, we cannot train beginners. For that, we recommend the other teams from SVSTG. However, if you already have a solid foundation, a few years of experience, you know common playing systems and the desire to improve, then we are looking forward to meeting you!",
             text7: "Interested? Come by for a trial training session!",
             writeUs: "Contact us!",
             training: "Training: Wednesday from 7:30 PM to 10 PM.",
-            casualPlaying: "As guests: Mondays/Fridays 7:30 PM to 10 PM at the Hammster's and Kunterbunten."
+            casualPlaying: "As guests: Fridays 7:30 PM to 10 PM at the Kunterbunten."
         },
         fourofour: {
             title: "Unfortunately, the page could not be found.",
@@ -164,7 +164,7 @@ export const translations = {
                 greeting: "Привет",
                 weAre: "Мы - Sparkle Squad!",
                 subTitle: "Смешанная волейбольная команда в районе Гамбург Хамм",
-                text: "Вы ищете амбициозную и дружелюбную команду с прочной базой (A3/A4)? Тогда вам точно к нам! Приходите на пробное занятие и посмотрите, что мы из себя представляем!",
+                text: "Вы ищете амбициозную и дружелюбную команду с прочной базой (A3)? Тогда вам точно к нам! Приходите на пробное занятие и посмотрите, что мы из себя представляем!",
                 comeToTrial: "Приходите на пробное занятие!",
                 followOnInstagram: "Подписывайтесь на нас в Instagram!"
             },
@@ -180,7 +180,7 @@ export const translations = {
                 },
                 tournaments: {
                     title: "Участие в турнирах",
-                    desc: "Мы участвуем не только в Mixed-Hobby-Runde (A4) и Hansa-Pokal, в том числе и пляжных турнирах в окрестностях Гамбурга."
+                    desc: "Мы участвуем не только в Mixed-Hobby-Runde (A3) и Hansa-Pokal, в том числе и пляжных турнирах в окрестностях Гамбурга."
                 },
                 outside: {
                     title: "Летом мы выходим в парк",
@@ -194,15 +194,15 @@ export const translations = {
             sparkleSquadTeamImg: "Команда Sparkle Squad",
             title: "Присоединяйтесь к Sparkle Squad!",
             text1: "Вы ищете интернациональную, дружелюбную и амбициозную команду?",
-            text2: "Вы владеете базовыми навыками и стремитесь играть на более высоком уровне (A3/A4)?",
+            text2: "Вы владеете базовыми навыками и стремитесь играть на более высоком уровне (A3)?",
             text3: "Тогда Sparkle Squad может быть именно тем, что вы ищете! Мы новообразованная команда, стремящаяся играть на высоком уровне. Мы в основном говорим на немецком и английском, но у нас также много игроков, которые говорят на русском. Наш возраст — от 20 до 28 лет.",
-            text4: "У нас 3 тренировочных дня (понедельник, среда, пятница). В понедельник и пятницу мы в гостях у других команд для неформальной игры. В среду мы тренируемся и работаем над нашей техникой, стратегией и тактикой.",
+            text4: "У нас 2 тренировочных дня (среда, пятница). В пятницу мы в гостях у Kunterbunten для неформальной игры. В среду мы тренируемся и работаем над нашей техникой, стратегией и тактикой.",
             text5: "Кроме того, мы участвуем во многих турнирах вокруг Гамбурга. Летом мы также выходим на улицу и играем в парке или на песке!",
-            text6: "К сожалению, мы не можем обучать новичков. Для этого мы рекомендуем другие команды из SVSTG. Однако, если у вас уже есть прочная основа, несколько лет опыта и желание совершенствоваться, то мы с нетерпением ждем встречи с вами!",
+            text6: "К сожалению, мы не можем обучать новичков. Для этого мы рекомендуем другие команды из SVSTG. Однако, если у вас уже есть прочная основа, несколько лет опыта, знание игровой системы и желание совершенствоваться, то мы с нетерпением ждем встречи с вами!",
             text7: "Заинтересованы? Приходите на пробную тренировку!",
             writeUs: "Напишите нам!",
             training: "Тренировки: среда 19:30-22:00",
-            casualPlaying: "Гостевые игры: понедельник и пятница, 19:30-22:00 у Hammster и Kunterbunten"
+            casualPlaying: "Гостевые игры: пятница, 19:30-22:00 у Kunterbunten"
         },
         fourofour: {
             title: "К сожалению, страница не найдена.",
