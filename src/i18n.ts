@@ -54,7 +54,7 @@ export const translations = {
             text7: "Interesse geweckt? Komm zum Probetraining vorbei!",
             writeUs: "Schreib uns!",
             training: "Training: Mittwoch: 19:30 bis 22:00 Uhr.",
-            casualPlaying: "Zu Gast: Freitags 19:30 - 22:00 Uhr bei den Kunterbunten."
+            casualPlaying: "Zu Gast: Freitag: 19:30 - 22:00 Uhr bei den Kunterbunten."
         },
         fourofour: {
             title: "Leider konnte die Seite nicht gefunden werden.",
@@ -122,13 +122,13 @@ export const translations = {
             text1: "Are you looking for an international, friendly, and ambitious team?",
             text2: "Do you have solid foundations and want to play with us at a higher level (A3)?",
             text3: "Then the Sparkle Squad might be exactly what you're looking for! We are a newly formed team aiming to play at a high level. We mainly speak German and English, but we also have many members who speak Russian. We are all between 20 and 28 years old.",
-            text4: "We have 2 training days (Wednesday, Friday). On Friday, we are guests at the Kunterbunten to play casually with them. On Wednesday, we train and work on our technique, strategy, and tactics.",
+            text4: "We have 2 training days (Wednesday and Friday). On Friday, we are guests at the Kunterbunten to play casually with them. On Wednesday, we train and work on our technique, strategy, and tactics.",
             text5: "Additionally, we participate in many tournaments around Hamburg. In the summer, we also go outside to play in the park or on the sand!",
             text6: "Unfortunately, we cannot train beginners. For that, we recommend the other teams from SVSTG. However, if you already have a solid foundation, a few years of experience, you know common playing systems and the desire to improve, then we are looking forward to meeting you!",
             text7: "Interested? Come by for a trial training session!",
             writeUs: "Contact us!",
-            training: "Training: Wednesday from 7:30 PM to 10 PM.",
-            casualPlaying: "As guests: Fridays 7:30 PM to 10 PM at the Kunterbunten."
+            training: "Training: Wednesdays from 7:30 PM to 10 PM.",
+            casualPlaying: "As guests: Fridays from 7:30 PM to 10 PM at the Kunterbunten."
         },
         fourofour: {
             title: "Unfortunately, the page could not be found.",
@@ -202,7 +202,7 @@ export const translations = {
             text7: "Заинтересованы? Приходите на пробную тренировку!",
             writeUs: "Напишите нам!",
             training: "Тренировки: среда 19:30-22:00",
-            casualPlaying: "Гостевые игры: пятница, 19:30-22:00 у Kunterbunten"
+            casualPlaying: "Гостевые игры: пятница 19:30-22:00 у Kunterbunten"
         },
         fourofour: {
             title: "К сожалению, страница не найдена.",
