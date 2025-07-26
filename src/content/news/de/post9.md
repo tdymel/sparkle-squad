@@ -7,7 +7,7 @@ identifier: "9"
 ---
 
 Heute hat uns Senku zu sich zum Freundschaftsspiel eingeladen. 
-Ihre Halle ist echt schwer zu finden, aber wir sind glücklich die Hallen irgendwie gefunden zu haben.
+Ihre Halle ist echt schwer zu finden, aber wir sind glücklich die Halle irgendwie gefunden zu haben.
 
 An dem Tag lief alles nicht wirklich rund.
 Die meisten haben von uns abgesagt und dann ist eine Person auch nicht gekommen, 
