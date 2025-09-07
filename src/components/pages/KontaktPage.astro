@@ -6,34 +6,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const t = useTranslations(Astro.url);
 ---
 
-<BaseLayout sideBarActiveItemID="kontakt" title={t.contact.title} description={t.contact.description} >
+<BaseLayout sideBarActiveItemID="kontakt" title={t.contact.title} description={t.contact.description}>
     <div class="pb-12 mt-5">
         <div class="text-5xl font-bold">{t.contact.title}</div>
         <div class="py-2">
-            <Image width={750} height={422} format="webp" src="/spieltag_25_04_27.webp" alt={t.contact.sparkleSquadTeamImg} class="w-full mb-6" />
+            <Image width={750} height={422} format="webp" src="/spieltag_25_04_27.webp" alt={t.contact.sparkleSquadTeamImg} class="w-full mb-6"/>
             <text class="text-lg">
                 {t.contact.text1}
-                <br />
+                <br/>
                 {t.contact.text2}
-                <br /><br />
+                <br/><br/>
                 {t.contact.text3}
-                <br /><br />
+                <br/><br/>
                 {t.contact.text4}
-                <br /><br />
+                <br/><br/>
                 {t.contact.text5}
-                <br /><br />
+                <br/><br/>
                 {t.contact.text6}
-                <br /><br />
+                <br/><br/>
                 {t.contact.text7}
 
-                <br/><br />
+                <br/><br/>
                 {t.contact.training}
-                <br />
+                <br/>
                 {t.contact.casualPlaying}
             </text>
         </div>
         <div class="mt-8">
-            <a class="btn btn-outline" href="mailto:dymel.tom@gmail.com">{t.contact.writeUs}</a>
+            <a class="btn btn-outline" target="_blank" href="https://forms.gle/3CNuhfGuEmAFBc858">{t.contact.writeUs}</a>
         </div>
     </div>
 </BaseLayout>
