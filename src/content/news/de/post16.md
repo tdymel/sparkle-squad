@@ -1,15 +1,15 @@
 ---
-title: "4 Punkte beim 4. HVBV B1-4 Mixed-Runde Spieltag"
-description: "4 Punkte beim 4. Spieltag in der B1-4 Mixed-Runde Liga in Hamburg!"
-pubDate: "Feb 01 2026"
-heroImage: "/2026_02_01_b1_spieltag.webp"
+title: "3 Punkte beim 3. HVBV A3 Mixed-Runde Spieltag"
+description: "3 Punkte beim 3. Spieltag in der A3 Mixed-Runde Liga in Hamburg!"
+pubDate: "Jan 25 2026"
+heroImage: "/2026_01_25_a3_spieltag.webp"
 identifier: "16"
 ---
 
-Heute war der 4. Spieltag in der B1-4 Mixed-Runde Liga in Hamburg.  
-Im ersten Spiel haben wir 2:0 gewonnen.  
-Das zweite Spiel haben wir leider 1:2 abgegeben.  
-Der zweite Satz scheint wie verhext zu sein für unser Team :)
+Heute war der 3. Spieltag in der A3 Mixed-Runde Liga in Hamburg.  
+Das erste Spiel haben wir 2:0 gegen den Tabellenersten gewonnen.  
+Im zweiten Spiel haben wir leider 0:2 verloren.  
+Wir haben wirklich alles gegeben, aber die Gegner haben einfach alles aufgehoben.
 
 Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
 Du verfügst über ein solides Spielniveau?

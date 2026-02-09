@@ -1,15 +1,19 @@
 ---
-title: "3 Points at the 3rd HVBV A3 Mixed Round Matchday"
-description: "3 points at the 3rd matchday in the A3 Mixed Round League in Hamburg!"
-pubDate: "Jan 25 2026"
-heroImage: "/2026_01_25_a3_spieltag.webp"
+title: "4 Points at the 3rd HVBV B1-4 Mixed Round Matchday"
+description: "4 points at the 3rd matchday in the B1-4 Mixed Round League in Hamburg!"
+pubDate: "Jan 18 2026"
+heroImage: "/2026_01_18_b1_spieltag.webp"
 identifier: "15"
 ---
 
-Today was the 3rd matchday in the A3 Mixed Round League in Hamburg.  
-We won the first game 2:0 against the league leaders.  
-Unfortunately, we lost the second game 0:2.  
-We really gave it our all, but the opponents managed to pick up everything.
+Today was the 3rd matchday in the B1-4 Mixed Round League in Hamburg!
+Last week, the 3rd A3 matchday was also supposed to take place, but unfortunately, it was canceled because Hamburg experienced a historic cold snap.
+
+Brand new, we now have a uniform.
+With it, we immediately make a much more impressive impression.
+
+We won the first game confidently.
+The second game started well, but from the second set, we somehow lost concentration and thus gave up the game.
 
 Would you also like to be part of our Mixed/Hobby Volleyball Team in Hamburg Hamm?
 Do you have solid foundations?

@@ -1,17 +1,14 @@
 ---
-title: "Doppelsieg beim 2. HVBV B1-4 Mixed-Runde Spieltag"
-description: "Doppelsieg beim 2. Spieltag in der B1-4 Mixed-Runde Liga in Hamburg!"
-pubDate: "Dec 07 2025"
-heroImage: "/2025_12_07_b1_spieltag.webp"
+title: "Doppelsieg beim 2. HVBV A3 Mixed-Runde Spieltag und 1. B1-4 Spieltag"
+description: "Doppelsieg beim 2. Spieltag in der A3 und B1-4 Mixed-Runde Liga in Hamburg!"
+pubDate: "Nov 30 2025"
+heroImage: "/2025_11_30_a3_2_spieltag.webp"
 identifier: "13"
 ---
 
-Heute war der 2. Spieltag in der B1-4 Mixed-Runde Liga in Hamburg!
-Auch diesen Spieltag konnten wir gekonnt für uns entscheiden! 
-Let's go Sparkle Squad, Let's go!
-
-Das war der letzte Spieltag vor Weihnachten. 
-Am 11. Januar wirds weiter gehen :)
+Heute war der 2. Spieltag in der A3 Mixed-Runde Liga in Hamburg!
+Die Woche davor hatten wir auch in B1-4 gewonnen, aber leider haben wir keine Bilder gemacht.
+Bisher läuft es sehr gut, hoffentlich geht es weiter so!
 
 Du möchtest auch Teil von unserem Freizeit-Mixed-Hobby Volleyball Team in Hamburg Hamm werden?
 Du verfügst über ein solides Spielniveau?
