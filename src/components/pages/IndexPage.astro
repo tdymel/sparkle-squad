@@ -12,7 +12,7 @@ const t = useTranslations(Astro.url);
 
 const posts = (await getCollection("news", ({ id }) => id.startsWith(lang))).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const last_posts = posts.slice(0, 10);
+const last_posts = posts;
 ---
 
 <BaseLayout sideBarActiveItemID="home" description={t.index.description}>
