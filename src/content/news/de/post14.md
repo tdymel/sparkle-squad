@@ -1,6 +1,6 @@
 ---
-title: "4 Punkte beim 3. HVBV B1-4 Mixed-Runde Spieltag"
-description: "4 Punkte beim 3. Spieltag in der B1-4 Mixed-Runde Liga in Hamburg!"
+title: "4 Punkte beim 3. HVBV B1-4 Mixed-Runde Spieltag und unsere neue Uniform"
+description: "4 Punkte beim 3. Spieltag in der B1-4 Mixed-Runde Liga in Hamburg! Außerdem ist endlich unsere neue Uniform angekommen!"
 pubDate: "Jan 18 2026"
 heroImage: "/2026_01_18_b1_spieltag.webp"
 identifier: "14"
