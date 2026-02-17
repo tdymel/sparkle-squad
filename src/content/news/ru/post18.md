@@ -1,7 +1,7 @@
 ---
 title: "4 очка на 4-й HVBV A3 Mixed Round игровой день"
 description: "4 очка на 4-й игровой день в лиге A3 Mixed Round в Гамбурге!"
-pubDate: "Feb 01 2026"
+pubDate: "Feb 15 2026"
 heroImage: "/2026_02_15_a3_spieltag.webp"
 identifier: "18"
 ---

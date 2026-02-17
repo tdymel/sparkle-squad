@@ -1,7 +1,7 @@
 ---
 title: "4 Punkte beim 4. HVBV A3 Mixed-Runde Spieltag"
 description: "4 Punkte beim 4. Spieltag in der A3 Mixed-Runde Liga in Hamburg!"
-pubDate: "Feb 01 2026"
+pubDate: "Feb 15 2026"
 heroImage: "/2026_02_15_a3_spieltag.webp"
 identifier: "18"
 ---
