@@ -3,6 +3,12 @@ use dioxus::prelude::*;
 
 i18n_init!(DE, EN, RU);
 
+impl Default for I18n {
+    fn default() -> Self {
+        I18n::DE
+    }
+}
+
 const LOGO: Asset = asset!("/assets/logo_black.svg");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
@@ -38,14 +44,26 @@ i18n!(
 
 #[component]
 fn App() -> Element {
-    let path = web_sys::window()
-        .and_then(|w| w.location().pathname().ok())
-        .unwrap_or_else(|| "/".to_string());
+    rsx! {
+        Router::<Route> { }
+    }
+}
 
-    let i18n = i18n_from_path(&path);
+#[derive(Routable, Clone, PartialEq)]
+enum Route {
+    #[route("/")]
+    Index { i18n: I18n },
+    #[route("/de")]
+    IndexDe {},
+    #[route("/en")]
+    IndexEn {},
+    #[route("/ru")]
+    IndexRu {},
+}
 
+#[component]
+fn Index(i18n: I18n) -> Element {
     use_context_provider(|| i18n);
-
     rsx! {
         document::Title { {i18n.app().title().to_string()} }
 
@@ -95,10 +113,29 @@ fn App() -> Element {
     }
 }
 
-fn i18n_from_path(path: &str) -> I18n {
-    match path.trim_end_matches('/').rsplit('/').next() {
-        Some("ru") => I18n::RU,
-        Some("en") => I18n::EN,
-        _ => I18n::DE,
+#[component]
+fn IndexDe() -> Element {
+    rsx! {
+        Index {
+            i18n: I18n::DE
+        }
+    }
+}
+
+#[component]
+fn IndexEn() -> Element {
+    rsx! {
+        Index {
+            i18n: I18n::EN
+        }
+    }
+}
+
+#[component]
+fn IndexRu() -> Element {
+    rsx! {
+        Index {
+            i18n: I18n::RU
+        }
     }
 }

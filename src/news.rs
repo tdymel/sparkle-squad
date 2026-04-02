@@ -10,8 +10,8 @@ use crate::I18n;
 const LOGO: Asset = asset!("/assets/logo_black.svg");
 const COURT: Asset = asset!(
     "/assets/news/court.png",
-    AssetOptions::image()
-        .with_webp()
+    ImageAssetOptions::new()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 160
@@ -20,7 +20,7 @@ const COURT: Asset = asset!(
 const SPIELTAG_25_04_27: Asset = asset!(
     "/assets/news/spieltag_25_04_27.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 201
@@ -29,7 +29,7 @@ const SPIELTAG_25_04_27: Asset = asset!(
 const STELLE_2025: Asset = asset!(
     "/assets/news/2025_stelle_tournament.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 225
@@ -38,7 +38,7 @@ const STELLE_2025: Asset = asset!(
 const LUETJENSEE_2025: Asset = asset!(
     "/assets/news/2025_luetjensee.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 256
@@ -47,7 +47,7 @@ const LUETJENSEE_2025: Asset = asset!(
 const WAKENITZ_2025: Asset = asset!(
     "/assets/news/wakenitz_2025.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 251
@@ -56,7 +56,7 @@ const WAKENITZ_2025: Asset = asset!(
 const HANSE_POKAL_2025: Asset = asset!(
     "/assets/news/2025_06_Hansa_Pokal.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 320
@@ -65,7 +65,7 @@ const HANSE_POKAL_2025: Asset = asset!(
 const EUTIN_2025: Asset = asset!(
     "/assets/news/2025_10_eutin.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 216
@@ -74,7 +74,7 @@ const EUTIN_2025: Asset = asset!(
 const HALLOWEEN_2025: Asset = asset!(
     "/assets/news/2025_11_01_spooky.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 243
@@ -83,7 +83,7 @@ const HALLOWEEN_2025: Asset = asset!(
 const A3_2025_1: Asset = asset!(
     "/assets/news/2025_11_16_a3_spieltag.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 216
@@ -92,7 +92,7 @@ const A3_2025_1: Asset = asset!(
 const A3_2025_2: Asset = asset!(
     "/assets/news/2025_11_30_a3_2_spieltag.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 210
@@ -101,7 +101,7 @@ const A3_2025_2: Asset = asset!(
 const B1_2025_2: Asset = asset!(
     "/assets/news/2025_12_07_b1_spieltag.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 216
@@ -110,7 +110,7 @@ const B1_2025_2: Asset = asset!(
 const B1_2026_3: Asset = asset!(
     "/assets/news/2026_01_18_b1_spieltag.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 230
@@ -119,7 +119,7 @@ const B1_2026_3: Asset = asset!(
 const A3_2026_3: Asset = asset!(
     "/assets/news/2026_01_25_a3_spieltag.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 320
@@ -128,7 +128,7 @@ const A3_2026_3: Asset = asset!(
 const B1_2026_4: Asset = asset!(
     "/assets/news/2026_02_01_b1_spieltag.jpg",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 237
@@ -137,7 +137,7 @@ const B1_2026_4: Asset = asset!(
 const A3_2026_4: Asset = asset!(
     "/assets/news/2026_02_15_a3_spieltag.png",
     AssetOptions::image()
-        .with_webp()
+        .with_avif()
         .with_size(ImageSize::Manual {
             width: 288,
             height: 296
@@ -171,31 +171,31 @@ static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new(|| 
         vec![
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee_2.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee_3.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee_4.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee_5.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee_6.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/luetjensee_2025/2025_luetjensee_pokal.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
         ],
     );
@@ -205,51 +205,51 @@ static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new(|| 
         vec![
             asset!(
                 "/assets/news/wakenitz_2025/team_bild.png",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/urkunde.jpg",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0252.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0540.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0541.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0542.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0575.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0591.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0632.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0641.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0904.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
             asset!(
                 "/assets/news/wakenitz_2025/IMG_0924.JPG",
-                AssetOptions::image().with_webp()
+                AssetOptions::image().with_avif()
             ),
         ],
     );
