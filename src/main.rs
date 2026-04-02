@@ -8,19 +8,13 @@ const MAIN_CSS: Asset = asset!("/assets/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 mod about_us;
+mod components;
 mod header;
 mod news;
 
 pub use about_us::AboutUs;
 pub use header::Header;
 pub use news::News;
-
-/*
-TODO:
-* Add slideshow for news
-* Clean up components
-* Deployment via CI/CD on GitHub
-*/
 
 fn main() {
     dioxus::launch(App);

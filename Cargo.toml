@@ -8,6 +8,7 @@ edition = "2021"
 dioxus = { version = "0.7", features = ["router"] }
 web-sys = { version = "0.3", features = ["Window", "Location"] }
 comfy-i18n = "0.3"
+dioxus-primitives = { git = "https://github.com/DioxusLabs/components", version = "0.0.1", default-features = false }
 
 [features]
 default = ["web"]
