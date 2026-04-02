@@ -3,7 +3,7 @@
 [web.app]
 
 # HTML title tag content
-title = "sparkle-squad-new"
+title = "Sparkle Squad - Mixed Volleyball Hamburg Hamm"
 
 # include `assets` in web platform
 [web.resource]

@@ -7,13 +7,13 @@ const LOGO: Asset = asset!("/assets/logo_black.svg");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
+mod about_us;
 mod header;
 mod news;
-mod about_us;
 
+pub use about_us::AboutUs;
 pub use header::Header;
 pub use news::News;
-pub use about_us::AboutUs;
 
 fn main() {
     dioxus::launch(App);
@@ -23,13 +23,27 @@ i18n!(
     app,
     DE: {
         title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm"
-    }
+    },
+    EN: {
+        title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm"
+    },
+    RU: {
+        title: "Sparkle Squad — микс-волейбол, Гамбург-Хамм"
+    },
 );
 
 #[component]
 fn App() -> Element {
+    let path = web_sys::window()
+        .and_then(|w| w.location().pathname().ok())
+        .unwrap_or_else(|| "/".to_string());
+
+    let i18n = i18n_from_path(&path);
+
+    use_context_provider(|| i18n);
+
     rsx! {
-        document::Title { {I18n::DE.app().title().to_string()} }
+        document::Title { {i18n.app().title().to_string()} }
         document::Link { rel: "icon", href: LOGO }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
@@ -39,5 +53,13 @@ fn App() -> Element {
             AboutUs {}
             News {}
         }
+    }
+}
+
+fn i18n_from_path(path: &str) -> I18n {
+    match path.trim_end_matches('/').rsplit('/').next() {
+        Some("ru") => I18n::RU,
+        Some("en") => I18n::EN,
+        _ => I18n::DE,
     }
 }
