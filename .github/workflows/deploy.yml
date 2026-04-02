@@ -41,7 +41,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install Dioxus CLI
-        run: cargo install dioxus-cli
+        run: cargo install dioxus-cli --locked
 
       - name: Add wasm target
         run: rustup target add wasm32-unknown-unknown
