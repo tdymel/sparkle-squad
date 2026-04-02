@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -34,6 +34,9 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Load Rust Cache
+      - uses: Swatinem/rust-cache@v2
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -44,12 +47,12 @@ jobs:
         run: rustup target add wasm32-unknown-unknown
 
       - name: Build
-        run: dx build --platform web --release
+        run: dx build --platform web --release --debug-symbols=false
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./target/dx/sparkle-squad/release/web/public
 
   deploy:
     environment:
