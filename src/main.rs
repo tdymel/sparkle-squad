@@ -15,6 +15,13 @@ pub use about_us::AboutUs;
 pub use header::Header;
 pub use news::News;
 
+/*
+TODO:
+* Add slideshow for news
+* Clean up components
+* Deployment via CI/CD on GitHub
+*/
+
 fn main() {
     dioxus::launch(App);
 }
@@ -22,14 +29,17 @@ fn main() {
 i18n!(
     app,
     DE: {
-        title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm"
+        title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm",
+        description: "Turnieraktives, internationales A3/B1 Mixed-Volleyball-Team in Hamburg Hamm. Training Mittwochs 19:30 Uhr bis 22:00 Uhr."
     },
     EN: {
-        title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm"
+        title: "Sparkle Squad - Mixed Volleyball Hamburg Hamm",
+        description: "Tournament-active, international A3/B1 mixed volleyball team in Hamburg Hamm. Training on Wednesdays from 7:30 PM to 10:00 PM."
     },
     RU: {
-        title: "Sparkle Squad — микс-волейбол, Гамбург-Хамм"
-    },
+        title: "Sparkle Squad — Смешанная волейбольная команда Гамбург-Хамм",
+        description: "Международная смешанная волейбольная команда уровня A3/B1 из Гамбург-Хамма, активно участвующая в турнирах. Тренировки по средам с 19:30 до 22:00."
+    }
 );
 
 #[component]
@@ -44,9 +54,44 @@ fn App() -> Element {
 
     rsx! {
         document::Title { {i18n.app().title().to_string()} }
+
+        document::Meta { charset: "utf-8" }
+        document::Meta { name: "viewport", content: "width=device-width, initial-scale=1" }
+
+        document::Meta {
+            name: "description",
+            content: i18n.app().description().to_string()
+        }
+
+        document::Meta { property: "og:title", content: i18n.app().title().to_string() }
+        document::Meta { property: "og:description", content: i18n.app().description().to_string() }
+        document::Meta { property: "og:type", content: "website" }
+        document::Meta { property: "og:url", content: "https://sparkle-squad.de/" }
+        document::Meta { property: "og:image", content: "https://sparkle-squad.de/assets/logo_black.svg" }
+
+        document::Meta { name: "twitter:card", content: "summary_large_image" }
+        document::Meta { name: "twitter:title", content: i18n.app().title().to_string() }
+        document::Meta { name: "twitter:description", content: i18n.app().description().to_string() }
+        document::Meta { name: "twitter:image", content: "https://sparkle-squad.de/assets/logo_black.svg" }
+
         document::Link { rel: "icon", href: LOGO }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+
+        document::Link { rel: "alternate", hreflang: "de", href: "https://sparkle-squad.de/de" }
+        document::Link { rel: "alternate", hreflang: "en", href: "https://sparkle-squad.de/en" }
+        document::Link { rel: "alternate", hreflang: "ru", href: "https://sparkle-squad.de/ru" }
+        document::Link { rel: "alternate", hreflang: "x-default", href: "https://sparkle-squad.de/" }
+
+        document::Link {
+            rel: "canonical",
+            href: match i18n {
+                I18n::DE => "https://sparkle-squad.de/",
+                I18n::EN => "https://sparkle-squad.de/en",
+                I18n::RU => "https://sparkle-squad.de/ru"
+            }
+        }
+
         div {
             class: "flex flex-col max-w-5xl mx-auto gap-8",
             Header {}
