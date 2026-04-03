@@ -56,9 +56,11 @@ i18n!(
 pub fn AboutUs() -> Element {
     let i18n = consume_context::<I18n>();
     rsx! {
-         div {
+         section {
             class: "flex flex-col gap-4",
+            aria_labelledby: "about_us",
             h2 {
+                id: "about_us",
                 class: "text-3xl",
                 {i18n.about_us().title().to_string()}
             }

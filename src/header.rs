@@ -38,13 +38,18 @@ pub fn Header() -> Element {
     let i18n = consume_context::<I18n>();
 
     rsx! {
-        div {
+        section {
             class: "flex flex-col gap-8",
+            aria_labelledby: "header_title",
             div {
                 class: "flex flex-row items-center gap-8 flex-wrap",
                 img {
-                    class: "h-[10rem] mx-auto",
-                    src: LOGO
+                    class: "h-[10rem] w-auto mx-auto",
+                    src: LOGO,
+                    aria_hidden: true,
+                    alt: "Logo",
+                    width: "200",
+                    height: "160"
                 }
                 div {
                     class: "flex flex-col flex-1",
@@ -57,6 +62,7 @@ pub fn Header() -> Element {
                         LanguageSwitch { i18n: i18n }
                     }
                     h1 {
+                        id: "header_title",
                         class: "text-5xl",
                         {i18n.header().title().to_string()}
                     }
@@ -92,55 +98,18 @@ pub fn Header() -> Element {
     }
 }
 
-impl I18n {
-    fn suffix(self) -> &'static str {
-        match self {
-            I18n::EN => "en",
-            I18n::RU => "ru",
-            I18n::DE => "de",
-        }
-    }
-
-    fn from_suffix(value: &str) -> Self {
-        match value {
-            "ru" => I18n::RU,
-            "en" => I18n::EN,
-            _ => I18n::DE,
-        }
-    }
-}
-
-fn replace_lang_suffix(path: &str, lang: I18n) -> String {
-    let trimmed = path.trim_end_matches('/');
-    let parts: Vec<&str> = trimmed.split('/').filter(|p| !p.is_empty()).collect();
-
-    let new_parts = if let Some(last) = parts.last() {
-        if matches!(*last, "en" | "ru" | "de") {
-            let mut p = parts;
-            let len = p.len();
-            p[len - 1] = lang.suffix();
-            p
-        } else {
-            let mut p = parts;
-            p.push(lang.suffix());
-            p
-        }
-    } else {
-        vec![lang.suffix()]
-    };
-
-    format!("/{}", new_parts.join("/"))
-}
-
 i18n!(
     language_switch,
     DE: {
+        switch_label: "Sprache auswählen",
         label: "Deutsch"
     },
     EN: {
+        switch_label: "Select language",
         label: "English"
     },
     RU: {
+        switch_label: "Выбрать язык",
         label: "Русский"
     },
 );
@@ -153,6 +122,7 @@ pub fn LanguageSwitch(i18n: I18n) -> Element {
         select {
             class: "select border-0 outline-none focus:outline-none focus:ring-0 shadow-none max-w-[7rem] ml-auto",
             value: i18n.suffix(),
+            aria_label: *i18n.language_switch().switch_label(),
             onchange: move |evt| {
                 match I18n::from_suffix(&evt.value()) {
                     I18n::DE => nav.push(crate::Route::Index { i18n: I18n::DE }),

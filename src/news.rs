@@ -569,9 +569,11 @@ pub fn News() -> Element {
     let i18n = consume_context::<I18n>();
     let articles = i18n.news().articles().value();
     rsx! {
-        div {
+        section {
             class: "flex flex-col gap-4",
+            aria_labelledby: "news",
             h2 {
+                id: "news",
                 class: "text-3xl",
                 {i18n.news().title().to_string()}
             }
@@ -608,6 +610,7 @@ fn Article(
         article {
             class: format!("flex flex-row flex-wrap gap-8 {}", if has_images { "cursor-pointer" } else { "" }),
             tabindex: if has_images { 0 } else { -1 },
+            aria_labelledby: date,
             onclick: move |_| {
                 if !has_images {
                     return;
@@ -618,12 +621,17 @@ fn Article(
             img {
                 class: "max-h-[20rem] w-[18rem] mx-auto rounded-lg",
                 src: thumbnail,
+                aria_hidden: true,
+                alt: "Article thumbnail",
+                width: "288",
+                height: "320"
             }
             div {
                 class: "flex flex-col flex-1 gap-4",
                 div {
                     class: "flex flex-col",
                     h3 {
+                        id: date,
                         class: "text-2xl",
                         {title}
                     }

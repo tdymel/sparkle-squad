@@ -9,6 +9,24 @@ impl Default for I18n {
     }
 }
 
+impl I18n {
+    fn suffix(self) -> &'static str {
+        match self {
+            I18n::EN => "en",
+            I18n::RU => "ru",
+            I18n::DE => "de",
+        }
+    }
+
+    fn from_suffix(value: &str) -> Self {
+        match value {
+            "ru" => I18n::RU,
+            "en" => I18n::EN,
+            _ => I18n::DE,
+        }
+    }
+}
+
 const LOGO: Asset = asset!("/assets/logo_black.svg");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
@@ -21,6 +39,7 @@ mod news;
 pub use about_us::AboutUs;
 pub use header::Header;
 pub use news::News;
+use web_sys::wasm_bindgen::JsCast;
 
 fn main() {
     dioxus::launch(App);
@@ -64,6 +83,18 @@ enum Route {
 #[component]
 fn Index(i18n: I18n) -> Element {
     use_context_provider(|| i18n);
+
+    let html_element = web_sys::window()
+        .expect("Window not found")
+        .document()
+        .expect("Document not found")
+        .document_element()
+        .expect("Document element not found")
+        .dyn_into::<web_sys::HtmlElement>()
+        .expect("Failed to cast to HtmlElement");
+
+    html_element.set_attribute("lang", i18n.suffix()).unwrap();
+
     rsx! {
         document::Title { {i18n.app().title().to_string()} }
 
@@ -104,7 +135,7 @@ fn Index(i18n: I18n) -> Element {
             }
         }
 
-        div {
+        main {
             class: "flex flex-col max-w-5xl mx-auto gap-8",
             Header {}
             AboutUs {}
