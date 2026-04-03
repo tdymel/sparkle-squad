@@ -63,25 +63,8 @@ i18n!(
 
 #[component]
 fn App() -> Element {
-    rsx! {
-        Router::<Route> { }
-    }
-}
+    let i18n = current_lang().unwrap_or(I18n::DE);
 
-#[derive(Routable, Clone, PartialEq)]
-enum Route {
-    #[route("/")]
-    Index { i18n: I18n },
-    #[route("/de")]
-    IndexDe {},
-    #[route("/en")]
-    IndexEn {},
-    #[route("/ru")]
-    IndexRu {},
-}
-
-#[component]
-fn Index(i18n: I18n) -> Element {
     use_context_provider(|| i18n);
 
     let html_element = web_sys::window()
@@ -144,29 +127,10 @@ fn Index(i18n: I18n) -> Element {
     }
 }
 
-#[component]
-fn IndexDe() -> Element {
-    rsx! {
-        Index {
-            i18n: I18n::DE
-        }
-    }
-}
-
-#[component]
-fn IndexEn() -> Element {
-    rsx! {
-        Index {
-            i18n: I18n::EN
-        }
-    }
-}
-
-#[component]
-fn IndexRu() -> Element {
-    rsx! {
-        Index {
-            i18n: I18n::RU
-        }
-    }
+fn current_lang() -> Option<I18n> {
+    let window = web_sys::window()?;
+    let location = window.location();
+    let search = location.search().ok()?;
+    let params = web_sys::UrlSearchParams::new_with_str(&search).ok()?;
+    params.get("lang").map(|it| I18n::from_suffix(&it))
 }

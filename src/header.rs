@@ -116,19 +116,21 @@ i18n!(
 
 #[component]
 pub fn LanguageSwitch(i18n: I18n) -> Element {
-    let nav = navigator();
-
     rsx! {
         select {
             class: "select border-0 outline-none focus:outline-none focus:ring-0 shadow-none max-w-[7rem] ml-auto",
             value: i18n.suffix(),
             aria_label: *i18n.language_switch().switch_label(),
             onchange: move |evt| {
-                match I18n::from_suffix(&evt.value()) {
-                    I18n::DE => nav.push(crate::Route::Index { i18n: I18n::DE }),
-                    I18n::EN => nav.push(crate::Route::IndexEn {  }),
-                    I18n::RU => nav.push(crate::Route::IndexRu {  }),
-                };
+                let url = web_sys::Url::new(&web_sys::window()
+                    .unwrap()
+                    .location()
+                    .href()
+                    .unwrap())
+                    .unwrap();
+
+                url.search_params().set("lang", &evt.value());
+                web_sys::window().unwrap().location().set_href(&url.href()).unwrap();
             },
 
             option { value: "de", {I18n::DE.language_switch().label().to_string()} }
