@@ -53,8 +53,7 @@ i18n!(
 );
 
 #[component]
-pub fn AboutUs() -> Element {
-    let i18n = consume_context::<I18n>();
+pub fn AboutUs(i18n: I18n) -> Element {
     rsx! {
          section {
             class: "flex flex-col gap-4",

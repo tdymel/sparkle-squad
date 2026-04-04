@@ -61,11 +61,22 @@ i18n!(
     }
 );
 
+#[derive(Routable, Clone, PartialEq)]
+enum Route {
+    #[route("/?:lang")]
+    Index { lang: String },
+}
+
 #[component]
 fn App() -> Element {
-    let i18n = current_lang().unwrap_or(I18n::DE);
+    rsx! {
+        Router::<Route> {}
+    }
+}
 
-    use_context_provider(|| i18n);
+#[component]
+fn Index(lang: String) -> Element {
+    let i18n = I18n::from_suffix(&lang);
 
     let html_element = web_sys::window()
         .expect("Window not found")
@@ -120,17 +131,9 @@ fn App() -> Element {
 
         main {
             class: "flex flex-col max-w-5xl mx-auto gap-8",
-            Header {}
-            AboutUs {}
-            News {}
+            Header { i18n }
+            AboutUs { i18n }
+            News { i18n }
         }
     }
-}
-
-fn current_lang() -> Option<I18n> {
-    let window = web_sys::window()?;
-    let location = window.location();
-    let search = location.search().ok()?;
-    let params = web_sys::UrlSearchParams::new_with_str(&search).ok()?;
-    params.get("lang").map(|it| I18n::from_suffix(&it))
 }

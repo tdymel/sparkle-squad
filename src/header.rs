@@ -1,7 +1,7 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 
-use crate::I18n;
+use crate::{I18n, Route};
 
 const LOGO: Asset = asset!("/assets/logo_black.svg");
 
@@ -34,9 +34,7 @@ i18n!(
 );
 
 #[component]
-pub fn Header() -> Element {
-    let i18n = consume_context::<I18n>();
-
+pub fn Header(i18n: I18n) -> Element {
     rsx! {
         section {
             class: "flex flex-col gap-8",
@@ -116,21 +114,17 @@ i18n!(
 
 #[component]
 pub fn LanguageSwitch(i18n: I18n) -> Element {
+    let nav = use_navigator();
+
     rsx! {
         select {
             class: "select border-0 outline-none focus:outline-none focus:ring-0 shadow-none max-w-[7rem] ml-auto",
             value: i18n.suffix(),
             aria_label: *i18n.language_switch().switch_label(),
             onchange: move |evt| {
-                let url = web_sys::Url::new(&web_sys::window()
-                    .unwrap()
-                    .location()
-                    .href()
-                    .unwrap())
-                    .unwrap();
-
-                url.search_params().set("lang", &evt.value());
-                web_sys::window().unwrap().location().set_href(&url.href()).unwrap();
+                nav.push(Route::Index {
+                    lang: evt.value()
+                });
             },
 
             option { value: "de", {I18n::DE.language_switch().label().to_string()} }

@@ -565,8 +565,7 @@ i18n!(
 );
 
 #[component]
-pub fn News() -> Element {
-    let i18n = consume_context::<I18n>();
+pub fn News(i18n: I18n) -> Element {
     let articles = i18n.news().articles().value();
     rsx! {
         section {
