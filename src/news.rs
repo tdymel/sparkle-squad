@@ -143,8 +143,28 @@ const A3_2026_4: Asset = asset!(
             height: 296
         })
 );
+const SCVM_SRPING_TOURNAMENT: Asset = asset!(
+    "/assets/news/2026_03_29_SCVM.jpg",
+    AssetOptions::image()
+        .with_avif()
+        .with_size(ImageSize::Manual {
+            width: 288,
+            height: 320
+        })
+);
+const A3_B1_VICTORY: Asset = asset!(
+    "/assets/news/2026_04_12_b1_victory1.png",
+    AssetOptions::image()
+        .with_avif()
+        .with_size(ImageSize::Manual {
+            width: 288,
+            height: 171
+        })
+);
 
-const THUMBNAILS: [Asset; 16] = [
+const THUMBNAILS: [Asset; 18] = [
+    A3_B1_VICTORY,
+    SCVM_SRPING_TOURNAMENT,
     A3_2026_4,
     B1_2026_4,
     A3_2026_3,
@@ -254,6 +274,28 @@ static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new(|| 
         ],
     );
 
+    map.insert(
+        "2026-04-12",
+        vec![
+            asset!(
+                "/assets/news/2026_04_12_b1_victory1.png",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/2026_04_12_b1_victory2.jpg",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/2026_04_12_b1_victory3.jpg",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/2026_03_22_a3_victory.png",
+                AssetOptions::image().with_avif()
+            ),
+        ],
+    );
+
     map
 });
 
@@ -262,6 +304,18 @@ i18n!(
     DE: {
         title: "Funkelnde Neuigkeiten",
         articles: [
+            {
+                title: "Doppelsieg in der A3 und B1 Mixed-Runde",
+                date: "2026-04-12",
+                date_label: "12. April 2026",
+                description: "Wir haben beide Mixed-Runde-Ligen gewonnen! Sowohl in A3, als auch in B1 konnten wir uns gegen die anderen Teams durchsetzen. Damit haben wir ein erstaunliches Ergebnis für die 1. Season unseres Teams erzielt."
+            },
+            {
+                title: "1. Platz beim SCVM Frühlingsturnier",
+                date: "2026-03-29",
+                date_label: "29. März 2026",
+                description: "Diesmal waren wir zum SCVM Frühlingsturnier eingeladen. Das Turnier war bestens organisiert und es gab reichlich Kuchen. Das besondere an diesem Turnier war, dass das Niveau auf Bezirksliga für Herren begrenzt war. Trotzdem waren neben uns noch 2 weitere sehr gute Mannschaften dabei, gegen die wir uns am Ende knapp durchsetzen konnten."
+            },
             {
                 title: "4 Punkte beim 4. HVBV A3 Mixed-Runde Spieltag",
                 date: "2026-02-15",
@@ -364,6 +418,18 @@ i18n!(
         title: "Sparkling News",
         articles: [
             {
+                title: "Double victory in the A3 and B1 mixed rounds",
+                date: "2026-04-12",
+                date_label: "April 12, 2026",
+                description: "We won both mixed round leagues! In both A3 and B1, we managed to come out on top against the other teams. This means we achieved an amazing result in our team's first season."
+            },
+            {
+                title: "1st place at the SCVM Spring Tournament",
+                date: "2026-03-29",
+                date_label: "March 29, 2026",
+                description: "This time we were invited to the SCVM Spring Tournament. The tournament was very well organized and there was plenty of cake. The special thing about this tournament was that the level for men's teams was limited to Bezirksliga. Even so, there were two other very strong teams besides us, and in the end we managed to edge past them."
+            },
+            {
                 title: "4 points on the 4th HVBV A3 Mixed League match day",
                 date: "2026-02-15",
                 date_label: "February 15, 2026",
@@ -464,6 +530,18 @@ i18n!(
     RU: {
         title: "Сияющие новости",
         articles: [
+            {
+                title: "Двойная победа в смешанных лигах A3 и B1",
+                date: "2026-04-12",
+                date_label: "12 апреля 2026",
+                description: "Мы выиграли обе смешанные лиги! И в A3, и в B1 нам удалось обойти другие команды. Таким образом, в первом сезоне нашей команды мы добились потрясающего результата."
+            },
+            {
+                title: "1-е место на весеннем турнире SCVM",
+                date: "2026-03-29",
+                date_label: "29 марта 2026",
+                description: "На этот раз нас пригласили на весенний турнир SCVM. Турнир был отлично организован, и сладостей было в избытке. Особенностью этого турнира было то, что уровень мужских команд был ограничен Bezirksliga. Несмотря на это, помимо нас участвовали ещё две очень сильные команды, которых нам в итоге удалось с небольшим преимуществом обойти."
+            },
             {
                 title: "4 очка в 4-м игровом дне HVBV A3 Mixed-Runde",
                 date: "2026-02-15",
