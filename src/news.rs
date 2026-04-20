@@ -161,8 +161,18 @@ const A3_B1_VICTORY: Asset = asset!(
             height: 171
         })
 );
+const HP_2026_1: Asset = asset!(
+    "/assets/news/2026_04_19_hp_1.jpg",
+    AssetOptions::image()
+        .with_avif()
+        .with_size(ImageSize::Manual {
+            width: 288,
+            height: 216
+        })
+);
 
-const THUMBNAILS: [Asset; 18] = [
+const THUMBNAILS: [Asset; 19] = [
+    HP_2026_1,
     A3_B1_VICTORY,
     SCVM_SRPING_TOURNAMENT,
     A3_2026_4,
@@ -305,6 +315,12 @@ i18n!(
         title: "Funkelnde Neuigkeiten",
         articles: [
             {
+                title: "Erfolgreich in die erste Runde des Hanse-Pokals gestartet",
+                date: "2026-04-19",
+                date_label: "19. April 2026",
+                description: "Diesen Sonntag hat die erste Runde des HVBV Hanse-Pokals gestartet. Gespielt haben wir insgesamt 3 Spiele. Das erste Spiel gegen WSV (2:0 gewonnen). Das zweite Spiel gegen Duvenstedt (2:0 gewonnen) und das dritte Spiel nochmal gegen WSV (2:0 gewonnen), die sich in ihrem zweiten Spiel ganz kanpp gegen NetzFetz durchsetzen konnten."
+            },
+            {
                 title: "Doppelsieg in der A3 und B1 Mixed-Runde",
                 date: "2026-04-12",
                 date_label: "12. April 2026",
@@ -418,6 +434,12 @@ i18n!(
         title: "Sparkling News",
         articles: [
             {
+                title: "Successful start to the first round of the Hanse Cup",
+                date: "2026-04-19",
+                date_label: "April 19, 2026",
+                description: "This Sunday, the first round of the HVBV Hanse Cup began. We played a total of 3 matches. The first match was against WSV (won 2:0). The second match was against Duvenstedt (won 2:0), and the third match was again against WSV (won 2:0), who narrowly managed to beat NetzFetz in their second match."
+            },
+            {
                 title: "Double victory in the A3 and B1 mixed rounds",
                 date: "2026-04-12",
                 date_label: "April 12, 2026",
@@ -530,6 +552,12 @@ i18n!(
     RU: {
         title: "Сияющие новости",
         articles: [
+            {
+                title: "Успешный старт в первом раунде Hanse-Pokal",
+                date: "2026-04-19",
+                date_label: "19 апреля 2026",
+                description: "В это воскресенье стартовал первый раунд HVBV Hanse-Pokal. Всего мы сыграли 3 матча. Первый матч против WSV (победа 2:0). Второй матч против Duvenstedt (победа 2:0), а третий матч снова против WSV (победа 2:0), которые в своей второй игре смогли с большим трудом обыграть NetzFetz."
+            },
             {
                 title: "Двойная победа в смешанных лигах A3 и B1",
                 date: "2026-04-12",
