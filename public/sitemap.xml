@@ -3,24 +3,24 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://example.com/</loc>
-        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/?lang=en" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/?lang=ru" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/" />
+        <loc>https://sparkle-squad.de/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://sparkle-squad.de/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sparkle-squad.de/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sparkle-squad.de/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkle-squad.de/" />
     </url>
     <url>
-        <loc>https://example.com/?lang=en</loc>
-        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/?lang=en" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/?lang=ru" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/" />
+        <loc>https://sparkle-squad.de/?lang=en</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://sparkle-squad.de/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sparkle-squad.de/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sparkle-squad.de/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkle-squad.de/" />
     </url>
     <url>
-        <loc>https://example.com/?lang=ru</loc>
-        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/?lang=en" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/?lang=ru" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/" />
+        <loc>https://sparkle-squad.de/?lang=ru</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://sparkle-squad.de/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sparkle-squad.de/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sparkle-squad.de/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkle-squad.de/" />
     </url>
 </urlset>
