@@ -170,8 +170,18 @@ const HP_2026_1: Asset = asset!(
             height: 216
         })
 );
+const WAKENITZ_2026: Asset = asset!(
+    "/assets/news/wakenitz_2026/urkunde.jpeg",
+    AssetOptions::image()
+        .with_avif()
+        .with_size(ImageSize::Manual {
+            width: 288,
+            height: 320
+        })
+);
 
-const THUMBNAILS: [Asset; 19] = [
+const THUMBNAILS: [Asset; 20] = [
+    WAKENITZ_2026,
     HP_2026_1,
     A3_B1_VICTORY,
     SCVM_SRPING_TOURNAMENT,
@@ -306,6 +316,36 @@ static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new(|| 
         ],
     );
 
+    map.insert(
+        "2026-05-02",
+        vec![
+            asset!(
+                "/assets/news/wakenitz_2026/urkunde.jpeg",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/wakenitz_2026/1.JPG",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/wakenitz_2026/2.JPG",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/wakenitz_2026/3.JPG",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/wakenitz_2026/4.JPG",
+                AssetOptions::image().with_avif()
+            ),
+            asset!(
+                "/assets/news/wakenitz_2026/5.JPG",
+                AssetOptions::image().with_avif()
+            ),
+        ],
+    );
+
     map
 });
 
@@ -314,6 +354,12 @@ i18n!(
     DE: {
         title: "Funkelnde Neuigkeiten",
         articles: [
+            {
+                title: "Erfahrung gewonnen beim Wakenitz Pokal 2026",
+                date: "2026-05-02",
+                date_label: "02. Mai 2026",
+                description: "Auch dieses Jahr waren wir beim Wakenitz Pokal 2026 in Lübeck. Dieses Turnier hatte äußerst starke Teams von der Regionalliga bis zur Bezirksliga. In der Gruppenphase trafen wir auf die späteren Erst- bis Viertplatzierten des Turniers und sind deshalb schon früh ins untere Bracket abgestiegen. Nichtsdestotrotz haben wir alle sehr gut gespielt und freuen uns auf das nächste Jahr!"
+            },
             {
                 title: "Erfolgreich in die erste Runde des Hanse-Pokals gestartet",
                 date: "2026-04-19",
@@ -434,6 +480,12 @@ i18n!(
         title: "Sparkling News",
         articles: [
             {
+                title: "Gained valuable experience at the Wakenitz Cup 2026",
+                date: "2026-05-02",
+                date_label: "May 02, 2026",
+                description: "This year, we once again took part in the Wakenitz Cup 2026 in Lübeck. The tournament featured extremely strong teams ranging from Regionalliga to Bezirksliga. In the group stage, we faced the teams that eventually finished 1st through 4th in the tournament, which meant we dropped into the lower bracket early. Nevertheless, we all played very well and are already looking forward to next year!"
+            },
+            {
                 title: "Successful start to the first round of the Hanse Cup",
                 date: "2026-04-19",
                 date_label: "April 19, 2026",
@@ -552,6 +604,12 @@ i18n!(
     RU: {
         title: "Сияющие новости",
         articles: [
+            {
+                title: "Ценный опыт на Wakenitz Pokal 2026",
+                date: "2026-05-02",
+                date_label: "02 мая 2026",
+                description: "В этом году мы снова приняли участие в Wakenitz Pokal 2026 в Любеке. На турнире выступали очень сильные команды — от Regionalliga до Bezirksliga. На групповом этапе нам достались команды, которые в итоге заняли с 1-го по 4-е места, поэтому мы довольно рано опустились в нижнюю сетку. Тем не менее, мы все сыграли очень хорошо и уже с нетерпением ждём следующего года!"
+            },
             {
                 title: "Успешный старт в первом раунде Hanse-Pokal",
                 date: "2026-04-19",
