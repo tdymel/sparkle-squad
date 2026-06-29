@@ -80,7 +80,7 @@ pub fn Header(i18n: I18n) -> Element {
                     class: "flex flex-row gap-4 flex-wrap",
                     a {
                         class: "btn btn-outline flex-1 min-w-[18rem]",
-                        href: "https://forms.gle/3CNuhfGuEmAFBc858",
+                        href: "https://forms.gle/migmPaXywrYJzXEx9",
                         target: "_blank",
                         {i18n.header().apply_for_tryout().to_string()}
                     }
