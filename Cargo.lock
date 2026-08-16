@@ -2898,7 +2898,9 @@ checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
 
 [[package]]
 name = "libero"
-version = "0.0.2"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6cd8cba925cf2c6e7768861e801248c3444851ab0ad2aa9fd86a2ec244ad22e8"
 dependencies = [
  "dioxus",
 ]
