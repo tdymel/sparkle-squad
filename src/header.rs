@@ -1,5 +1,9 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
+use libero::{
+    components::{Button, Flex, Image, Option, Select, Text, Title},
+    sx::sx,
+};
 
 use crate::{I18n, Route};
 
@@ -37,58 +41,65 @@ i18n!(
 pub fn Header(i18n: I18n) -> Element {
     rsx! {
         section {
-            class: "flex flex-col gap-8",
             aria_labelledby: "header_title",
-            div {
-                class: "flex flex-row items-center gap-8 flex-wrap",
-                img {
-                    class: "h-[10rem] w-auto mx-auto",
-                    src: LOGO,
-                    aria_hidden: true,
-                    alt: "Logo",
-                    width: "200",
-                    height: "160"
-                }
-                div {
-                    class: "flex flex-col flex-1",
-                    div {
-                        class: "flex flex-row",
-                        span {
-                            class: "text-xl py-1",
-                            {i18n.header().greeting().to_string()}
+            Flex {
+                direction: "column",
+                gap: "xl",
+                Flex {
+                    direction: "row",
+                    wrap: true,
+                    align: "center",
+                    gap: "xl",
+                    Image {
+                        src: LOGO,
+                        alt: "",
+                        sx: sx().width("auto").height("10rem").flex_shrink("0"),
+                    }
+                    Flex {
+                        direction: "column",
+                        gap: "xs",
+                        sx: sx().flex("1").min_width("18rem"),
+                        Flex {
+                            direction: "row",
+                            align: "center",
+                            gap: "sm",
+                            Text { span: true, "{i18n.header().greeting()}" }
+                            LanguageSwitch { i18n: i18n }
                         }
-                        LanguageSwitch { i18n: i18n }
-                    }
-                    h1 {
-                        id: "header_title",
-                        class: "text-5xl",
-                        {i18n.header().title().to_string()}
-                    }
-                    h2 {
-                        class: "text-3xl py-3",
-                        {i18n.header().subtitle().to_string()}
+                        Title {
+                            id: "header_title",
+                            variant: "h1",
+                            "{i18n.header().title()}"
+                        }
+                        Title {
+                            variant: "h2",
+                            size: "h1",
+                            "{i18n.header().subtitle()}"
+                        }
                     }
                 }
-            }
-            div {
-                class: "flex flex-col gap-4",
-                span {
-                    class: "text-lg",
-                    {i18n.header().pitch().to_string()}
-                }
-                div {
-                    class: "flex flex-row gap-4 flex-wrap",
-                    a {
-                        class: "btn btn-outline flex-1 min-w-[18rem]",
-                        href: "https://forms.gle/migmPaXywrYJzXEx9",
-                        target: "_blank",
-                        {i18n.header().apply_for_tryout().to_string()}
-                    }
-                    a {
-                        class: "btn flex-1 min-w-[18rem]",
-                        href: "https://www.instagram.com/sparklesquad_team",
-                        target: "_blank",
-                        {i18n.header().instagram().to_string()}
+                Flex {
+                    direction: "column",
+                    gap: "lg",
+                    Text { size: "lg", "{i18n.header().pitch()}" }
+                    Flex {
+                        direction: "row",
+                        wrap: true,
+                        gap: "md",
+                        Button {
+                            variant: "outlined",
+                            href: "https://forms.gle/migmPaXywrYJzXEx9",
+                            target: "_blank",
+                            sx: sx().flex("1").min_width("18rem"),
+                            "{i18n.header().apply_for_tryout()}"
+                        }
+                        Button {
+                            variant: "filled",
+                            href: "https://www.instagram.com/sparklesquad_team",
+                            target: "_blank",
+                            sx: sx().flex("1").min_width("18rem"),
+                            "{i18n.header().instagram()}"
+                        }
                     }
                 }
             }
@@ -117,19 +128,16 @@ pub fn LanguageSwitch(i18n: I18n) -> Element {
     let nav = use_navigator();
 
     rsx! {
-        select {
-            class: "select border-0 outline-none focus:outline-none focus:ring-0 shadow-none max-w-[7rem] ml-auto",
+        Select {
+            sx: sx().margin_left("auto"),
             value: i18n.suffix(),
             aria_label: *i18n.language_switch().switch_label(),
-            onchange: move |evt| {
-                nav.push(Route::Index {
-                    lang: evt.value()
-                });
+            onchange: move |value: String| {
+                nav.push(Route::Index { lang: value });
             },
-
-            option { value: "de", {I18n::DE.language_switch().label().to_string()} }
-            option { value: "en", {I18n::EN.language_switch().label().to_string()} }
-            option { value: "ru", {I18n::RU.language_switch().label().to_string()} }
+            Option { value: "de", {I18n::DE.language_switch().label().to_string()} }
+            Option { value: "en", {I18n::EN.language_switch().label().to_string()} }
+            Option { value: "ru", {I18n::RU.language_switch().label().to_string()} }
         }
     }
 }

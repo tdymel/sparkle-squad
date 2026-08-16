@@ -1,5 +1,9 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
+use libero::{
+    components::{Divider, Flex, List, ListItem, Text, Title},
+    sx::sx,
+};
 
 use crate::I18n;
 
@@ -55,29 +59,33 @@ i18n!(
 #[component]
 pub fn AboutUs(i18n: I18n) -> Element {
     rsx! {
-         section {
-            class: "flex flex-col gap-4",
+        section {
             aria_labelledby: "about_us",
-            h2 {
-                id: "about_us",
-                class: "text-3xl",
-                {i18n.about_us().title().to_string()}
-            }
-            dl {
-                class: "flex flex-col",
-                description_item {
-                    label: i18n.about_us().team().label(),
-                    description: i18n.about_us().team().description()
+            Flex {
+                direction: "column",
+                gap: "lg",
+                Title {
+                    id: "about_us",
+                    variant: "h2",
+                    size: "h1",
+                    "{i18n.about_us().title()}"
                 }
-                div { class: "divider" }
-                description_item {
-                    label: i18n.about_us().training().label(),
-                    description: i18n.about_us().training().description()
-                }
-                div { class: "divider" }
-                description_item {
-                    label: i18n.about_us().tournaments().label(),
-                    description: i18n.about_us().tournaments().description()
+                List {
+                    sx: sx().gap("lg"),
+                    DescriptionItem {
+                        label: i18n.about_us().team().label(),
+                        description: i18n.about_us().team().description()
+                    }
+                    Divider {}
+                    DescriptionItem {
+                        label: i18n.about_us().training().label(),
+                        description: i18n.about_us().training().description()
+                    }
+                    Divider {}
+                    DescriptionItem {
+                        label: i18n.about_us().tournaments().label(),
+                        description: i18n.about_us().tournaments().description()
+                    }
                 }
             }
         }
@@ -85,23 +93,15 @@ pub fn AboutUs(i18n: I18n) -> Element {
 }
 
 #[component]
-fn description_item(label: &'static str, description: &'static str) -> Element {
+fn DescriptionItem(label: &'static str, description: &'static str) -> Element {
     rsx! {
-        div {
-            div {
-                class: "flex flex-col gap-2",
-                aria_hidden: true,
-                h3 {
-                    class: "text-2xl",
-                    {label}
-                }
-                span {
-                    class: "text-lg",
-                    {description}
-                }
+        ListItem {
+            Flex {
+                direction: "column",
+                gap: "sm",
+                Title { variant: "h3", size: "h2", {label} }
+                Text { size: "lg", {description} }
             }
-            dt { class: "sr-only", {label}}
-            dd { class: "sr-only", {description}}
         }
     }
 }

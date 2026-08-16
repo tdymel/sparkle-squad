@@ -1,353 +1,16 @@
-use std::collections::HashMap;
-use std::sync::LazyLock;
-
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
+use libero::{
+    components::{Box, Divider, Flex, Image, List, ListItem, Text, Title},
+    sx::sx,
+    theme::Size,
+};
 
-use crate::components::dialog::*;
 use crate::I18n;
 
-const LOGO: Asset = asset!("/assets/logo_black.svg");
-const COURT: Asset = asset!(
-    "/assets/news/court.png",
-    ImageAssetOptions::new()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 160
-        })
-);
-const SPIELTAG_25_04_27: Asset = asset!(
-    "/assets/news/spieltag_25_04_27.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 201
-        })
-);
-const STELLE_2025: Asset = asset!(
-    "/assets/news/2025_stelle_tournament.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 225
-        })
-);
-const LUETJENSEE_2025: Asset = asset!(
-    "/assets/news/2025_luetjensee.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 256
-        })
-);
-const WAKENITZ_2025: Asset = asset!(
-    "/assets/news/wakenitz_2025.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 251
-        })
-);
-const HANSE_POKAL_2025: Asset = asset!(
-    "/assets/news/2025_06_Hansa_Pokal.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
-        })
-);
-const EUTIN_2025: Asset = asset!(
-    "/assets/news/2025_10_eutin.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
-        })
-);
-const HALLOWEEN_2025: Asset = asset!(
-    "/assets/news/2025_11_01_spooky.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 243
-        })
-);
-const A3_2025_1: Asset = asset!(
-    "/assets/news/2025_11_16_a3_spieltag.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
-        })
-);
-const A3_2025_2: Asset = asset!(
-    "/assets/news/2025_11_30_a3_2_spieltag.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 210
-        })
-);
-const B1_2025_2: Asset = asset!(
-    "/assets/news/2025_12_07_b1_spieltag.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
-        })
-);
-const B1_2026_3: Asset = asset!(
-    "/assets/news/2026_01_18_b1_spieltag.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 230
-        })
-);
-const A3_2026_3: Asset = asset!(
-    "/assets/news/2026_01_25_a3_spieltag.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
-        })
-);
-const B1_2026_4: Asset = asset!(
-    "/assets/news/2026_02_01_b1_spieltag.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 237
-        })
-);
-const A3_2026_4: Asset = asset!(
-    "/assets/news/2026_02_15_a3_spieltag.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 296
-        })
-);
-const SCVM_SRPING_TOURNAMENT: Asset = asset!(
-    "/assets/news/2026_03_29_SCVM.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
-        })
-);
-const A3_B1_VICTORY: Asset = asset!(
-    "/assets/news/2026_04_12_b1_victory1.png",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 171
-        })
-);
-const HP_2026_1: Asset = asset!(
-    "/assets/news/2026_04_19_hp_1.jpg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
-        })
-);
-const WAKENITZ_2026: Asset = asset!(
-    "/assets/news/wakenitz_2026/urkunde.jpeg",
-    AssetOptions::image()
-        .with_avif()
-        .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
-        })
-);
+mod assets;
 
-const THUMBNAILS: [Asset; 20] = [
-    WAKENITZ_2026,
-    HP_2026_1,
-    A3_B1_VICTORY,
-    SCVM_SRPING_TOURNAMENT,
-    A3_2026_4,
-    B1_2026_4,
-    A3_2026_3,
-    B1_2026_3,
-    B1_2025_2,
-    A3_2025_2,
-    A3_2025_1,
-    HALLOWEEN_2025,
-    EUTIN_2025,
-    HANSE_POKAL_2025,
-    WAKENITZ_2025,
-    LUETJENSEE_2025,
-    STELLE_2025,
-    SPIELTAG_25_04_27,
-    COURT,
-    LOGO,
-];
-
-static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new(|| {
-    let mut map = HashMap::new();
-
-    map.insert(
-        "2025-05-24",
-        vec![
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee_2.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee_3.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee_4.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee_5.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee_6.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/luetjensee_2025/2025_luetjensee_pokal.png",
-                AssetOptions::image().with_avif()
-            ),
-        ],
-    );
-
-    map.insert(
-        "2025-06-01",
-        vec![
-            asset!(
-                "/assets/news/wakenitz_2025/team_bild.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/urkunde.jpg",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0252.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0540.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0541.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0542.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0575.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0591.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0632.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0641.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0904.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2025/IMG_0924.JPG",
-                AssetOptions::image().with_avif()
-            ),
-        ],
-    );
-
-    map.insert(
-        "2026-04-12",
-        vec![
-            asset!(
-                "/assets/news/2026_04_12_b1_victory1.png",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/2026_04_12_b1_victory2.jpg",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/2026_04_12_b1_victory3.jpg",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/2026_03_22_a3_victory.png",
-                AssetOptions::image().with_avif()
-            ),
-        ],
-    );
-
-    map.insert(
-        "2026-05-02",
-        vec![
-            asset!(
-                "/assets/news/wakenitz_2026/urkunde.jpeg",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2026/1.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2026/2.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2026/3.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2026/4.JPG",
-                AssetOptions::image().with_avif()
-            ),
-            asset!(
-                "/assets/news/wakenitz_2026/5.JPG",
-                AssetOptions::image().with_avif()
-            ),
-        ],
-    );
-
-    map
-});
+use assets::{SLIDESHOW_IMAGES, THUMBNAILS, THUMBNAILS_FULL};
 
 i18n!(
     news,
@@ -733,23 +396,26 @@ pub fn News(i18n: I18n) -> Element {
     let articles = i18n.news().articles().value();
     rsx! {
         section {
-            class: "flex flex-col gap-4",
             aria_labelledby: "news",
-            h2 {
-                id: "news",
-                class: "text-3xl",
-                {i18n.news().title().to_string()}
-            }
-            for (i, article) in articles.iter().enumerate() {
-                Article {
-                    thumbnail: THUMBNAILS[i],
-                    title: article.title(),
-                    date: article.date(),
-                    date_label: article.date_label(),
-                    description: article.description()
-                }
-                if i < articles.len() - 1 {
-                    div { class: "divider" }
+            Flex {
+                direction: "column",
+                gap: "lg",
+                Title { id: "news", variant: "h2", size: "h1", "{i18n.news().title()}" }
+                List {
+                    sx: sx().gap("lg"),
+                    for (i , article) in articles.iter().enumerate() {
+                        Article {
+                            thumbnail: THUMBNAILS[i],
+                            thumbnail_full: THUMBNAILS_FULL[i],
+                            title: article.title(),
+                            date: article.date(),
+                            date_label: article.date_label(),
+                            description: article.description()
+                        }
+                        if i < articles.len() - 1 {
+                            Divider {}
+                        }
+                    }
                 }
             }
         }
@@ -759,111 +425,70 @@ pub fn News(i18n: I18n) -> Element {
 #[component]
 fn Article(
     thumbnail: Asset,
+    thumbnail_full: Asset,
     title: &'static str,
     date: &'static str,
     date_label: &'static str,
     description: &'static str,
 ) -> Element {
-    let mut dialog_open = use_signal(|| false);
-    let mut current_index = use_signal(|| 0usize);
-    let amount_images = SLIDESHOW_IMAGES.get(date).map(|it| it.len()).unwrap_or(0);
-    let has_images = SLIDESHOW_IMAGES.contains_key(date);
+    let gallery = SLIDESHOW_IMAGES.get(date);
 
     rsx! {
-        article {
-            class: format!("flex flex-row flex-wrap gap-8 {}", if has_images { "cursor-pointer" } else { "" }),
-            tabindex: if has_images { 0 } else { -1 },
+        ListItem {
             aria_labelledby: date,
-            onclick: move |_| {
-                if !has_images {
-                    return;
-                }
-
-                dialog_open.set(true);
-            },
-            img {
-                class: "max-h-[20rem] w-[18rem] mx-auto rounded-lg",
-                src: thumbnail,
-                aria_hidden: true,
-                alt: "Article thumbnail",
-                width: "288",
-                height: "320"
-            }
-            div {
-                class: "flex flex-col flex-1 gap-4",
-                div {
-                    class: "flex flex-col",
-                    h3 {
-                        id: date,
-                        class: "text-2xl",
-                        {title}
-                    }
-                    time {
-                        datetime: date,
-                        {date_label}
+            Flex {
+                sx: sx()
+                    .width("100%")
+                    .flex_direction("column")
+                    .align_items("stretch")
+                    .gap("md")
+                    .breakpoint(Size::Sm, sx().flex_direction("row").align_items("flex-start")),
+                Box {
+                    sx: sx()
+                        .width("100%")
+                        .max_width("26rem")
+                        .align_self("center")
+                        .flex_shrink("0")
+                        .breakpoint(Size::Sm, sx().width("18rem").align_self("flex-start")),
+                    Image {
+                        src: thumbnail,
+                        zoomed_src: thumbnail_full,
+                        radius: "sm",
+                        alt: title,
+                        zoomable: true,
+                        sx: sx().height("auto"),
                     }
                 }
-                span {
-                    class: "text-lg",
-                    {description}
-                }
-            }
-        }
-        if has_images {
-            DialogRoot {
-                open: dialog_open(),
-                on_open_change: move |change| {
-                    dialog_open.set(change);
-                },
-                div {
-                    class: "w-full h-full flex flex-col items-center justify-center",
-                    img {
-                        class: "max-h-2/3 max-w-full",
-                        src: *SLIDESHOW_IMAGES.get(date).unwrap().get(current_index()).unwrap()
-                    }
-                    div { class: "flex items-center justify-between w-full absolute px-4",
-                        button {
-                            class: "btn btn-circle btn-lg",
-                            onclick: move |event| {
-                                event.stop_propagation();
-                                current_index.set(if current_index() > 1 { current_index() - 1 } else { 0 });
-                            },
-                            aria_label: "Previous image",
-                            svg {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                class: "h-5 w-5",
-                                fill: "none",
-                                view_box: "0 0 24 24",
-                                stroke: "currentColor",
-                                stroke_width: "2",
-                                path {
-                                    stroke_linecap: "round",
-                                    stroke_linejoin: "round",
-                                    d: "M15 19l-7-7 7-7"
-                                }
-                            }
+                Flex {
+                    direction: "column",
+                    gap: "lg",
+                    sx: sx().flex("1").min_width("0"),
+                    Flex {
+                        direction: "column",
+                        gap: "xs",
+                        Title { id: date, variant: "h3", size: "h2", {title} }
+                        Text {
+                            size: "md",
+                            span: true,
+                            time { datetime: date, {date_label} }
                         }
-
-                        button {
-                            class: "btn btn-circle btn-lg",
-                            onclick: move |event| {
-                                event.stop_propagation();
-                                if amount_images > current_index() + 1 {
-                                    current_index.set(current_index() + 1);
-                                }
-                            },
-                            aria_label: "Next image",
-                            svg {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                class: "h-5 w-5",
-                                fill: "none",
-                                view_box: "0 0 24 24",
-                                stroke: "currentColor",
-                                stroke_width: "2",
-                                path {
-                                    stroke_linecap: "round",
-                                    stroke_linejoin: "round",
-                                    d: "M9 5l7 7-7 7"
+                    }
+                    Text { size: "lg", {description} }
+                    if let Some(images) = gallery.filter(|images| images.len() > 1) {
+                        Flex {
+                            direction: "row",
+                            wrap: true,
+                            gap: "sm",
+                            for image in images.iter().skip(1) {
+                                Box {
+                                    sx: sx().width("96px").height("96px").flex_shrink("0"),
+                                    Image {
+                                        src: *image,
+                                        fit: "cover",
+                                        radius: "sm",
+                                        alt: title,
+                                        zoomable: true,
+                                    }
                                 }
                             }
                         }
