@@ -49,6 +49,7 @@ pub fn Header(i18n: I18n) -> Element {
                     direction: "row",
                     wrap: true,
                     align: "center",
+                    justify: "center",
                     gap: "xl",
                     Image {
                         src: LOGO,

@@ -235,21 +235,27 @@ const A3_2026_4_FULL: Asset = asset!(
     AssetOptions::image().with_avif()
 );
 const SCVM_SRPING_TOURNAMENT_FULL: Asset = asset!(
-    "/assets/news/2026_03_29_SCVM.jpg",
-    AssetOptions::image().with_avif()
-);
+            "/assets/news/2026_03_29_SCVM.jpg",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1446, height: 1920 })
+        );
 const A3_B1_VICTORY_FULL: Asset = asset!(
     "/assets/news/2026_04_12_b1_victory1.png",
     AssetOptions::image().with_avif()
 );
 const HP_2026_1_FULL: Asset = asset!(
-    "/assets/news/2026_04_19_hp_1.jpg",
-    AssetOptions::image().with_avif()
-);
+            "/assets/news/2026_04_19_hp_1.jpg",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1920, height: 1440 })
+        );
 const WAKENITZ_2026_FULL: Asset = asset!(
-    "/assets/news/wakenitz_2026/urkunde.jpeg",
-    AssetOptions::image().with_avif()
-);
+            "/assets/news/wakenitz_2026/urkunde.jpeg",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1446, height: 1920 })
+        );
 
 pub const THUMBNAILS: [Asset; 20] = [
     WAKENITZ_2026,
@@ -414,29 +420,41 @@ pub static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new
         "2026-05-02",
         vec![
             asset!(
-                "/assets/news/wakenitz_2026/urkunde.jpeg",
-                AssetOptions::image().with_avif()
-            ),
+            "/assets/news/wakenitz_2026/urkunde.jpeg",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1446, height: 1920 })
+        ),
             asset!(
-                "/assets/news/wakenitz_2026/1.JPG",
-                AssetOptions::image().with_avif()
-            ),
+            "/assets/news/wakenitz_2026/1.JPG",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
+        ),
             asset!(
-                "/assets/news/wakenitz_2026/2.JPG",
-                AssetOptions::image().with_avif()
-            ),
+            "/assets/news/wakenitz_2026/2.JPG",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
+        ),
             asset!(
-                "/assets/news/wakenitz_2026/3.JPG",
-                AssetOptions::image().with_avif()
-            ),
+            "/assets/news/wakenitz_2026/3.JPG",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
+        ),
             asset!(
-                "/assets/news/wakenitz_2026/4.JPG",
-                AssetOptions::image().with_avif()
-            ),
+            "/assets/news/wakenitz_2026/4.JPG",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
+        ),
             asset!(
-                "/assets/news/wakenitz_2026/5.JPG",
-                AssetOptions::image().with_avif()
-            ),
+            "/assets/news/wakenitz_2026/5.JPG",
+            AssetOptions::image()
+                .with_avif()
+                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
+        ),
         ],
     );
 
