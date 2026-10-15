@@ -1,7 +1,7 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Button, Flex, Image, Option, Select, Text, Title},
+    components::{Box, Button, Flex, Select, Text, ThemeSwitcher, Title},
     sx::sx,
 };
 
@@ -51,10 +51,16 @@ pub fn Header(i18n: I18n) -> Element {
                     align: "center",
                     justify: "center",
                     gap: "xl",
-                    Image {
-                        src: LOGO,
-                        alt: "",
-                        sx: sx().width("auto").height("10rem").flex_shrink("0"),
+                    // The logo is a mask over the ink colour rather than an
+                    // `<img>`, so the black artwork turns light in dark mode.
+                    Box {
+                        aria_hidden: "true",
+                        sx: sx()
+                            .height("10rem")
+                            .aspect_ratio("2560 / 1812")
+                            .flex_shrink("0")
+                            .background_color("var(--lsx-ink)")
+                            .mask(format!("url({LOGO}) center / contain no-repeat")),
                     }
                     Flex {
                         direction: "column",
@@ -64,17 +70,16 @@ pub fn Header(i18n: I18n) -> Element {
                             direction: "row",
                             align: "center",
                             gap: "sm",
-                            Text { span: true, "{i18n.header().greeting()}" }
+                            Text { component: "span", "{i18n.header().greeting()}" }
                             LanguageSwitch { i18n: i18n }
+                            ThemeSwitcher {}
                         }
                         Title {
                             id: "header_title",
-                            variant: "h1",
                             "{i18n.header().title()}"
                         }
                         Title {
-                            variant: "h2",
-                            size: "h1",
+                            component: "h2",
                             "{i18n.header().subtitle()}"
                         }
                     }
@@ -89,15 +94,17 @@ pub fn Header(i18n: I18n) -> Element {
                         gap: "md",
                         Button {
                             variant: "outlined",
-                            href: "https://forms.gle/migmPaXywrYJzXEx9",
+                            to: "https://forms.gle/migmPaXywrYJzXEx9",
                             target: "_blank",
+                            new_tab_icon: true,
                             sx: sx().flex("1").min_width("18rem"),
                             "{i18n.header().apply_for_tryout()}"
                         }
                         Button {
                             variant: "filled",
-                            href: "https://www.instagram.com/sparklesquad_team",
+                            to: "https://www.instagram.com/sparklesquad_team",
                             target: "_blank",
+                            new_tab_icon: true,
                             sx: sx().flex("1").min_width("18rem"),
                             "{i18n.header().instagram()}"
                         }
@@ -131,14 +138,13 @@ pub fn LanguageSwitch(i18n: I18n) -> Element {
     rsx! {
         Select {
             sx: sx().margin_left("auto"),
-            value: i18n.suffix(),
+            value: Some(i18n),
             aria_label: *i18n.language_switch().switch_label(),
-            onchange: move |value: String| {
-                nav.push(Route::Index { lang: value });
+            onchange: move |value: Option<I18n>| {
+                if let Some(value) = value {
+                    nav.push(Route::Index { lang: value.suffix().to_string() });
+                }
             },
-            Option { value: "de", {I18n::DE.language_switch().label().to_string()} }
-            Option { value: "en", {I18n::EN.language_switch().label().to_string()} }
-            Option { value: "ru", {I18n::RU.language_switch().label().to_string()} }
         }
     }
 }

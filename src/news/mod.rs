@@ -2,7 +2,8 @@ use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
     components::{Box, Divider, Flex, Image, List, ListItem, Text, Title},
-    sx::sx,
+    hooks::{use_lightbox, LightboxItem, LightboxOptions},
+    sx::{sx, Sx},
     theme::Size,
 };
 
@@ -400,7 +401,7 @@ pub fn News(i18n: I18n) -> Element {
             Flex {
                 direction: "column",
                 gap: "lg",
-                Title { id: "news", variant: "h2", size: "h1", "{i18n.news().title()}" }
+                Title { id: "news", component: "h2", "{i18n.news().title()}" }
                 List {
                     sx: sx().gap("lg"),
                     for (i , article) in articles.iter().enumerate() {
@@ -431,7 +432,28 @@ fn Article(
     date_label: &'static str,
     description: &'static str,
 ) -> Element {
-    let gallery = SLIDESHOW_IMAGES.get(date);
+    // The first gallery picture is the article's own thumbnail, so the rest
+    // are the extras shown under the text.
+    let extras: &'static [Asset] = SLIDESHOW_IMAGES
+        .get(date)
+        .map_or(&[], |images| images.get(1..).unwrap_or_default());
+
+    // One lightbox per article, so the cover and every extra open the same
+    // gallery and can be paged through with the arrows and the thumbnail strip.
+    let lightbox = use_lightbox(LightboxOptions {
+        aria_label: Some(title.to_string()),
+        captions: false,
+        ..LightboxOptions::default()
+    });
+    let items: Vec<LightboxItem> = std::iter::once(
+        LightboxItem::new(thumbnail_full.to_string(), title).thumbnail(thumbnail.to_string()),
+    )
+    .chain(
+        extras
+            .iter()
+            .map(|image| LightboxItem::new(image.to_string(), title)),
+    )
+    .collect();
 
     rsx! {
         ListItem {
@@ -443,8 +465,13 @@ fn Article(
                     .align_items("stretch")
                     .gap("md")
                     .breakpoint(Size::Sm, sx().flex_direction("row").align_items("flex-start")),
-                Box {
-                    sx: sx()
+                GalleryButton {
+                    label: title,
+                    onclick: {
+                        let items = items.clone();
+                        move |_| { lightbox.open_with((items.clone(), 0)); }
+                    },
+                    frame: sx()
                         .width("100%")
                         .max_width("26rem")
                         .align_self("center")
@@ -452,11 +479,10 @@ fn Article(
                         .breakpoint(Size::Sm, sx().width("18rem").align_self("flex-start")),
                     Image {
                         src: thumbnail,
-                        zoomed_src: thumbnail_full,
                         radius: "sm",
                         alt: title,
-                        zoomable: true,
-                        sx: sx().height("auto"),
+                        loading: "lazy",
+                        sx: sx().width("100%").height("auto").display("block"),
                     }
                 }
                 Flex {
@@ -466,28 +492,34 @@ fn Article(
                     Flex {
                         direction: "column",
                         gap: "xs",
-                        Title { id: date, variant: "h3", size: "h2", {title} }
+                        Title { id: date, size: "xl", component: "h3", {title} }
                         Text {
                             size: "md",
-                            span: true,
+                            component: "span",
                             time { datetime: date, {date_label} }
                         }
                     }
                     Text { size: "lg", {description} }
-                    if let Some(images) = gallery.filter(|images| images.len() > 1) {
+                    if !extras.is_empty() {
                         Flex {
                             direction: "row",
                             wrap: true,
                             gap: "sm",
-                            for image in images.iter().skip(1) {
-                                Box {
-                                    sx: sx().width("96px").height("96px").flex_shrink("0"),
+                            for (i, image) in extras.iter().enumerate() {
+                                GalleryButton {
+                                    label: title,
+                                    onclick: {
+                                        let items = items.clone();
+                                        move |_| { lightbox.open_with((items.clone(), i + 1)); }
+                                    },
+                                    frame: sx().width("96px").height("96px").flex_shrink("0"),
                                     Image {
                                         src: *image,
                                         fit: "cover",
                                         radius: "sm",
                                         alt: title,
-                                        zoomable: true,
+                                        loading: "lazy",
+                                        sx: sx().width("100%").height("100%").display("block"),
                                     }
                                 }
                             }
@@ -495,6 +527,34 @@ fn Article(
                     }
                 }
             }
+        }
+    }
+}
+
+/// A bare button around a picture that opens the article's gallery on it.
+#[component]
+fn GalleryButton(
+    label: &'static str,
+    onclick: EventHandler<MouseEvent>,
+    frame: Sx,
+    children: Element,
+) -> Element {
+    rsx! {
+        Box {
+            component: "button",
+            r#type: "button",
+            aria_label: label,
+            onclick: move |event| onclick.call(event),
+            sx: frame
+                .padding("0")
+                .border("none")
+                .background("none")
+                .border_radius("sm")
+                .cursor("zoom-in")
+                .focus_visible(
+                    sx().outline("2px solid var(--lsx-ink)").outline_offset("2px"),
+                ),
+            {children}
         }
     }
 }

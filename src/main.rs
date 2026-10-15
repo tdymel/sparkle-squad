@@ -8,7 +8,6 @@ mod assets;
 mod header;
 mod i18n;
 mod news;
-mod theme;
 
 pub use app::{App, Route};
 

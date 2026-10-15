@@ -2,12 +2,14 @@ use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
     components::{Container, Flex},
+    hooks::use_localization_handle,
+    localization::Localization,
     sx::sx,
-    theme::Size,
+    theme::{Size, ThemeSet},
     LiberoProvider,
 };
 
-use crate::{about_us::AboutUs, assets::LOGO, header::Header, news::News, theme::THEME, I18n};
+use crate::{about_us::AboutUs, assets::LOGO, header::Header, news::News, I18n};
 
 i18n!(
     app,
@@ -45,12 +47,14 @@ fn Index(lang: String) -> Element {
     // No web_sys needed for this: dioxus's own document::eval works across
     // every renderer (web, desktop, ...), unlike a raw web_sys::window() call
     // which only exists on the web target.
-    use_effect(move || {
+    // `use_reactive` re-runs it when the language switch navigates to another
+    // `lang`, which keeps the same `Index` mounted.
+    use_effect(use_reactive!(|i18n| {
         document::eval(&format!(
             "document.documentElement.setAttribute('lang', {:?});",
             i18n.suffix()
         ));
-    });
+    }));
 
     rsx! {
         document::Title { {i18n.app().title().to_string()} }
@@ -91,7 +95,9 @@ fn Index(lang: String) -> Element {
         }
 
         LiberoProvider {
-            theme: &THEME,
+            themes: ThemeSet::SHADCN,
+            localization: localization(i18n),
+            LocalizationSync { i18n }
             main {
                 Container {
                     size: Size::Lg,
@@ -108,4 +114,22 @@ fn Index(lang: String) -> Element {
             }
         }
     }
+}
+
+/// The words libero's own components say (the lightbox, the theme switch).
+/// It has no Russian, so Russian falls back to English.
+fn localization(i18n: I18n) -> &'static Localization {
+    match i18n {
+        I18n::DE => &Localization::GERMAN,
+        I18n::EN | I18n::RU => &Localization::ENGLISH,
+    }
+}
+
+/// `LiberoProvider` reads `localization` once at mount, so a later language
+/// switch is passed on through the handle.
+#[component]
+fn LocalizationSync(i18n: I18n) -> Element {
+    let handle = use_localization_handle();
+    use_effect(use_reactive!(|i18n| handle.set(localization(i18n))));
+    rsx! {}
 }

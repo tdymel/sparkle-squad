@@ -66,8 +66,7 @@ pub fn AboutUs(i18n: I18n) -> Element {
                 gap: "lg",
                 Title {
                     id: "about_us",
-                    variant: "h2",
-                    size: "h1",
+                    component: "h2",
                     "{i18n.about_us().title()}"
                 }
                 List {
@@ -99,7 +98,7 @@ fn DescriptionItem(label: &'static str, description: &'static str) -> Element {
             Flex {
                 direction: "column",
                 gap: "sm",
-                Title { variant: "h3", size: "h2", {label} }
+                Title { size: "xl", component: "h3", {label} }
                 Text { size: "lg", {description} }
             }
         }

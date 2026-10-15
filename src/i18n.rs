@@ -23,3 +23,19 @@ impl I18n {
         }
     }
 }
+
+// Lets the language switch list the languages straight off `I18n`. The value
+// is the URL suffix, the label each language's own name.
+impl libero::components::Options for I18n {
+    fn options() -> &'static [Self] {
+        &[I18n::DE, I18n::EN, I18n::RU]
+    }
+
+    fn label(&self) -> String {
+        self.language_switch().label().to_string()
+    }
+
+    fn value(&self) -> String {
+        self.suffix().to_string()
+    }
+}
