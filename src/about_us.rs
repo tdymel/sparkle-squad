@@ -63,14 +63,14 @@ pub fn AboutUs(i18n: I18n) -> Element {
             aria_labelledby: "about_us",
             Flex {
                 direction: "column",
-                gap: "lg",
+                gap: "xxl",
                 Title {
                     id: "about_us",
                     component: "h2",
                     "{i18n.about_us().title()}"
                 }
                 List {
-                    sx: sx().gap("lg"),
+                    sx: sx().gap("xxl"),
                     DescriptionItem {
                         label: i18n.about_us().team().label(),
                         description: i18n.about_us().team().description()
@@ -97,7 +97,7 @@ fn DescriptionItem(label: &'static str, description: &'static str) -> Element {
         ListItem {
             Flex {
                 direction: "column",
-                gap: "sm",
+                gap: "md",
                 Title { size: "xl", component: "h3", {label} }
                 Text { size: "lg", {description} }
             }

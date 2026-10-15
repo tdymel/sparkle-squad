@@ -7,7 +7,9 @@ mod app;
 mod assets;
 mod header;
 mod i18n;
+mod localization;
 mod news;
+mod top_bar;
 
 pub use app::{App, Route};
 

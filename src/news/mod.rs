@@ -1,7 +1,7 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Box, Divider, Flex, Image, List, ListItem, Text, Title},
+    components::{Badge, Box, Button, Collapse, Divider, Flex, Image, List, ListItem, Text, Title},
     hooks::{use_lightbox, LightboxItem, LightboxOptions},
     sx::{sx, Sx},
     theme::Size,
@@ -17,6 +17,8 @@ i18n!(
     news,
     DE: {
         title: "Funkelnde Neuigkeiten",
+        show_older: "Ältere Neuigkeiten anzeigen",
+        show_fewer: "Weniger anzeigen",
         articles: [
             {
                 title: "Erfahrung gewonnen beim Wakenitz Pokal 2026",
@@ -142,6 +144,8 @@ i18n!(
     },
     EN: {
         title: "Sparkling News",
+        show_older: "Show older news",
+        show_fewer: "Show less",
         articles: [
             {
                 title: "Gained valuable experience at the Wakenitz Cup 2026",
@@ -267,6 +271,8 @@ i18n!(
     },
     RU: {
         title: "Сияющие новости",
+        show_older: "Показать старые новости",
+        show_fewer: "Показать меньше",
         articles: [
             {
                 title: "Ценный опыт на Wakenitz Pokal 2026",
@@ -392,29 +398,140 @@ i18n!(
     }
 );
 
+i18n!(
+    category,
+    DE: { league: "Mixed-Runde", cup: "Hanse-Pokal", tournament: "Turnier", team: "Team" },
+    EN: { league: "Mixed League", cup: "Hanse Cup", tournament: "Tournament", team: "Team" },
+    RU: { league: "Смешанная лига", cup: "Hanse-Pokal", tournament: "Турнир", team: "Команда" }
+);
+
+i18n!(
+    highlight,
+    DE: { champion: "Meister", first_place: "1. Platz", second_place: "2. Platz", double_win: "Doppelsieg" },
+    EN: { champion: "Champions", first_place: "1st place", second_place: "2nd place", double_win: "Double win" },
+    RU: { champion: "Чемпионы", first_place: "1 место", second_place: "2 место", double_win: "Двойная победа" }
+);
+
+#[derive(Clone, Copy, PartialEq)]
+enum Category {
+    League,
+    Cup,
+    Tournament,
+    Team,
+}
+
+#[derive(Clone, Copy, PartialEq)]
+enum Highlight {
+    Champion,
+    FirstPlace,
+    SecondPlace,
+    DoubleWin,
+}
+
+/// What an article is about, and the result worth a badge, keyed by its date
+/// like the gallery so the article texts stay free of markup.
+fn badges(date: &str) -> (Category, Option<Highlight>) {
+    use Category::*;
+    use Highlight::*;
+    match date {
+        "2026-04-12" => (League, Some(Champion)),
+        "2026-03-29" | "2025-08-25" => (Tournament, Some(FirstPlace)),
+        "2025-05-24" | "2025-05-11" => (Tournament, Some(SecondPlace)),
+        "2025-12-07" | "2025-11-30" | "2025-11-16" => (League, Some(DoubleWin)),
+        "2026-02-15" | "2026-02-01" | "2026-01-25" | "2026-01-18" => (League, None),
+        "2026-04-19" | "2025-06-22" | "2025-04-27" => (Cup, None),
+        "2025-04-16" | "2025-02-28" => (Team, None),
+        _ => (Tournament, None),
+    }
+}
+
+impl Category {
+    fn label(self, i18n: I18n) -> &'static str {
+        match self {
+            Category::League => i18n.category().league(),
+            Category::Cup => i18n.category().cup(),
+            Category::Tournament => i18n.category().tournament(),
+            Category::Team => i18n.category().team(),
+        }
+    }
+}
+
+impl Highlight {
+    fn label(self, i18n: I18n) -> &'static str {
+        match self {
+            Highlight::Champion => i18n.highlight().champion(),
+            Highlight::FirstPlace => i18n.highlight().first_place(),
+            Highlight::SecondPlace => i18n.highlight().second_place(),
+            Highlight::DoubleWin => i18n.highlight().double_win(),
+        }
+    }
+}
+
+/// Articles shown before "show older news".
+const VISIBLE_ARTICLES: usize = 4;
+
 #[component]
 pub fn News(i18n: I18n) -> Element {
     let articles = i18n.news().articles().value();
+    let mut show_older = use_signal(|| false);
+    let (recent, older) = articles.split_at(VISIBLE_ARTICLES.min(articles.len()));
+
     rsx! {
         section {
             aria_labelledby: "news",
             Flex {
                 direction: "column",
-                gap: "lg",
+                gap: "xxl",
                 Title { id: "news", component: "h2", "{i18n.news().title()}" }
-                List {
-                    sx: sx().gap("lg"),
-                    for (i , article) in articles.iter().enumerate() {
-                        Article {
-                            thumbnail: THUMBNAILS[i],
-                            thumbnail_full: THUMBNAILS_FULL[i],
-                            title: article.title(),
-                            date: article.date(),
-                            date_label: article.date_label(),
-                            description: article.description()
+                Box {
+                    List {
+                        sx: sx().gap("xxl"),
+                        for (i, article) in recent.iter().enumerate() {
+                            if i > 0 {
+                                Divider {}
+                            }
+                            Article {
+                                i18n,
+                                index: i,
+                                title: article.title(),
+                                date: article.date(),
+                                date_label: article.date_label(),
+                                description: article.description()
+                            }
                         }
-                        if i < articles.len() - 1 {
-                            Divider {}
+                    }
+                    if !older.is_empty() {
+                        Collapse {
+                            id: "older_news",
+                            open: show_older(),
+                            List {
+                                sx: sx().gap("xxl").padding_top("xxl"),
+                                for (i, article) in older.iter().enumerate() {
+                                    Divider {}
+                                    Article {
+                                        i18n,
+                                        index: VISIBLE_ARTICLES + i,
+                                        title: article.title(),
+                                        date: article.date(),
+                                        date_label: article.date_label(),
+                                        description: article.description()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if !older.is_empty() {
+                    Button {
+                        variant: "outlined",
+                        aria_expanded: show_older(),
+                        aria_controls: "older_news",
+                        onclick: move |_| show_older.toggle(),
+                        sx: sx().align_self("center"),
+                        if show_older() {
+                            "{i18n.news().show_fewer()}"
+                        } else {
+                            "{i18n.news().show_older()}"
                         }
                     }
                 }
@@ -425,8 +542,9 @@ pub fn News(i18n: I18n) -> Element {
 
 #[component]
 fn Article(
-    thumbnail: Asset,
-    thumbnail_full: Asset,
+    i18n: I18n,
+    /// The article's place in the list, which picks its thumbnail.
+    index: usize,
     title: &'static str,
     date: &'static str,
     date_label: &'static str,
@@ -434,6 +552,8 @@ fn Article(
 ) -> Element {
     // The first gallery picture is the article's own thumbnail, so the rest
     // are the extras shown under the text.
+    let (thumbnail, thumbnail_full) = (THUMBNAILS[index], THUMBNAILS_FULL[index]);
+    let (category, highlight) = badges(date);
     let extras: &'static [Asset] = SLIDESHOW_IMAGES
         .get(date)
         .map_or(&[], |images| images.get(1..).unwrap_or_default());
@@ -463,7 +583,7 @@ fn Article(
                     .width("100%")
                     .flex_direction("column")
                     .align_items("stretch")
-                    .gap("md")
+                    .gap("xl")
                     .breakpoint(Size::Sm, sx().flex_direction("row").align_items("flex-start")),
                 GalleryButton {
                     label: title,
@@ -487,11 +607,20 @@ fn Article(
                 }
                 Flex {
                     direction: "column",
-                    gap: "lg",
+                    gap: "xl",
                     sx: sx().flex("1").min_width("0"),
                     Flex {
                         direction: "column",
-                        gap: "xs",
+                        gap: "sm",
+                        Flex {
+                            direction: "row",
+                            wrap: true,
+                            gap: "xs",
+                            if let Some(highlight) = highlight {
+                                Badge { "{highlight.label(i18n)}" }
+                            }
+                            Badge { variant: "outlined", color: "muted", "{category.label(i18n)}" }
+                        }
                         Title { id: date, size: "xl", component: "h3", {title} }
                         Text {
                             size: "md",
@@ -504,7 +633,7 @@ fn Article(
                         Flex {
                             direction: "row",
                             wrap: true,
-                            gap: "sm",
+                            gap: "md",
                             for (i, image) in extras.iter().enumerate() {
                                 GalleryButton {
                                     label: title,

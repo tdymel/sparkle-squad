@@ -1,13 +1,12 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Box, Button, Flex, Select, Text, ThemeSwitcher, Title},
+    components::{Box, Button, Flex, Text, Title},
     sx::sx,
+    theme::Size,
 };
 
-use crate::{I18n, Route};
-
-const LOGO: Asset = asset!("/assets/logo_black.svg");
+use crate::{assets::LOGO, I18n};
 
 i18n!(
     header,
@@ -44,18 +43,21 @@ pub fn Header(i18n: I18n) -> Element {
             aria_labelledby: "header_title",
             Flex {
                 direction: "column",
-                gap: "xl",
+                gap: "xxl",
                 Flex {
                     direction: "row",
                     wrap: true,
                     align: "center",
                     justify: "center",
-                    gap: "xl",
+                    gap: "xxl",
                     // The logo is a mask over the ink colour rather than an
                     // `<img>`, so the black artwork turns light in dark mode.
+                    // On a phone the top bar's logo is enough.
                     Box {
                         aria_hidden: "true",
                         sx: sx()
+                            .display("none")
+                            .breakpoint(Size::Sm, sx().display("block"))
                             .height("10rem")
                             .aspect_ratio("2560 / 1812")
                             .flex_shrink("0")
@@ -64,16 +66,9 @@ pub fn Header(i18n: I18n) -> Element {
                     }
                     Flex {
                         direction: "column",
-                        gap: "xs",
+                        gap: "sm",
                         sx: sx().flex("1").min_width("18rem"),
-                        Flex {
-                            direction: "row",
-                            align: "center",
-                            gap: "sm",
-                            Text { component: "span", "{i18n.header().greeting()}" }
-                            LanguageSwitch { i18n: i18n }
-                            ThemeSwitcher {}
-                        }
+                        Text { component: "span", "{i18n.header().greeting()}" }
                         Title {
                             id: "header_title",
                             "{i18n.header().title()}"
@@ -86,12 +81,12 @@ pub fn Header(i18n: I18n) -> Element {
                 }
                 Flex {
                     direction: "column",
-                    gap: "lg",
+                    gap: "xl",
                     Text { size: "lg", "{i18n.header().pitch()}" }
                     Flex {
                         direction: "row",
                         wrap: true,
-                        gap: "md",
+                        gap: "lg",
                         Button {
                             variant: "outlined",
                             to: "https://forms.gle/migmPaXywrYJzXEx9",
@@ -111,40 +106,6 @@ pub fn Header(i18n: I18n) -> Element {
                     }
                 }
             }
-        }
-    }
-}
-
-i18n!(
-    language_switch,
-    DE: {
-        switch_label: "Sprache auswählen",
-        label: "Deutsch"
-    },
-    EN: {
-        switch_label: "Select language",
-        label: "English"
-    },
-    RU: {
-        switch_label: "Выбрать язык",
-        label: "Русский"
-    },
-);
-
-#[component]
-pub fn LanguageSwitch(i18n: I18n) -> Element {
-    let nav = use_navigator();
-
-    rsx! {
-        Select {
-            sx: sx().margin_left("auto"),
-            value: Some(i18n),
-            aria_label: *i18n.language_switch().switch_label(),
-            onchange: move |value: Option<I18n>| {
-                if let Some(value) = value {
-                    nav.push(Route::Index { lang: value.suffix().to_string() });
-                }
-            },
         }
     }
 }

@@ -3,13 +3,15 @@ use dioxus::prelude::*;
 use libero::{
     components::{Container, Flex},
     hooks::use_localization_handle,
-    localization::Localization,
     sx::sx,
     theme::{Size, ThemeSet},
     LiberoProvider,
 };
 
-use crate::{about_us::AboutUs, assets::LOGO, header::Header, news::News, I18n};
+use crate::{
+    about_us::AboutUs, assets::LOGO, header::Header, localization::localization, news::News,
+    top_bar::TopBar, I18n,
+};
 
 i18n!(
     app,
@@ -98,14 +100,17 @@ fn Index(lang: String) -> Element {
             themes: ThemeSet::SHADCN,
             localization: localization(i18n),
             LocalizationSync { i18n }
+            TopBar { i18n }
             main {
                 Container {
                     size: Size::Lg,
                     gutters: Size::Md,
                     Flex {
                         direction: "column",
-                        gap: "xl",
-                        sx: sx().padding_top(Size::Xl).padding_bottom(Size::Xl),
+                        // Past the theme's largest step (24px) on purpose: the
+                        // sections need more air between them than any gap inside.
+                        gap: "3rem",
+                        sx: sx().padding_top(Size::Xxl).padding_bottom("3rem"),
                         Header { i18n }
                         AboutUs { i18n }
                         News { i18n }
@@ -113,15 +118,6 @@ fn Index(lang: String) -> Element {
                 }
             }
         }
-    }
-}
-
-/// The words libero's own components say (the lightbox, the theme switch).
-/// It has no Russian, so Russian falls back to English.
-fn localization(i18n: I18n) -> &'static Localization {
-    match i18n {
-        I18n::DE => &Localization::GERMAN,
-        I18n::EN | I18n::RU => &Localization::ENGLISH,
     }
 }
 
