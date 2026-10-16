@@ -2,7 +2,7 @@ use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
     components::{
-        Badge, Box, Button, Collapse, Divider, Flex, Float, Icon, Image, List, ListItem, Text, Title,
+        Badge, Box, Button, Collapse, Flex, Float, Icon, Image, List, ListItem, Paper, Text, Title,
     },
     hooks::{use_lightbox, LightboxItem, LightboxOptions},
     sx::{sx, Sx},
@@ -402,9 +402,9 @@ i18n!(
 
 i18n!(
     category,
-    DE: { league: "Mixed-Runde", cup: "Hanse-Pokal", tournament: "Turnier", team: "Team" },
-    EN: { league: "Mixed League", cup: "Hanse Cup", tournament: "Tournament", team: "Team" },
-    RU: { league: "Смешанная лига", cup: "Hanse-Pokal", tournament: "Турнир", team: "Команда" }
+    DE: { league: "Mixed-Runde", cup: "Hanse-Pokal", tournament: "Turnier" },
+    EN: { league: "Mixed League", cup: "Hanse Cup", tournament: "Tournament" },
+    RU: { league: "Смешанная лига", cup: "Hanse-Pokal", tournament: "Турнир" }
 );
 
 i18n!(
@@ -416,9 +416,9 @@ i18n!(
 
 i18n!(
     highlight,
-    DE: { champion: "Meister", first_place: "1. Platz", second_place: "2. Platz", double_win: "Doppelsieg" },
-    EN: { champion: "Champions", first_place: "1st place", second_place: "2nd place", double_win: "Double win" },
-    RU: { champion: "Чемпионы", first_place: "1 место", second_place: "2 место", double_win: "Двойная победа" }
+    DE: { first_place: "1. Platz", second_place: "2. Platz", third_place: "3. Platz" },
+    EN: { first_place: "1st place", second_place: "2nd place", third_place: "3rd place" },
+    RU: { first_place: "1 место", second_place: "2 место", third_place: "3 место" }
 );
 
 #[derive(Clone, Copy, PartialEq)]
@@ -426,31 +426,31 @@ enum Category {
     League,
     Cup,
     Tournament,
-    Team,
 }
 
 #[derive(Clone, Copy, PartialEq)]
 enum Highlight {
-    Champion,
     FirstPlace,
     SecondPlace,
-    DoubleWin,
+    #[allow(dead_code, reason = "no third place to report yet")]
+    ThirdPlace,
 }
 
 /// What an article is about, and the result worth a badge, keyed by its date
 /// like the gallery so the article texts stay free of markup.
-fn badges(date: &str) -> (Category, Option<Highlight>) {
+/// Only the competition and a placing get one: team news has no badge.
+fn badges(date: &str) -> (Option<Category>, Option<Highlight>) {
     use Category::*;
     use Highlight::*;
     match date {
-        "2026-04-12" => (League, Some(Champion)),
-        "2026-03-29" | "2025-08-25" => (Tournament, Some(FirstPlace)),
-        "2025-05-24" | "2025-05-11" => (Tournament, Some(SecondPlace)),
-        "2025-12-07" | "2025-11-30" | "2025-11-16" => (League, Some(DoubleWin)),
-        "2026-02-15" | "2026-02-01" | "2026-01-25" | "2026-01-18" => (League, None),
-        "2026-04-19" | "2025-06-22" | "2025-04-27" => (Cup, None),
-        "2025-04-16" | "2025-02-28" => (Team, None),
-        _ => (Tournament, None),
+        "2026-03-29" | "2025-08-25" => (Some(Tournament), Some(FirstPlace)),
+        "2026-04-12" => (Some(League), Some(FirstPlace)),
+        "2025-05-24" | "2025-05-11" => (Some(Tournament), Some(SecondPlace)),
+        "2025-12-07" | "2025-11-30" | "2025-11-16" | "2026-02-15"
+        | "2026-02-01" | "2026-01-25" | "2026-01-18" => (Some(League), None),
+        "2026-04-19" | "2025-06-22" | "2025-04-27" => (Some(Cup), None),
+        "2025-04-16" | "2025-02-28" => (None, None),
+        _ => (Some(Tournament), None),
     }
 }
 
@@ -460,7 +460,6 @@ impl Category {
             Category::League => i18n.category().league(),
             Category::Cup => i18n.category().cup(),
             Category::Tournament => i18n.category().tournament(),
-            Category::Team => i18n.category().team(),
         }
     }
 }
@@ -468,10 +467,9 @@ impl Category {
 impl Highlight {
     fn label(self, i18n: I18n) -> &'static str {
         match self {
-            Highlight::Champion => i18n.highlight().champion(),
             Highlight::FirstPlace => i18n.highlight().first_place(),
             Highlight::SecondPlace => i18n.highlight().second_place(),
-            Highlight::DoubleWin => i18n.highlight().double_win(),
+            Highlight::ThirdPlace => i18n.highlight().third_place(),
         }
     }
 }
@@ -493,12 +491,11 @@ pub fn News(i18n: I18n) -> Element {
                 gap: "xxl",
                 Title { id: "news", component: "h2", "{i18n.news().title()}" }
                 Box {
+                    // Cards, as in "about us": their borders separate them,
+                    // so the gap is smaller than the old dividers needed.
                     List {
-                        sx: sx().gap("xxl"),
+                        sx: sx().gap("lg"),
                         for (i, article) in recent.iter().enumerate() {
-                            if i > 0 {
-                                Divider {}
-                            }
                             Article {
                                 i18n,
                                 index: i,
@@ -514,9 +511,8 @@ pub fn News(i18n: I18n) -> Element {
                             id: "older_news",
                             open: show_older(),
                             List {
-                                sx: sx().gap("xxl").padding_top("xxl"),
+                                sx: sx().gap("lg").padding_top("lg"),
                                 for (i, article) in older.iter().enumerate() {
-                                    Divider {}
                                     Article {
                                         i18n,
                                         index: VISIBLE_ARTICLES + i,
@@ -593,35 +589,47 @@ fn Article(
     rsx! {
         ListItem {
             aria_labelledby: date,
-            Flex {
+            Paper {
+                bordered: true,
+                radius: "md",
+                // No padding: the photo bleeds to the card's edges, across the
+                // top on a phone and down the left side from `sm` up. The
+                // card clips it to its rounded corners; the text keeps the
+                // padding, which is also the gap between the two.
                 sx: sx()
                     .width("100%")
+                    .overflow("hidden")
+                    .display("flex")
                     .flex_direction("column")
                     .align_items("stretch")
-                    .gap("xl")
-                    .breakpoint(Size::Sm, sx().flex_direction("row").align_items("flex-start")),
+                    .breakpoint(Size::Sm, sx().flex_direction("row")),
                 GalleryButton {
                     label,
                     onclick: move |_| { lightbox.open_with((items.clone(), 0)); },
                     frame: sx()
                         .width("100%")
-                        .max_width("26rem")
-                        .align_self("center")
                         .flex_shrink("0")
-                        .breakpoint(Size::Sm, sx().width("18rem").align_self("flex-start")),
+                        .breakpoint(Size::Sm, sx().width("18rem")),
+                    // Its own height on a phone; from `sm` up it fills the
+                    // card's height and crops to it.
                     Image {
                         src: thumbnail,
-                        radius: "sm",
                         alt: title,
                         loading: "lazy",
-                        sx: sx().width("100%").height("auto").display("block"),
+                        sx: sx()
+                            .width("100%")
+                            .height("auto")
+                            .display("block")
+                            .breakpoint(Size::Sm, sx().height("100%").object_fit("cover")),
                     }
                     if photo_count > 1 {
                         // Fixed black, not ink: it sits on a photo, not the page.
                         Float {
                             placement: "bottom-end",
-                            offset_x: "sm",
-                            offset_y: "sm",
+                            // Float's offsets are physical (right, down), so
+                            // pulling it into the corner takes negative ones.
+                            offset_x: "-sm",
+                            offset_y: "-sm",
                             Badge {
                                 color: "black",
                                 size: "lg",
@@ -639,24 +647,35 @@ fn Article(
                 Flex {
                     direction: "column",
                     gap: "xl",
-                    sx: sx().flex("1").min_width("0"),
+                    sx: sx().flex("1").min_width("0").padding("xl"),
                     Flex {
                         direction: "column",
                         gap: "sm",
+                        Title { id: date, size: "xl", component: "h3", {title} }
                         Flex {
                             direction: "row",
                             wrap: true,
                             gap: "xs",
+                            // The date leads the row, set apart from the
+                            // labels by its tonal fill and calendar icon.
+                            Badge {
+                                variant: "tonal",
+                                color: "muted",
+                                Icon {
+                                    svg: pictogram_icons_lucide::calendar::outlined,
+                                    variant: "standard",
+                                    // Unset is primary; take the badge's text colour.
+                                    color: "currentColor",
+                                    size: "1.1em",
+                                }
+                                time { datetime: date, {date_label} }
+                            }
                             if let Some(highlight) = highlight {
                                 Badge { "{highlight.label(i18n)}" }
                             }
-                            Badge { variant: "outlined", color: "muted", "{category.label(i18n)}" }
-                        }
-                        Title { id: date, size: "xl", component: "h3", {title} }
-                        Text {
-                            size: "md",
-                            component: "span",
-                            time { datetime: date, {date_label} }
+                            if let Some(category) = category {
+                                Badge { variant: "outlined", color: "muted", "{category.label(i18n)}" }
+                            }
                         }
                     }
                     Text { size: "lg", {description} }
@@ -689,7 +708,6 @@ fn GalleryButton(
                 .padding("0")
                 .border("none")
                 .background("none")
-                .border_radius("sm")
                 .cursor("zoom-in")
                 // The picture dims under the pointer, so the whole cover,
                 // badge included, reads as one thing to click.
@@ -700,7 +718,8 @@ fn GalleryButton(
                 )
                 .hover(sx().selector("& img", sx().filter("brightness(0.85)")))
                 .focus_visible(
-                    sx().outline("2px solid var(--lsx-ink)").outline_offset("2px"),
+                    // Inset: the card clips anything outside the photo.
+                    sx().outline("2px solid var(--lsx-ink)").outline_offset("-4px"),
                 ),
             {children}
         }
