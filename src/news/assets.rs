@@ -10,8 +10,8 @@ const COURT: Asset = asset!(
     ImageAssetOptions::new()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 160
+            width: 513,
+            height: 234
         })
 );
 const SPIELTAG_25_04_27: Asset = asset!(
@@ -19,8 +19,8 @@ const SPIELTAG_25_04_27: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 201
+            width: 800,
+            height: 560
         })
 );
 const STELLE_2025: Asset = asset!(
@@ -28,8 +28,8 @@ const STELLE_2025: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 225
+            width: 800,
+            height: 626
         })
 );
 const LUETJENSEE_2025: Asset = asset!(
@@ -37,8 +37,8 @@ const LUETJENSEE_2025: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 256
+            width: 563,
+            height: 502
         })
 );
 const WAKENITZ_2025: Asset = asset!(
@@ -46,8 +46,8 @@ const WAKENITZ_2025: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 251
+            width: 800,
+            height: 696
         })
 );
 const HANSE_POKAL_2025: Asset = asset!(
@@ -55,8 +55,8 @@ const HANSE_POKAL_2025: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
+            width: 488,
+            height: 575
         })
 );
 const EUTIN_2025: Asset = asset!(
@@ -64,8 +64,8 @@ const EUTIN_2025: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
+            width: 800,
+            height: 600
         })
 );
 const HALLOWEEN_2025: Asset = asset!(
@@ -73,8 +73,8 @@ const HALLOWEEN_2025: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 243
+            width: 800,
+            height: 676
         })
 );
 const A3_2025_1: Asset = asset!(
@@ -82,8 +82,8 @@ const A3_2025_1: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
+            width: 800,
+            height: 600
         })
 );
 const A3_2025_2: Asset = asset!(
@@ -91,8 +91,8 @@ const A3_2025_2: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 210
+            width: 638,
+            height: 464
         })
 );
 const B1_2025_2: Asset = asset!(
@@ -100,8 +100,8 @@ const B1_2025_2: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
+            width: 800,
+            height: 600
         })
 );
 const B1_2026_3: Asset = asset!(
@@ -109,8 +109,8 @@ const B1_2026_3: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 230
+            width: 800,
+            height: 638
         })
 );
 const A3_2026_3: Asset = asset!(
@@ -118,8 +118,8 @@ const A3_2026_3: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
+            width: 800,
+            height: 1067
         })
 );
 const B1_2026_4: Asset = asset!(
@@ -127,8 +127,8 @@ const B1_2026_4: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 237
+            width: 800,
+            height: 658
         })
 );
 const A3_2026_4: Asset = asset!(
@@ -136,8 +136,8 @@ const A3_2026_4: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 296
+            width: 435,
+            height: 447
         })
 );
 const SCVM_SRPING_TOURNAMENT: Asset = asset!(
@@ -145,8 +145,8 @@ const SCVM_SRPING_TOURNAMENT: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
+            width: 800,
+            height: 1063
         })
 );
 const A3_B1_VICTORY: Asset = asset!(
@@ -154,8 +154,8 @@ const A3_B1_VICTORY: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 171
+            width: 800,
+            height: 472
         })
 );
 const HP_2026_1: Asset = asset!(
@@ -163,8 +163,8 @@ const HP_2026_1: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 216
+            width: 800,
+            height: 600
         })
 );
 const WAKENITZ_2026: Asset = asset!(
@@ -172,8 +172,8 @@ const WAKENITZ_2026: Asset = asset!(
     AssetOptions::image()
         .with_avif()
         .with_size(ImageSize::Manual {
-            width: 288,
-            height: 320
+            width: 800,
+            height: 1063
         })
 );
 
@@ -235,27 +235,21 @@ const A3_2026_4_FULL: Asset = asset!(
     AssetOptions::image().with_avif()
 );
 const SCVM_SRPING_TOURNAMENT_FULL: Asset = asset!(
-            "/assets/news/2026_03_29_SCVM.jpg",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1446, height: 1920 })
-        );
+    "/assets/news/2026_03_29_SCVM.jpg",
+    AssetOptions::image().with_avif()
+);
 const A3_B1_VICTORY_FULL: Asset = asset!(
     "/assets/news/2026_04_12_b1_victory1.png",
     AssetOptions::image().with_avif()
 );
 const HP_2026_1_FULL: Asset = asset!(
-            "/assets/news/2026_04_19_hp_1.jpg",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1920, height: 1440 })
-        );
+    "/assets/news/2026_04_19_hp_1.jpg",
+    AssetOptions::image().with_avif()
+);
 const WAKENITZ_2026_FULL: Asset = asset!(
-            "/assets/news/wakenitz_2026/urkunde.jpeg",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1446, height: 1920 })
-        );
+    "/assets/news/wakenitz_2026/urkunde.jpeg",
+    AssetOptions::image().with_avif()
+);
 
 pub const THUMBNAILS: [Asset; 20] = [
     WAKENITZ_2026,
@@ -420,41 +414,29 @@ pub static SLIDESHOW_IMAGES: LazyLock<HashMap<&str, Vec<Asset>>> = LazyLock::new
         "2026-05-02",
         vec![
             asset!(
-            "/assets/news/wakenitz_2026/urkunde.jpeg",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1446, height: 1920 })
-        ),
+                "/assets/news/wakenitz_2026/urkunde.jpeg",
+                AssetOptions::image().with_avif()
+            ),
             asset!(
-            "/assets/news/wakenitz_2026/1.JPG",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
-        ),
+                "/assets/news/wakenitz_2026/1.JPG",
+                AssetOptions::image().with_avif()
+            ),
             asset!(
-            "/assets/news/wakenitz_2026/2.JPG",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
-        ),
+                "/assets/news/wakenitz_2026/2.JPG",
+                AssetOptions::image().with_avif()
+            ),
             asset!(
-            "/assets/news/wakenitz_2026/3.JPG",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
-        ),
+                "/assets/news/wakenitz_2026/3.JPG",
+                AssetOptions::image().with_avif()
+            ),
             asset!(
-            "/assets/news/wakenitz_2026/4.JPG",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
-        ),
+                "/assets/news/wakenitz_2026/4.JPG",
+                AssetOptions::image().with_avif()
+            ),
             asset!(
-            "/assets/news/wakenitz_2026/5.JPG",
-            AssetOptions::image()
-                .with_avif()
-                .with_size(ImageSize::Manual { width: 1920, height: 1280 })
-        ),
+                "/assets/news/wakenitz_2026/5.JPG",
+                AssetOptions::image().with_avif()
+            ),
         ],
     );
 
