@@ -97,7 +97,7 @@ fn Index(lang: String) -> Element {
         }
 
         LiberoProvider {
-            themes: ThemeSet::SHADCN,
+            themes: ThemeSet::DEFAULT,
             localization: localization(i18n),
             LocalizationSync { i18n }
             TopBar { i18n }

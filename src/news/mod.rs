@@ -550,16 +550,16 @@ fn Article(
     date_label: &'static str,
     description: &'static str,
 ) -> Element {
-    // The first gallery picture is the article's own thumbnail, so the rest
-    // are the extras shown under the text.
+    // The first gallery picture is the article's own thumbnail; the rest are
+    // only reached by paging through the gallery the thumbnail opens.
     let (thumbnail, thumbnail_full) = (THUMBNAILS[index], THUMBNAILS_FULL[index]);
     let (category, highlight) = badges(date);
     let extras: &'static [Asset] = SLIDESHOW_IMAGES
         .get(date)
         .map_or(&[], |images| images.get(1..).unwrap_or_default());
 
-    // One lightbox per article, so the cover and every extra open the same
-    // gallery and can be paged through with the arrows and the thumbnail strip.
+    // One lightbox per article: the cover opens it on itself, and the extras
+    // are paged through with the arrows and the thumbnail strip.
     let lightbox = use_lightbox(LightboxOptions {
         aria_label: Some(title.to_string()),
         captions: false,
@@ -587,10 +587,7 @@ fn Article(
                     .breakpoint(Size::Sm, sx().flex_direction("row").align_items("flex-start")),
                 GalleryButton {
                     label: title,
-                    onclick: {
-                        let items = items.clone();
-                        move |_| { lightbox.open_with((items.clone(), 0)); }
-                    },
+                    onclick: move |_| { lightbox.open_with((items.clone(), 0)); },
                     frame: sx()
                         .width("100%")
                         .max_width("26rem")
@@ -629,31 +626,6 @@ fn Article(
                         }
                     }
                     Text { size: "lg", {description} }
-                    if !extras.is_empty() {
-                        Flex {
-                            direction: "row",
-                            wrap: true,
-                            gap: "md",
-                            for (i, image) in extras.iter().enumerate() {
-                                GalleryButton {
-                                    label: title,
-                                    onclick: {
-                                        let items = items.clone();
-                                        move |_| { lightbox.open_with((items.clone(), i + 1)); }
-                                    },
-                                    frame: sx().width("96px").height("96px").flex_shrink("0"),
-                                    Image {
-                                        src: *image,
-                                        fit: "cover",
-                                        radius: "sm",
-                                        alt: title,
-                                        loading: "lazy",
-                                        sx: sx().width("100%").height("100%").display("block"),
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }

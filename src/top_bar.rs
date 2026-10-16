@@ -1,7 +1,7 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Box, Container, Flex, Header, Options, Select, SelectOptionArgs, ThemeSwitcher},
+    components::{Box, Container, Flex, Header, Icon, Options, Select, SelectOptionArgs, ThemeSwitcher},
     sx::sx,
     theme::{Size, ThemeSet},
 };
@@ -23,15 +23,16 @@ pub fn TopBar(i18n: I18n) -> Element {
                     align: "center",
                     gap: "md",
                     sx: sx().flex_wrap("nowrap").padding_top("sm").padding_bottom("sm"),
-                    // Same mask trick as the hero logo, so it follows the theme.
-                    Box {
-                        aria_hidden: "true",
-                        sx: sx()
-                            .height("2.5rem")
-                            .aspect_ratio("2560 / 1812")
-                            .flex_shrink("0")
-                            .background_color("var(--lsx-ink)")
-                            .mask(format!("url({LOGO}) center / contain no-repeat")),
+                    // A standard Icon draws the artwork as a bare stencil in the ink
+                    // colour (black, white in dark mode); the default filled variant
+                    // paints the whole box.
+                    // It is square by default; the logo is wider than tall.
+                    Icon {
+                        src: LOGO.to_string(),
+                        variant: "standard",
+                        color: "ink",
+                        size: "2.5rem",
+                        sx: sx().width("auto").aspect_ratio("2560 / 1812"),
                     }
                     Flex {
                         direction: "row",
@@ -39,7 +40,7 @@ pub fn TopBar(i18n: I18n) -> Element {
                         gap: "sm",
                         sx: sx().flex_wrap("nowrap").margin_left("auto"),
                         LanguageSwitch { i18n }
-                        // Opens on the shadcn pair; the picker swaps in any
+                        // Opens on libero's own pair; the picker swaps in any
                         // of libero's other theme sets.
                         ThemeSwitcher {
                             themes: ThemeSet::CATALOGUE,
@@ -96,10 +97,11 @@ fn LanguageLabel(lang: I18n) -> Element {
     rsx! {
         Box {
             component: "span",
-            // A line height of 1 keeps the trigger at the field's height
-            // instead of growing past it with the text's line box.
+            // Block-level flex, not inline-flex: inline, it sat on the value
+            // slot's text baseline and drifted off the trigger's centre.
+            // A line height of 1 keeps the trigger at the field's height.
             sx: sx()
-                .display("inline-flex")
+                .display("flex")
                 .align_items("center")
                 .gap("sm")
                 .line_height("1"),

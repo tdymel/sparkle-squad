@@ -1,7 +1,7 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Box, Button, Flex, Text, Title},
+    components::{Button, Flex, Icon, Text, Title},
     sx::sx,
     theme::Size,
 };
@@ -50,19 +50,21 @@ pub fn Header(i18n: I18n) -> Element {
                     align: "center",
                     justify: "center",
                     gap: "xxl",
-                    // The logo is a mask over the ink colour rather than an
-                    // `<img>`, so the black artwork turns light in dark mode.
+                    // A standard Icon draws the artwork as a bare stencil in the ink
+                    // colour (black, white in dark mode); the default filled variant
+                    // paints the whole box.
+                    // It is square by default; the logo is wider than tall.
                     // On a phone the top bar's logo is enough.
-                    Box {
-                        aria_hidden: "true",
+                    Icon {
+                        src: LOGO.to_string(),
+                        variant: "standard",
+                        color: "ink",
+                        size: "10rem",
                         sx: sx()
-                            .display("none")
-                            .breakpoint(Size::Sm, sx().display("block"))
-                            .height("10rem")
+                            .width("auto")
                             .aspect_ratio("2560 / 1812")
-                            .flex_shrink("0")
-                            .background_color("var(--lsx-ink)")
-                            .mask(format!("url({LOGO}) center / contain no-repeat")),
+                            .display("none")
+                            .breakpoint(Size::Sm, sx().display("inline-flex")),
                     }
                     Flex {
                         direction: "column",
