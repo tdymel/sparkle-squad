@@ -12,7 +12,10 @@ i18n!(
     header,
     DE: {
         greeting: "Moin 👋",
-        title: "Wir sind Sparkle Squad!",
+        // The title runs before and after the team name, which stays the
+        // same in every language and is drawn in the primary colour.
+        title_before: "Wir sind ",
+        title_after: "!",
         subtitle: "Mixed Volleyball Team in Hamburg Hamm",
         pitch: "Du suchst nach einem ambitionierten und sympathischen Mixed Volleyball Team in Hamburg und du hast sichere Grundlagen (A3/B1/Bezirksliga)? Dann bist du bei uns genau richtig! Komm zum Probetraining und mach dir ein Bild von uns!",
         apply_for_tryout: "Komm zum Probetraining!",
@@ -20,7 +23,8 @@ i18n!(
     },
     EN: {
         greeting: "Hi 👋",
-        title: "We are Sparkle Squad!",
+        title_before: "We are ",
+        title_after: "!",
         subtitle: "Mixed volleyball team in Hamburg Hamm",
         pitch: "Are you looking for an ambitious and friendly mixed volleyball team in Hamburg, and do you already have solid fundamentals (A3/B1/district league level)? Then you’ve come to the right place! Join us for a trial practice and get to know us!",
         apply_for_tryout: "Join a trial practice!",
@@ -28,7 +32,8 @@ i18n!(
     },
     RU: {
         greeting: "Привет 👋",
-        title: "Мы — Sparkle Squad!",
+        title_before: "Мы — ",
+        title_after: "!",
         subtitle: "Смешанная волейбольная команда в Гамбурге, район Hamm",
         pitch: "Ты ищешь амбициозную и дружелюбную смешанную волейбольную команду в Гамбурге и уже уверенно владеешь базовыми навыками (уровень A3/B1/Bezirksliga)? Тогда тебе точно к нам! Приходи на пробную тренировку и познакомься с нами!",
         apply_for_tryout: "Приходи на пробную тренировку!",
@@ -73,7 +78,18 @@ pub fn Header(i18n: I18n) -> Element {
                         Text { component: "span", "{i18n.header().greeting()}" }
                         Title {
                             id: "header_title",
-                            "{i18n.header().title()}"
+                            "{i18n.header().title_before()}"
+                            Text {
+                                component: "span",
+                                color: "primary",
+                                // Text brings body-copy type; take the heading's.
+                                sx: sx()
+                                    .font_size("inherit")
+                                    .font_weight("inherit")
+                                    .line_height("inherit"),
+                                "Sparkle Squad"
+                            }
+                            "{i18n.header().title_after()}"
                         }
                         Title {
                             component: "h2",

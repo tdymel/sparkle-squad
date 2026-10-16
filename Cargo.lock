@@ -4799,6 +4799,7 @@ dependencies = [
  "comfy-i18n",
  "dioxus",
  "libero",
+ "pictogram-icons-lucide",
 ]
 
 [[package]]

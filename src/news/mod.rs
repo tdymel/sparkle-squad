@@ -1,7 +1,9 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Badge, Box, Button, Collapse, Divider, Flex, Image, List, ListItem, Text, Title},
+    components::{
+        Badge, Box, Button, Collapse, Divider, Flex, Float, Icon, Image, List, ListItem, Text, Title,
+    },
     hooks::{use_lightbox, LightboxItem, LightboxOptions},
     sx::{sx, Sx},
     theme::Size,
@@ -406,6 +408,13 @@ i18n!(
 );
 
 i18n!(
+    gallery,
+    DE: { photos: "Fotos" },
+    EN: { photos: "photos" },
+    RU: { photos: "фото" }
+);
+
+i18n!(
     highlight,
     DE: { champion: "Meister", first_place: "1. Platz", second_place: "2. Platz", double_win: "Doppelsieg" },
     EN: { champion: "Champions", first_place: "1st place", second_place: "2nd place", double_win: "Double win" },
@@ -574,6 +583,12 @@ fn Article(
             .map(|image| LightboxItem::new(image.to_string(), title)),
     )
     .collect();
+    let photo_count = items.len();
+    // The badge is only seen, so the button's name carries the count.
+    let label = match photo_count {
+        1 => title.to_string(),
+        n => format!("{title}, {n} {}", i18n.gallery().photos()),
+    };
 
     rsx! {
         ListItem {
@@ -586,7 +601,7 @@ fn Article(
                     .gap("xl")
                     .breakpoint(Size::Sm, sx().flex_direction("row").align_items("flex-start")),
                 GalleryButton {
-                    label: title,
+                    label,
                     onclick: move |_| { lightbox.open_with((items.clone(), 0)); },
                     frame: sx()
                         .width("100%")
@@ -600,6 +615,25 @@ fn Article(
                         alt: title,
                         loading: "lazy",
                         sx: sx().width("100%").height("auto").display("block"),
+                    }
+                    if photo_count > 1 {
+                        // Fixed black, not ink: it sits on a photo, not the page.
+                        Float {
+                            placement: "bottom-end",
+                            offset_x: "sm",
+                            offset_y: "sm",
+                            Badge {
+                                color: "black",
+                                size: "lg",
+                                Icon {
+                                    svg: pictogram_icons_lucide::images::outlined,
+                                    variant: "standard",
+                                    color: "white",
+                                    size: "1.1em",
+                                }
+                                "{photo_count}"
+                            }
+                        }
                     }
                 }
                 Flex {
@@ -635,7 +669,7 @@ fn Article(
 /// A bare button around a picture that opens the article's gallery on it.
 #[component]
 fn GalleryButton(
-    label: &'static str,
+    label: String,
     onclick: EventHandler<MouseEvent>,
     frame: Sx,
     children: Element,
@@ -647,11 +681,24 @@ fn GalleryButton(
             aria_label: label,
             onclick: move |event| onclick.call(event),
             sx: frame
+                .position("relative")
+                // Float's z-index (200) is meant for page-level floats and
+                // outranks the sticky header; isolating the cover keeps the
+                // badge's z-index inside it, so the header scrolls over it.
+                .isolation("isolate")
                 .padding("0")
                 .border("none")
                 .background("none")
                 .border_radius("sm")
                 .cursor("zoom-in")
+                // The picture dims under the pointer, so the whole cover,
+                // badge included, reads as one thing to click.
+                .selector(
+                    "& img",
+                    sx().transition("filter 150ms ease")
+                        .media("(prefers-reduced-motion: reduce)", sx().transition("none")),
+                )
+                .hover(sx().selector("& img", sx().filter("brightness(0.85)")))
                 .focus_visible(
                     sx().outline("2px solid var(--lsx-ink)").outline_offset("2px"),
                 ),
