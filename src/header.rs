@@ -75,7 +75,7 @@ pub fn Header(i18n: I18n) -> Element {
                         direction: "column",
                         gap: "sm",
                         sx: sx().flex("1").min_width("18rem"),
-                        Text { component: "span", "{i18n.header().greeting()}" }
+                        Text { component: "span", size: "lg", "{i18n.header().greeting()}" }
                         Title {
                             id: "header_title",
                             "{i18n.header().title_before()}"

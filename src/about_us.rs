@@ -1,9 +1,11 @@
 use comfy_i18n::i18n;
 use dioxus::prelude::*;
 use libero::{
-    components::{Divider, Flex, List, ListItem, Text, Title},
+    components::{Flex, Icon, List, ListItem, Paper, SvgData, Title},
     sx::sx,
+    theme::Size,
 };
+use pictogram_icons_lucide as lucide;
 
 use crate::I18n;
 
@@ -12,52 +14,53 @@ i18n!(
     DE: {
         title: "Das zeichnet uns aus",
         team: {
-            label: "Ambitioniertes, sympathisches und internationales Team",
-            description: "Wir sind ein ehrgeiziges und internationales Team, welches auf einem hohen Level spielen möchte. Im Schnitt sind wir 25 Jahre alt. Unsere Spieler kommen aus aller Welt, es wird hauptsächlich Deutsch und Englisch gesprochen, aber viele sprechen auch Ukrainisch, Russisch und Grichisch."
+            label: "Starkes Team",
+            facts: ["Ehrgeizig, mit dem Ziel, auf hohem Level zu spielen", "Im Schnitt 25 Jahre alt", "Spieler aus aller Welt", "Vor allem Deutsch & Englisch, dazu Ukrainisch, Russisch und Griechisch"]
         },
         training: {
-            label: "Strukturiertes und zielgerichtetes Training",
-            description: "Jeden Mittwoch von 19:30 - 22:00 Uhr machen ein zielgerichtetes Training, um uns stetig zu verbessern. Zuerst machen wir uns gemeinsam warm. Danach verbessern wir unsere Grundtechnik und üben Spielszenarien. Am Ende spielen wir und wenden das gelernte an."
+            label: "Gezieltes Training",
+            facts: ["Jeden Mittwoch 19:30–22:00 Uhr", "Gemeinsames Aufwärmen", "Grundtechnik & Spielszenarien", "Abschlussspiel, um das Gelernte anzuwenden"]
         },
         tournaments: {
-            label: "Ligabetrieb & Turniere",
-            description: "Wir spielen nicht nur in der Hamburger Mixed-Runde (A3 & B1) und dem Hanse-Pokal mit, sondern auch an zahlreichen anderen Turnieren im Umkreis von Hamburg."
+            label: "Liga & Turniere",
+            facts: ["Hamburger Mixed-Runde (A3 & B1)", "Hanse-Pokal", "Zahlreiche Turniere im Umkreis von Hamburg"]
         }
     },
     EN: {
         title: "What sets us apart",
         team: {
-            label: "Ambitious, friendly and international team",
-            description: "We are an ambitious and international team aiming to play at a high level. On average, we are 25 years old. Our players come from all over the world. We mainly speak German and English, but many also speak Ukrainian, Russian and Greek."
+            label: "Strong team",
+            facts: ["Ambitious, aiming to play at a high level", "25 years old on average", "Players from all over the world", "Mainly German & English, plus Ukrainian, Russian and Greek"]
         },
         training: {
-            label: "Structured and focused training",
-            description: "Every Wednesday from 7:30 pm to 10:00 pm, we do focused training to keep improving steadily. First, we warm up together. Then we work on our basic technique and practice game scenarios. At the end, we play and apply what we’ve learned."
+            label: "Focused training",
+            facts: ["Every Wednesday 7:30–10:00 pm", "Warm-up together", "Basic technique & game scenarios", "Match play to apply what we’ve learned"]
         },
         tournaments: {
-            label: "League play & tournaments",
-            description: "We not only compete in the Hamburg Mixed League (A3 & B1) and the Hanse Cup, but also take part in many other tournaments in and around Hamburg."
+            label: "League & tournaments",
+            facts: ["Hamburg Mixed League (A3 & B1)", "Hanse Cup", "Many tournaments in and around Hamburg"]
         }
     },
     RU: {
         title: "Что нас отличает",
         team: {
-            label: "Амбициозная, дружелюбная и международная команда",
-            description: "Мы амбициозная и международная команда, которая хочет играть на высоком уровне. В среднем нам 25 лет. Наши игроки приезжают со всего мира. В основном мы говорим на немецком и английском, но многие также говорят на украинском, русском и греческом."
+            label: "Сильная команда",
+            facts: ["Амбициозные, стремимся играть на высоком уровне", "Средний возраст — 25 лет", "Игроки со всего мира", "В основном немецкий и английский, а также украинский, русский и греческий"]
         },
         training: {
-            label: "Структурированные и целенаправленные тренировки",
-            description: "Каждую среду с 19:30 до 22:00 у нас проходит целенаправленная тренировка, чтобы мы постоянно становились лучше. Сначала мы вместе разминаемся. Затем улучшаем базовую технику и отрабатываем игровые ситуации. В конце мы играем и применяем изученное на практике."
+            label: "Целенаправленные тренировки",
+            facts: ["Каждую среду 19:30–22:00", "Совместная разминка", "Базовая техника и игровые ситуации", "Игра в конце, чтобы применить изученное"]
         },
         tournaments: {
             label: "Лига и турниры",
-            description: "Мы участвуем не только в Гамбургской смешанной лиге (A3 и B1) и Hanse-Pokal, но и во многих других турнирах в Гамбурге и его окрестностях."
+            facts: ["Гамбургская смешанная лига (A3 и B1)", "Hanse-Pokal", "Множество турниров в Гамбурге и окрестностях"]
         }
     }
 );
 
 #[component]
 pub fn AboutUs(i18n: I18n) -> Element {
+    let about_us = i18n.about_us();
     rsx! {
         section {
             aria_labelledby: "about_us",
@@ -67,23 +70,29 @@ pub fn AboutUs(i18n: I18n) -> Element {
                 Title {
                     id: "about_us",
                     component: "h2",
-                    "{i18n.about_us().title()}"
+                    "{about_us.title()}"
                 }
+                // Three cards side by side from `md` up, stacked below it;
+                // stretched, so a row of them shares one height.
                 List {
-                    sx: sx().gap("xxl"),
-                    DescriptionItem {
-                        label: i18n.about_us().team().label(),
-                        description: i18n.about_us().team().description()
+                    sx: sx()
+                        .gap("lg")
+                        .align_items("stretch")
+                        .breakpoint(Size::Md, sx().flex_direction("row")),
+                    FeatureCard {
+                        icon: lucide::users::outlined,
+                        label: about_us.team().label(),
+                        facts: about_us.team().facts().value(),
                     }
-                    Divider {}
-                    DescriptionItem {
-                        label: i18n.about_us().training().label(),
-                        description: i18n.about_us().training().description()
+                    FeatureCard {
+                        icon: lucide::dumbbell::outlined,
+                        label: about_us.training().label(),
+                        facts: about_us.training().facts().value(),
                     }
-                    Divider {}
-                    DescriptionItem {
-                        label: i18n.about_us().tournaments().label(),
-                        description: i18n.about_us().tournaments().description()
+                    FeatureCard {
+                        icon: lucide::trophy::outlined,
+                        label: about_us.tournaments().label(),
+                        facts: about_us.tournaments().facts().value(),
                     }
                 }
             }
@@ -91,15 +100,58 @@ pub fn AboutUs(i18n: I18n) -> Element {
     }
 }
 
+/// The card icon's tile, which the heading's first line is centred on.
+const ICON_SIZE: &str = "2.5rem";
+
+/// One card: an icon beside its heading, then a checklist of what it covers.
 #[component]
-fn DescriptionItem(label: &'static str, description: &'static str) -> Element {
+fn FeatureCard(
+    icon: SvgData,
+    label: &'static str,
+    facts: &'static [&'static str],
+) -> Element {
     rsx! {
         ListItem {
-            Flex {
-                direction: "column",
-                gap: "md",
-                Title { size: "xl", component: "h3", {label} }
-                Text { size: "lg", {description} }
+            sx: sx().flex("1 1 0").min_width("0"),
+            Paper {
+                bordered: true,
+                radius: "md",
+                sx: sx()
+                    .height("100%")
+                    .padding("xl")
+                    .display("flex")
+                    .flex_direction("column")
+                    .gap("lg"),
+                Flex {
+                    direction: "row",
+                    // Top, not centre: the heading wraps in a narrow card,
+                    // and the icon stays with its first line.
+                    align: "flex-start",
+                    gap: "md",
+                    sx: sx().flex_wrap("nowrap"),
+                    Icon { svg: icon, variant: "tonal", color: "primary", size: ICON_SIZE, radius: "md" }
+                    // Shifted down by half the gap between the icon and one
+                    // line (`1lh`), so the first line sits on the icon's middle.
+                    Title {
+                        size: "lg",
+                        component: "h3",
+                        sx: sx().margin_top(format!("calc(({ICON_SIZE} - 1lh) / 2)")),
+                        {label}
+                    }
+                }
+                List {
+                    icon: rsx! {
+                        Icon {
+                            svg: lucide::check::outlined,
+                            variant: "standard",
+                            color: "primary",
+                            size: "1em",
+                        }
+                    },
+                    for fact in facts.iter() {
+                        ListItem { "{fact}" }
+                    }
+                }
             }
         }
     }
